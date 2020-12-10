@@ -1,0 +1,14 @@
+/*-----Global Componentns-----*/
+.home__continerFluid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+}
+
+.home__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 88%;
+}

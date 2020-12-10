@@ -1,10 +1,16 @@
 import React from 'react'
 
+import Slideshow from '../components/Slideshow'
+
+import '../styles/reset.css'
+import '../styles/screens/Home.css'
 
 const Home = () => {
             return (
-                  <div>
-                      <h1>Home</h1>  
+                  <div className="home__continerFluid">
+                      <div className="home__container">
+                        <Slideshow />
+                      </div>
                   </div>
             )
 }
