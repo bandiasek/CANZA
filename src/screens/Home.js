@@ -1,12 +1,69 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { db } from '../firebase'
+import Swiper from 'react-id-swiper'
 
 import Slideshow from '../components/Slideshow'
 import Dash from '../assets/Dash.svg'
+import ArrowLeft from '../assets/arrows/ArrowLeft.svg'
+import ArrowRight from '../assets/arrows/ArrowRight.svg'
+import ArrowLeftActive from '../assets/arrows/ArrowLeftActive.svg'
+import ArrowRightActive from '../assets/arrows/ArrowRightActive.svg'
 
 import '../styles/reset.css'
+import 'swiper/swiper-bundle.css'
 import '../styles/screens/Home.css'
 
 const Home = () => {
+	// Defining state
+	const [posts, setPosts] = useState([])
+
+	// Swipper setting
+	const params = {
+		slidesPerView: 3,
+		spaceBetween: 30,
+		slidesPerGroup: 3,
+		loop: true,
+		loopFillGroupWithBlank: true,
+		freemode: false,
+
+	    }
+
+	// Swipper handling
+	const [swiper, setSwiper] = useState(null);
+	
+	// Handling navigation between slides
+	const goNext = () => {
+		  swiper.slideNext();
+	    };
+	   
+	const goPrev = () => {
+		  swiper.slidePrev();
+	}
+
+	// Fetching and saving posts to state
+	const getPosts = () => {
+            db.collection('posts')
+                  .get()
+			.then((snapchot) =>{ 
+				setPosts(
+					snapchot.docs.map((doc) => ({
+						id: doc.id,
+						data: doc.data(),
+					}))
+				)
+				console.log(posts)
+			}
+			)
+	}
+
+	// After loading page, fetch posts
+	useEffect(() => {
+		getPosts()
+		
+		var mySwiper = document.querySelector(".swiper-container").swiper;
+    		setSwiper(mySwiper);
+	}, [])
+
 	return (
 		<div className='home__continerFluid'>
 			<div className='home__container'>
@@ -21,6 +78,31 @@ const Home = () => {
 					</h3>
 				</div>
 
+			<div className="home__newest">
+				<div className="home__newestHeading">
+					<h1><span className="newestHeadingBorder" >NAJNOVŠI</span>E ČLÁNKY</h1>
+
+					<div className="newestHeadingSwitch">
+						<img src={ArrowLeft} onClick={goPrev} alt="Left Arrow"/>
+						<img src={ArrowRight} onClick={goNext} alt="Right Arrow"/>
+					</div>
+				</div>
+
+				<div className="home__newestPosts">
+					<Swiper  {...params} className="home__newestPostsSwiper">
+						<div>Slide 1</div>
+						<div>Slide 2</div>
+						<div>Slide 3</div>
+						<div>Slide 4</div>
+						<div>Slide 5</div>
+						<div>Slide 1</div>
+						<div>Slide 2</div>
+						<div>Slide 3</div>
+						<div>Slide 4</div>
+						<div>Slide 5</div>
+					</Swiper>
+				</div>
+			</div>
         
 
 
