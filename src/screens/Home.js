@@ -24,6 +24,23 @@ const Home = () => {
 		slidesPerGroup: 1,
 		loop: true,
 		freemode: false,
+		breakpoints: {
+			1300: {
+				slidesPerView: 3,
+			    },
+			1024: {
+			  slidesPerView: 2,
+			},
+			768: {
+			  slidesPerView: 2,
+			},
+			640: {
+			  slidesPerView: 1,
+			},
+			320: {
+			  slidesPerView: 1,
+			}
+		    }
 
 	    }
 

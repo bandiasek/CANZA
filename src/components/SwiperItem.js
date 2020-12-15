@@ -35,7 +35,7 @@ const SwiperItem = ({ postCategory, postName, postImg }) => {
                   <div className="swiperItem__containerImg">
                         <img src={PostImg} alt="Post img" />
                         
-                        <div style={style}>
+                        <div style={style} className="swiperItem__backImg" >
                               <img src={BackImg} alt="Back img"/>
                         </div>
                   </div>
