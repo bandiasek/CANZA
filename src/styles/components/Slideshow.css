@@ -1,0 +1,73 @@
+/*-----Resizing component + img -----*/
+.slideshow__container {
+      width: 100%;
+      height: auto;
+      max-height: 75vh;
+      position: relative;
+      overflow: hidden;
+}
+
+img {
+      width: 100%;
+      height: auto;
+}
+
+/*-----Changing Incicators + hover, transition...-----*/
+.indicators {
+      position: absolute;
+      bottom: 10%;
+      width: 100%;
+}
+
+.each-indicator {
+      height: 10px;
+      width: 10px;
+      margin-left: 1vw;
+      margin-right: 1vw;
+      background-color: white;
+      cursor: pointer;
+      border-radius: 50%;
+}
+
+.each-indicator:not(:hover) {
+      transform: scale(1);
+      transition: 0.25s;
+}
+
+.each-indicator:hover {
+      background-color: #a3bdbd;
+      transform: scale(1.15);
+      transition: 0.25s;
+}
+
+.active {
+      background-color: #5A8181;
+}
+
+/*-----Media querrys-----*/
+/*Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+      .each-indicator {
+            height: 6px;
+            width: 6px;
+      }
+ }
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+      .each-indicator {
+            height: 8px;
+            width: 8px;
+      }
+ }
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+
+ }
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+
+ }
+
