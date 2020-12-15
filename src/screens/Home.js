@@ -3,6 +3,7 @@ import { db } from '../firebase'
 import Swiper from 'react-id-swiper'
 
 import Slideshow from '../components/Slideshow'
+import SwiperItem from '../components/SwiperItem'
 import Dash from '../assets/Dash.svg'
 import ArrowLeft from '../assets/arrows/ArrowLeft.svg'
 import ArrowRight from '../assets/arrows/ArrowRight.svg'
@@ -20,10 +21,8 @@ const Home = () => {
 	// Swipper setting
 	const params = {
 		slidesPerView: 3,
-		spaceBetween: 30,
-		slidesPerGroup: 3,
+		slidesPerGroup: 1,
 		loop: true,
-		loopFillGroupWithBlank: true,
 		freemode: false,
 
 	    }
@@ -90,16 +89,27 @@ const Home = () => {
 
 				<div className="home__newestPosts">
 					<Swiper  {...params} className="home__newestPostsSwiper">
-						<div>Slide 1</div>
-						<div>Slide 2</div>
-						<div>Slide 3</div>
-						<div>Slide 4</div>
-						<div>Slide 5</div>
-						<div>Slide 1</div>
-						<div>Slide 2</div>
-						<div>Slide 3</div>
-						<div>Slide 4</div>
-						<div>Slide 5</div>
+						<div>
+							<SwiperItem />
+						</div>
+						<div>
+							<SwiperItem />
+						</div>
+						<div>
+							<SwiperItem />
+						</div>
+						<div>
+							<SwiperItem />
+						</div>
+						<div>
+							<SwiperItem />
+						</div>
+						<div>
+							<SwiperItem />
+						</div>
+						<div>
+							<SwiperItem />
+						</div>
 					</Swiper>
 				</div>
 			</div>
