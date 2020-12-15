@@ -135,7 +135,7 @@
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) { 
       .home__slideShowText {
-            height: 60vh;
+            height: 70vh;
       }
       .home__slideShowText > h1 {
             font-size: 3em;
@@ -162,12 +162,19 @@
  /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
       .home__slideShowText > h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
+            text-align: center;
       }
       .home__slideShowText > h3 {
+            padding-top: 10%;
+            text-align: center;
+            line-height: 1.5;
             font-size: 0.5rem;
       }
       .home__newestPosts {
             margin-top: 15%;
+      }
+      .home__slideShowTextEdit {
+            display: none;
       }
  }

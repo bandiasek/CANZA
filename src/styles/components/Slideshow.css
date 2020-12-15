@@ -61,14 +61,14 @@
             width: 8px;
       }
       .slideshow__itemImg  {
-            height: 60vh;
+            height: 75vh;
             object-fit: cover;
       }
  }
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) { 
-
+      
  }
 
 /* Large devices (desktops, less than 1200px) */

@@ -22,6 +22,7 @@ const Home = () => {
 	const params = {
 		slidesPerView: 3,
 		slidesPerGroup: 1,
+		spaceBetween: 10,
 		loop: true,
 		freemode: false,
 		breakpoints: {
