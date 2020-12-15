@@ -53,7 +53,7 @@ const Slideshow = () => {
             slideImages.map(
               (slide) => {
                 return (
-                      <img src={slide.src} alt={slide.alt} key={slide.alt} />
+                          <img className="slideshow__itemImg" src={slide.src} alt={slide.alt} key={slide.alt} />
                 )
               }
             )

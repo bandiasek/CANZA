@@ -7,7 +7,8 @@
       overflow: hidden;
 }
 
-img {
+
+.slideshow__itemImg {
       width: 100%;
       height: auto;
 }
@@ -58,6 +59,10 @@ img {
       .each-indicator {
             height: 8px;
             width: 8px;
+      }
+      .slideshow__itemImg  {
+            height: 60vh;
+            object-fit: cover;
       }
  }
 
