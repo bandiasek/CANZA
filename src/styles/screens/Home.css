@@ -20,7 +20,11 @@
 
 .home__slideShowText {
       position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       width: 75%;
+      height: 70vh;
 }
 
 .home__slideShowText > h1 {
@@ -28,7 +32,7 @@
       font-weight: regular;
       font-family: 'Playfair Display', serif;
       color: white;
-      margin-top: 15%;
+      margin-top: -10%;
 }
 
 .home__slideShowText > h3 {
@@ -106,12 +110,18 @@
 /*-----Media querrys-----*/
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) { 
+      .home__slideShowText {
+            height: 50vh;
+      }
       .home__slideShowText > h1 {
             font-size: 5em;
       }
  }
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) { 
+      .home__slideShowText {
+            height: 40vh;
+      }
       .home__slideShowText > h1 {
             font-size: 4em;
       }
@@ -124,6 +134,9 @@
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) { 
+      .home__slideShowText {
+            height: 60vh;
+      }
       .home__slideShowText > h1 {
             font-size: 3em;
       }
@@ -133,6 +146,9 @@
       }
       .home__slideShowTextEdit > img {
             max-width: 0.7rem;
+      }
+      .home__newest {
+            margin-top: 18%;
       }
       .newestHeadingSwitch {
             display: none;
@@ -152,6 +168,6 @@
             font-size: 0.5rem;
       }
       .home__newestPosts {
-            margin-top: 12%;
+            margin-top: 15%;
       }
  }
