@@ -74,6 +74,7 @@
       font-weight: bolder;
       letter-spacing: 2px;
       padding-bottom: 1.5rem;
+      color: #00001D;
       border-bottom: 2px solid #EEEEEE;
 }
 
@@ -105,7 +106,80 @@
       margin-top: 4%;
 }
 
+/*-----FindMore section-----*/
+.home__FindMore {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      min-height: 75vh;
+      background-image: url('../../assets/FindMoreBG.svg');
+}
 
+.home__FindMoreContainer {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 84%;
+      height: 100%;
+}
+
+.home__FindMoreContainer > * {
+      display: flex;
+      flex-direction: column;
+      flex: 0.3;
+      height: 42vh;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+      background-color: white;
+}
+
+.home__FindMoreContainer > * > img {
+      display: flex;
+      min-width: 85%;
+      align-self: flex-end;
+}
+
+.home__FindMoreContainer > * > a {
+      display: flex;
+      align-self: flex-end;
+      margin: 2.5rem 2rem 1.5rem 0;
+      text-decoration: none;
+}
+
+.home__FindMoreContainer > * > a > h4 {
+      font-weight: bold;
+      font-family: 'Raleway', serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #5A8181;
+}
+
+.home__FindMoreContainer > * > h1 {
+      font-size: 3rem;
+      font-weight: medium;
+      font-family: 'Playfair Display', serif;
+      padding: 2.5rem 0 0 2rem;
+      color: #00001D;
+}
+
+.home__FindMoreBlog {      
+      align-self: flex-start;
+      margin-top: -1rem;
+}
+
+.home__FindMoreTraining {
+      align-self: center;
+}
+
+.home__FindMoreFood {
+      align-self: flex-end;
+      margin-bottom: -1rem;
+}
 
 /*-----Media querrys-----*/
 /* Large devices (desktops, less than 1200px) */

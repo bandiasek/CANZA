@@ -9,6 +9,9 @@ import ArrowLeft from '../assets/arrows/ArrowLeft.svg'
 import ArrowRight from '../assets/arrows/ArrowRight.svg'
 import ArrowLeftActive from '../assets/arrows/ArrowLeftActive.svg'
 import ArrowRightActive from '../assets/arrows/ArrowRightActive.svg'
+import BlogImg from '../assets/BlogImg.svg'
+import TrainingImg from '../assets/TrainingImg.svg'
+import FoodImg from '../assets/FoodImg.svg'
 
 import '../styles/reset.css'
 import 'swiper/swiper-bundle.css'
@@ -131,9 +134,34 @@ const Home = () => {
 					</Swiper>
 				</div>
 			</div>
-        
+			</div>
 
+			<div className="home__FindMore">
+				<div className="home__FindMoreContainer">
+					<div className="home__FindMoreBlog">
+						<a href="####">
+							<h4>ZISTI VIAC KLIKNUTÍM</h4>
+						</a>
+						<img src={BlogImg} alt="Blog Img"/>
+						<h1>BLOG</h1>
+					</div>
 
+					<div className="home__FindMoreTraining">
+						<a href="####">
+							<h4>ZISTI VIAC KLIKNUTÍM</h4>
+						</a>
+						<img src={TrainingImg} alt="Training Img"/>
+						<h1>CVIČENIE</h1>
+					</div>
+
+					<div className="home__FindMoreFood">
+						<a href="####">
+							<h4>ZISTI VIAC KLIKNUTÍM</h4>
+						</a>
+						<img src={FoodImg} alt="Food Img"/>
+						<h1>STRAVA</h1>
+					</div>
+				</div>
 			</div>
 		</div>
 	)
