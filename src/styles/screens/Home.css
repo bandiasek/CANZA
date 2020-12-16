@@ -132,15 +132,14 @@
       display: flex;
       flex-direction: column;
       flex: 0.3;
-      height: 42vh;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
       background-color: white;
 }
 
 .home__FindMoreContainer > * > img {
       display: flex;
-      min-width: 85%;
       align-self: flex-end;
+      width: 85%;
 }
 
 .home__FindMoreContainer > * > a {
@@ -163,7 +162,7 @@
       font-size: 3rem;
       font-weight: medium;
       font-family: 'Playfair Display', serif;
-      padding: 2.5rem 0 0 2rem;
+      padding: 2.5rem 0 4rem 2rem;
       color: #00001D;
 }
 
@@ -184,18 +183,23 @@
 /*-----Media querrys-----*/
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) { 
+      /**** Text in SlideShow ****/
       .home__slideShowText {
             justify-content: center;
       }
       .home__slideShowText > h1 {
+            font-size: 5em;
+      }
 
+      /**** FindMore section ****/
+      .home__FindMoreContainer > * > h1 {
+            font-size: 2.5rem;
+            padding: 2.5rem 0 2rem 2rem;
       }
  }
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) { 
-      .home__slideShowText {
-
-      }
+      /**** Text in SlideShow ****/
       .home__slideShowText > h1 {
             font-size: 4em;
       }
@@ -203,11 +207,32 @@
             font-size: 0.7em;
             letter-spacing: 2px;
       }
+
+      /**** FindMore section ****/
+      .home__FindMoreContainer {
+            position: relative;
+            flex-direction: column;
+      }
+      .home__FindMoreContainer > * > h1 {
+            font-size: 3rem;
+            padding: 2.5rem 0 4rem 2rem;
+      }
+      .home__FindMoreFood {
+            margin-top: 20%;
+            align-self: flex-start;
+      }
+      .home__FindMoreTraining {
+            position: absolute;
+            top: 33%;
+            align-self: flex-end;
+      }
+
  }
 
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) { 
+      /**** Text in SlideShow ****/
       .home__slideShowText {
             justify-content: flex-end;
       }
@@ -221,6 +246,8 @@
       .home__slideShowTextEdit > img {
             max-width: 0.7rem;
       }
+
+      /**** Newest section ****/
       .home__newest {
             margin-top: 18%;
       }
@@ -230,11 +257,28 @@
       .home__newestPosts {
             margin-top: 8%;
       }
+
+       /**** FindMore section ****/
+      .home__FindMoreFood {
+            margin-top: 0%;
+      }
+      .home__FindMoreTraining {
+            position: relative;
+            margin-bottom: 5%;
+      }
+      .home__FindMoreBlog {
+            margin-bottom: 5%;
+      }
+      .home__FindMore {
+            margin-top: 10%;
+      }
+
  }
 
 
  /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+      /**** Text in SlideShow ****/
       .home__slideShowText > h1 {
             font-size: 2.2rem;
             text-align: center;
@@ -245,10 +289,33 @@
             line-height: 1.5;
             font-size: 0.5rem;
       }
-      .home__newestPosts {
-            margin-top: 15%;
-      }
       .home__slideShowTextEdit {
             display: none;
       }
+
+      /**** Newest section ****/
+      .home__newestPosts {
+            margin-top: 15%;
+      }
+
+      /**** FindMore section ****/
+      .home__FindMoreFood {
+            align-self: center;
+      }
+      .home__FindMoreTraining {
+            position: relative;
+            margin-bottom: 10%;
+            align-self: center;
+      }
+      .home__FindMoreBlog {
+            margin-bottom: 10%;
+            align-self: center;
+      }
+      .home__FindMoreContainer > * > h1 {
+            font-size: 2.2rem;
+      }
+      .home__FindMore {
+            margin-top: 15%;
+      }
+  
  }
