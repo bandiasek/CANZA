@@ -12,6 +12,9 @@ import ArrowRightActive from '../assets/arrows/ArrowRightActive.svg'
 import BlogImg from '../assets/BlogImg.svg'
 import TrainingImg from '../assets/TrainingImg.svg'
 import FoodImg from '../assets/FoodImg.svg'
+import C from '../assets/can/C.svg'
+import A from '../assets/can/A.svg'
+import N from '../assets/can/N.svg'
 
 import '../styles/reset.css'
 import 'swiper/swiper-bundle.css'
@@ -163,6 +166,17 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+
+			<div className="home__youCan">
+				<h1>YOU</h1>
+				<div className="home__youCanImgs">
+					<img src={C} alt="C"/>
+					<img src={A} alt="A"/>
+					<img src={N} alt="N"/>
+				</div>
+			</div>
+
+			
 		</div>
 	)
 }
