@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import PostImg from '../assets/postImg.svg'
-import BackImg from '../assets/backImg.svg'
+import PostImg from '../assets/posts/postImg.svg'
+import BackImg from '../assets/posts/backImg.svg'
 
 import '../styles/reset.css'
 import '../styles/components/Swiper.css'
