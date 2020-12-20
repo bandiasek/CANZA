@@ -176,6 +176,23 @@ const Home = () => {
 				</div>
 			</div>
 
+			<div className="home__contact">
+				<div className="home__contactContent">
+					<div className="home__contactForm">
+						<form method="post" action="odosielanie.php">
+							<h1>
+								KONTAKTUJTE 
+								<span className="contactFormEdit" > NÁS</span>
+							</h1>
+                            			<input name="meno" type="text" placeholder="VÁŠE MENO" required minlength="3" maxlength="32"></input>
+                            			<input name="email" type="email" placeholder="VÁŠ EMAIL" required></input>
+                            			<textarea name="sprava" rows="5" placeholder="VÁŠA SPRÁVA" required minlength="5"></textarea>
+                            			<button name="odoslat" type="submit" id="btn-set">ODOSLAŤ</button>
+                				</form>
+					</div>    
+				</div>
+			</div>
+
 			
 		</div>
 	)
