@@ -412,7 +412,6 @@
       .home__contactForm {
             width: 100%;
       }
-
  }
 
 
@@ -483,7 +482,6 @@
             flex-direction: row;
             justify-content: space-around;
       }
-
  }
 
 
@@ -548,7 +546,6 @@
       .home__contactForm > form > *:first-child {
             font-size: 1.5rem;
       }
-
       .home__contactForm > form > *:last-child {
             padding: 1rem 1rem 1rem 0.5rem;
       }
@@ -561,7 +558,4 @@
             flex-direction: column;
             justify-content: center;
       }
-
-      
-  
  }

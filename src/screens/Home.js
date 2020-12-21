@@ -7,8 +7,6 @@ import SwiperItem from '../components/SwiperItem'
 import Dash from '../assets/Dash.svg'
 import ArrowLeft from '../assets/arrows/ArrowLeft.svg'
 import ArrowRight from '../assets/arrows/ArrowRight.svg'
-import ArrowLeftActive from '../assets/arrows/ArrowLeftActive.svg'
-import ArrowRightActive from '../assets/arrows/ArrowRightActive.svg'
 import BlogImg from '../assets/BlogImg.svg'
 import TrainingImg from '../assets/TrainingImg.svg'
 import FoodImg from '../assets/FoodImg.svg'
@@ -34,40 +32,39 @@ const Home = () => {
 		breakpoints: {
 			1300: {
 				slidesPerView: 3,
-			    },
+			},
 			1024: {
-			  slidesPerView: 2,
+				slidesPerView: 2,
 			},
 			768: {
-			  slidesPerView: 2,
+				slidesPerView: 2,
 			},
 			640: {
-			  slidesPerView: 1,
+				slidesPerView: 1,
 			},
 			320: {
-			  slidesPerView: 1,
-			}
-		    }
-
-	    }
+				slidesPerView: 1,
+			},
+		},
+	}
 
 	// Swipper handling
-	const [swiper, setSwiper] = useState(null);
-	
+	const [swiper, setSwiper] = useState(null)
+
 	// Handling navigation between slides
 	const goNext = () => {
-		  swiper.slideNext();
-	    };
-	   
+		swiper.slideNext()
+	}
+
 	const goPrev = () => {
-		  swiper.slidePrev();
+		swiper.slidePrev()
 	}
 
 	// Fetching and saving posts to state
 	const getPosts = () => {
-            db.collection('posts')
-                  .get()
-			.then((snapchot) =>{ 
+		db.collection('posts')
+			.get()
+			.then((snapchot) => {
 				setPosts(
 					snapchot.docs.map((doc) => ({
 						id: doc.id,
@@ -75,16 +72,15 @@ const Home = () => {
 					}))
 				)
 				console.log(posts)
-			}
-			)
+			})
 	}
 
 	// After loading page, fetch posts
 	useEffect(() => {
 		getPosts()
-		
-		var mySwiper = document.querySelector(".swiper-container").swiper;
-    		setSwiper(mySwiper);
+
+		var mySwiper = document.querySelector('.swiper-container').swiper
+		setSwiper(mySwiper)
 	}, [])
 
 	return (
@@ -101,104 +97,124 @@ const Home = () => {
 					</h3>
 				</div>
 
-			<div className="home__newest">
-				<div className="home__newestHeading">
-					<h1><span className="newestHeadingBorder" >NAJNOVŠI</span>E ČLÁNKY</h1>
+				<div className='home__newest'>
+					<div className='home__newestHeading'>
+						<h1>
+							<span className='newestHeadingBorder'>NAJNOVŠI</span>E ČLÁNKY
+						</h1>
 
-					<div className="newestHeadingSwitch">
-						<img src={ArrowLeft} onClick={goPrev} alt="Left Arrow"/>
-						<img src={ArrowRight} onClick={goNext} alt="Right Arrow"/>
+						<div className='newestHeadingSwitch'>
+							<img src={ArrowLeft} onClick={goPrev} alt='Left Arrow' />
+							<img src={ArrowRight} onClick={goNext} alt='Right Arrow' />
+						</div>
+					</div>
+
+					<div className='home__newestPosts'>
+						<Swiper {...params} className='home__newestPostsSwiper'>
+							<div>
+								<SwiperItem />
+							</div>
+							<div>
+								<SwiperItem />
+							</div>
+							<div>
+								<SwiperItem />
+							</div>
+							<div>
+								<SwiperItem />
+							</div>
+							<div>
+								<SwiperItem />
+							</div>
+							<div>
+								<SwiperItem />
+							</div>
+							<div>
+								<SwiperItem />
+							</div>
+						</Swiper>
 					</div>
 				</div>
-
-				<div className="home__newestPosts">
-					<Swiper  {...params} className="home__newestPostsSwiper">
-						<div>
-							<SwiperItem />
-						</div>
-						<div>
-							<SwiperItem />
-						</div>
-						<div>
-							<SwiperItem />
-						</div>
-						<div>
-							<SwiperItem />
-						</div>
-						<div>
-							<SwiperItem />
-						</div>
-						<div>
-							<SwiperItem />
-						</div>
-						<div>
-							<SwiperItem />
-						</div>
-					</Swiper>
-				</div>
-			</div>
 			</div>
 
-			<div className="home__FindMore">
-				<div className="home__FindMoreContainer">
-					<div className="home__FindMoreBlog">
-						<a href="####">
+			<div className='home__FindMore'>
+				<div className='home__FindMoreContainer'>
+					<div className='home__FindMoreBlog'>
+						<a href='####'>
 							<h4>ZISTI VIAC KLIKNUTÍM</h4>
 						</a>
-						<img src={BlogImg} alt="Blog Img"/>
+						<img src={BlogImg} alt='Blog Img' />
 						<h1>BLOG</h1>
 					</div>
 
-					<div className="home__FindMoreTraining">
-						<a href="####">
+					<div className='home__FindMoreTraining'>
+						<a href='####'>
 							<h4>ZISTI VIAC KLIKNUTÍM</h4>
 						</a>
-						<img src={TrainingImg} alt="Training Img"/>
+						<img src={TrainingImg} alt='Training Img' />
 						<h1>CVIČENIE</h1>
 					</div>
 
-					<div className="home__FindMoreFood">
-						<a href="####">
+					<div className='home__FindMoreFood'>
+						<a href='####'>
 							<h4>ZISTI VIAC KLIKNUTÍM</h4>
 						</a>
-						<img src={FoodImg} alt="Food Img"/>
+						<img src={FoodImg} alt='Food Img' />
 						<h1>STRAVA</h1>
 					</div>
 				</div>
 			</div>
 
-			<div className="home__youCan">
+			<div className='home__youCan'>
 				<h1>YOU</h1>
-				<div className="home__youCanImgs">
-					<img src={C} alt="C"/>
-					<img src={A} alt="A"/>
-					<img src={N} alt="N"/>
+				<div className='home__youCanImgs'>
+					<img src={C} alt='C' />
+					<img src={A} alt='A' />
+					<img src={N} alt='N' />
 				</div>
 			</div>
 
-			<div className="home__contact">
-				<div className="home__contactContent">
-					<div className="home__contactForm">
-						<form method="post" action="odosielanie.php">
+			<div className='home__contact'>
+				<div className='home__contactContent'>
+					<div className='home__contactForm'>
+						<form method='post' action='odosielanie.php'>
 							<h1>
-								KONTAKTUJTE 
-								<span className="contactFormEdit" > NÁS</span>
+								KONTAKTUJTE
+								<span className='contactFormEdit'> NÁS</span>
 							</h1>
-                            			<input name="meno" type="text" placeholder="VÁŠE MENO" required minlength="3" maxlength="32"></input>
-                            			<input name="email" type="email" placeholder="VÁŠ EMAIL" required></input>
-                            			<textarea name="sprava" rows="5" placeholder="VÁŠA SPRÁVA" required minlength="5"></textarea>
-                            			<button name="odoslat" type="submit" id="btn-set">ODOSLAŤ</button>
-                				</form>
-					</div>    
+							<input
+								name='meno'
+								type='text'
+								placeholder='VÁŠE MENO'
+								required
+								minlength='3'
+								maxlength='32'
+							></input>
+							<input
+								name='email'
+								type='email'
+								placeholder='VÁŠ EMAIL'
+								required
+							></input>
+							<textarea
+								name='sprava'
+								rows='5'
+								placeholder='VÁŠA SPRÁVA'
+								required
+								minLength='5'
+							></textarea>
+							<button name='odoslat' type='submit' id='btn-set'>
+								ODOSLAŤ
+							</button>
+						</form>
+					</div>
 				</div>
 			</div>
 
-			<div className="home__footer">
-				<div className="home__footerLeft">
+			<div className='home__footer'>
+				<div className='home__footerLeft'></div>
 
-				</div>
-				
-				<div className="home__footerRight">
+				<div className='home__footerRight'>
 					<div>
 						<h3>WE ARE</h3>
 						<h1>CANZA</h1>
@@ -211,8 +227,6 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-
-			
 		</div>
 	)
 }
