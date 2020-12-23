@@ -23,6 +23,15 @@
 .swiperItem__containerText {
       width: 65%;
 }
+/*-----Fonts-----*/
+@font-face {
+      font-family: Raleway;
+      src: url('../../assets/fonts/Raleway-VariableFont_wght.ttf');
+    }
+@font-face {
+      font-family: Playfair Display;
+      src: url('../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf');
+    }
 
 .swiperItem__containerText > h4 {
       font-weight: bold;
