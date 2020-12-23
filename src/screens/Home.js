@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { db } from '../firebase'
 import Swiper from 'react-id-swiper'
 
 import Slideshow from '../components/Slideshow'
 import SwiperItem from '../components/SwiperItem'
+import { FuncContext } from '../components/Context'
+
 import Dash from '../assets/Dash.svg'
 import ArrowLeft from '../assets/arrows/ArrowLeft.svg'
 import ArrowRight from '../assets/arrows/ArrowRight.svg'
@@ -19,8 +21,8 @@ import 'swiper/swiper-bundle.css'
 import '../styles/screens/Home.css'
 
 const Home = () => {
-	// Defining state
-	const [posts, setPosts] = useState([])
+	// Gettings posts
+	const { posts } = useContext(FuncContext)
 
 	// Swipper setting
 	const params = {
@@ -60,25 +62,10 @@ const Home = () => {
 		swiper.slidePrev()
 	}
 
-	// Fetching and saving posts to state
-	const getPosts = () => {
-		db.collection('posts')
-			.get()
-			.then((snapchot) => {
-				setPosts(
-					snapchot.docs.map((doc) => ({
-						id: doc.id,
-						data: doc.data(),
-					}))
-				)
-				console.log(posts)
-			})
-	}
-
 	// After loading page, fetch posts
 	useEffect(() => {
-		getPosts()
-
+		console.log(posts)
+		
 		var mySwiper = document.querySelector('.swiper-container').swiper
 		setSwiper(mySwiper)
 	}, [])
@@ -111,27 +98,13 @@ const Home = () => {
 
 					<div className='home__newestPosts'>
 						<Swiper {...params} className='home__newestPostsSwiper'>
-							<div>
-								<SwiperItem />
-							</div>
-							<div>
-								<SwiperItem />
-							</div>
-							<div>
-								<SwiperItem />
-							</div>
-							<div>
-								<SwiperItem />
-							</div>
-							<div>
-								<SwiperItem />
-							</div>
-							<div>
-								<SwiperItem />
-							</div>
-							<div>
-								<SwiperItem />
-							</div>
+							{
+								posts.map(post => (
+									<div key={post.id}>
+										<SwiperItem />
+									</div>
+								))
+							}
 						</Swiper>
 					</div>
 				</div>
