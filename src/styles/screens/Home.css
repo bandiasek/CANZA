@@ -282,6 +282,7 @@
       font-weight: 500;
       background-color: white;
       color: #638A8A;
+      padding: 3%;
       border: 1.5px solid #638A8A;
 }
 ::placeholder {
@@ -412,6 +413,9 @@
       .home__contactForm {
             width: 100%;
       }
+      .home__contactForm > form > *:last-child {
+            padding: 5%;
+      }
  }
 
 
@@ -528,6 +532,9 @@
       }
 
       /**** youCAN section ****/
+      .home__youCan {
+            margin-bottom: 60%;
+      }
       .home__youCanImgs > img {
             width: auto;
             transform: scale(0.9);
@@ -546,10 +553,7 @@
       .home__contactForm > form > *:first-child {
             font-size: 1.5rem;
       }
-      .home__contactForm > form > *:last-child {
-            padding: 1rem 1rem 1rem 0.5rem;
-      }
-
+      
       /**** Happy Footer ****/
       .home__footerLeft {
             display: none;
