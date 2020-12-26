@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { db } from '../firebase'
 import Swiper from 'react-id-swiper'
 
 import Slideshow from '../components/Slideshow'
@@ -65,7 +64,7 @@ const Home = () => {
 	// After loading page, fetch posts
 	useEffect(() => {
 		console.log(posts)
-		
+
 		var mySwiper = document.querySelector('.swiper-container').swiper
 		setSwiper(mySwiper)
 	}, [])
@@ -100,9 +99,12 @@ const Home = () => {
 						<Swiper {...params} className='home__newestPostsSwiper'>
 							{
 								posts.map(post => (
-									<div key={post.id}>
-										<SwiperItem />
-									</div>
+										<SwiperItem 
+											category={post.data.category}
+											imgPath={post.data.imgPath}
+											name={post.data.name}
+											key={post.id}
+										/>
 								))
 							}
 						</Swiper>

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-import PostImg from '../assets/posts/postImg.svg'
 import BackImg from '../assets/posts/backImg.svg'
 
 import '../styles/reset.css'
 import '../styles/components/Swiper.css'
 
-const SwiperItem = ({ postCategory, postName, postImg }) => {
+const SwiperItem = ({ category, imgPath, name }) => {
 	// Defining styles
 	const [style, setStyle] = useState({ top: 0, left: 0, position: 'absolute' })
 	const styles = [
@@ -26,7 +25,7 @@ const SwiperItem = ({ postCategory, postName, postImg }) => {
 	return (
 		<div className='swiperItem__container'>
 			<div className='swiperItem__containerImg'>
-				<img src={PostImg} alt='Post img' />
+				<img src={require(`../assets/posts/${imgPath}`).default} alt='Post img' />
 
 				<div style={style} className='swiperItem__backImg'>
 					<img src={BackImg} alt='Back img' />
@@ -34,8 +33,8 @@ const SwiperItem = ({ postCategory, postName, postImg }) => {
 			</div>
 
 			<div className='swiperItem__containerText'>
-				<h4>STRAVOVANIE</h4>
-				<h1>Ako pomáha strava pri cvičení ?</h1>
+				<h4>{category}</h4>
+				<h1>{name}</h1>
 			</div>
 		</div>
 	)
