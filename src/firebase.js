@@ -1,4 +1,5 @@
 import firebase from 'firebase'
+import 'firebase/storage'
 require('firebase/auth')
 
 const firebaseConfig = {
@@ -16,3 +17,5 @@ const firebaseConfig = {
     export const db = firebaseApp.firestore();
 
     export const auth = firebase.auth();
+    
+    export const storage = firebase.storage();

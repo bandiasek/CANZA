@@ -9,7 +9,7 @@ import Training from './screens/Training'
 import Food from './screens/Food'
 import Home from './screens/Home'
 import { FuncContext } from './components/Context'
-import { auth, db } from './firebase'
+import { auth, db, storage } from './firebase'
 
 import Logo from './assets/LogoNav.svg'
 import Ham from './assets/HamNav.svg'
@@ -67,6 +67,27 @@ function App() {
 				})
 				.catch((error) => console.error('Error writing document: ', error))
 		},
+		
+		// Method that uploads image to storage and returns url to save
+		uploadImage: (image) => {
+			const uploadTask = storage.ref(`images/${image.name}`).put(image);
+			uploadTask.on(
+			  "state_changed",
+			  snapshot => {},
+			  error => {
+			    console.log(error);
+			  },
+			  () => {
+			    storage
+				.ref("images")
+				.child(image.name)
+				.getDownloadURL()
+				.then(url => {
+				  return url
+				});
+			  }
+			);
+		    },
 
 		// Method that del post localy and from db
 		delPost: (postId) => {

@@ -99,12 +99,14 @@ const Home = () => {
 						<Swiper {...params} className='home__newestPostsSwiper'>
 							{
 								posts.map(post => (
+									<div key={post.id} >
 										<SwiperItem 
 											category={post.data.category}
 											imgPath={post.data.imgPath}
 											name={post.data.name}
 											key={post.id}
 										/>
+									</div>	
 								))
 							}
 						</Swiper>
