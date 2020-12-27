@@ -4,7 +4,7 @@ import './styles/App.css'
 import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
 
 import Blog from './screens/Blog'
-import Login from './screens/Login'
+import CreatePost from './screens/CreatePost'
 import Training from './screens/Training'
 import Food from './screens/Food'
 import Home from './screens/Home'
@@ -17,19 +17,24 @@ import Ham from './assets/HamNav.svg'
 function App() {
 	// Storing posts
 	const [posts, setPosts] = useState([])
+	const [isLogged, setIsLogged] = useState(false)
 
 	// Wraping all the functions
 	const functions = useMemo(() => ({
 		
 		// Sign in method, return true or false
 		signIn: (event, email, pswd) => {
+			var success;
 			event.preventDefault()
 			auth
 				.signInWithEmailAndPassword(email, pswd)
-				.then(response => {return true})
+				.then(response => { setIsLogged(true) } )
 				.catch((error) => alert(error.message))
-				return false;
+
 		},
+
+		// Storing state of an app
+		isLogged: isLogged,
 
 		// Getting posts to local variable posts
 		getPosts: () => {
@@ -127,7 +132,7 @@ function App() {
 					<Route path='/strava' component={Food} />
 					<Route path='/trening' component={Training} />
 					<Route path='/blog' exact component={Blog} />
-					<Route path='/blog/login' component={Login} />
+					<Route path='/createpost' component={CreatePost} />
 				</div>
 			</Router>
 		</FuncContext.Provider>
