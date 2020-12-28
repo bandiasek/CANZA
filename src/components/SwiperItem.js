@@ -25,7 +25,7 @@ const SwiperItem = ({ category, imgPath, name }) => {
 	return (
 		<div className='swiperItem__container'>
 			<div className='swiperItem__containerImg'>
-				<img src={require(`../assets/posts/${imgPath}`).default} alt='Post img' />
+				<img src={imgPath} alt='Post img' />
 
 				<div style={style} className='swiperItem__backImg'>
 					<img src={BackImg} alt='Back img' />

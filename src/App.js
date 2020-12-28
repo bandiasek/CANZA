@@ -74,7 +74,7 @@ function App() {
 		},
 		
 		// Method that uploads image to storage and returns url to save
-		uploadImage: (image) => {
+		uploadPost: (image, event, author, category, createdAt, name, text ) => {
 			const uploadTask = storage.ref(`images/${image.name}`).put(image);
 			uploadTask.on(
 			  "state_changed",
@@ -88,7 +88,7 @@ function App() {
 				.child(image.name)
 				.getDownloadURL()
 				.then(url => {
-				  return url
+					functions.createPost(event, author, category, createdAt, url, name, text)
 				});
 			  }
 			);
