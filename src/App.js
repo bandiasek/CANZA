@@ -67,10 +67,10 @@ function App() {
 					text: text
 				})
 				.then(() => {
-					console.log('Document successfully written!')
+					alert('Document successfully written!')
 					functions.getPosts()
 				})
-				.catch((error) => console.error('Error writing document: ', error))
+				.catch((error) => alert('Error writing document: ', error))
 		},
 		
 		// Method that uploads image to storage and returns url to save
@@ -99,9 +99,18 @@ function App() {
 			db.collection('posts')
 				.doc(postId)
 				.delete()
-				.then(() => console.log('Successfully deleted!'))
-				.catch((err) => console.log('Error removing post: ', err))
+				.then(() => alert('Successfully deleted!'))
+				.catch((err) => alert('Error removing post: ', err))
 			setPosts(posts.filter((post) => post.id !== postId))
+		},
+
+		// Method that del post localy and from db
+		delPostImg: (imgPath) => {
+			const delTask = storage.refFromURL(imgPath)
+			delTask
+				.delete()
+				.then( response => alert('Delete of an Image was succesful ') )
+				.catch(err => alert(err) )
 		}
 	}))
 
