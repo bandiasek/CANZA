@@ -10,6 +10,7 @@ import Food from './screens/Food'
 import Home from './screens/Home'
 import { FuncContext } from './components/Context'
 import { auth, db, storage } from './firebase'
+import Loader from './components/Loader'
 
 import Logo from './assets/LogoNav.svg'
 import Ham from './assets/HamNav.svg'
@@ -18,6 +19,7 @@ function App() {
 	// Storing posts
 	const [posts, setPosts] = useState([])
 	const [isLogged, setIsLogged] = useState(false)
+	const [isLoaded, setIsLoaded] = useState(false)
 
 	// Wraping all the functions
 	const functions = useMemo(() => ({
@@ -117,35 +119,49 @@ function App() {
 	// Fetching posts at the start of the page
 	useEffect(() => {
 		functions.getPosts()
-		console.log(posts)
+		
+		setTimeout(()=>{
+			setIsLoaded(true);
+			setTimeout(()=>(
+				document.querySelector('.container').style.opacity = 1
+			),50)
+		    },3000);
 	}, [])
 
-	return (
-		<FuncContext.Provider value={functions}>
-			<Router>
-				<div className='container'>
-					<div className='app__navbar'>
-						<div className='app__navbarLeft'>
-							<img src={Logo} alt='Navbar Canza Logo' />
-							<h3>
-								CAN<span className='app__navbarColor'>ZA</span>
-							</h3>
+	if (isLoaded) {
+		return (
+			<FuncContext.Provider value={functions}>
+				<Router>
+					<div className='container'>
+						<div className='app__navbar'>
+							<div className='app__navbarLeft'>
+								<img src={Logo} alt='Navbar Canza Logo' />
+								<h3>
+									CAN<span className='app__navbarColor'>ZA</span>
+								</h3>
+							</div>
+	
+							<div className='app__navbarRight'>
+								<img src={Ham} alt='Navigation hamburger Icon' />
+							</div>
 						</div>
-
-						<div className='app__navbarRight'>
-							<img src={Ham} alt='Navigation hamburger Icon' />
-						</div>
+	
+						<Route path='/' exact component={Home} />
+						<Route path='/strava' component={Food} />
+						<Route path='/trening' component={Training} />
+						<Route path='/blog' exact component={Blog} />
+						<Route path='/createpost' component={CreatePost} />
 					</div>
+				</Router>
+			</FuncContext.Provider>
+		)
 
-					<Route path='/' exact component={Home} />
-					<Route path='/strava' component={Food} />
-					<Route path='/trening' component={Training} />
-					<Route path='/blog' exact component={Blog} />
-					<Route path='/createpost' component={CreatePost} />
-				</div>
-			</Router>
-		</FuncContext.Provider>
-	)
-}
+		} else {
+			return (
+				<Loader />
+			)
+		
+		}
+	}
 
 export default App

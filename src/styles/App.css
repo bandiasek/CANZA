@@ -5,12 +5,14 @@
     }
 @font-face {
       font-family: Playfair Display;
-      src: url('../assets/fonts/Raleway-VariableFont_wght.ttf');
+      src: url('../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf');
     }
 
 
 /*-----Global Componentns-----*/
 .container {
+      transition: opacity 1s ease-in;
+      opacity: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
