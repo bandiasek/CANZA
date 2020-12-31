@@ -548,7 +548,7 @@
       }
       .home__youCanImgs > img {
             width: auto;
-            transform: scale(0.9);
+            transform: scale(0.75);
       }
       .home__youCan > h1 {
             margin-top: 40%;
@@ -563,14 +563,29 @@
       /**** Contact Us section ****/
       .home__contactForm > form > *:first-child {
             font-size: 1.5rem;
+            padding: 0;
+            margin-bottom: 1.5rem;
+      }
+      .home__contactForm > form > * {
+            margin-top: 10px;
+            font-size: 0.8rem;
       }
       
       /**** Happy Footer ****/
+      .home__footer{
+            padding: 15px 0 15px 0;
+      }
       .home__footerLeft {
             display: none;
       }
       .home__footerRight { 
             flex-direction: column;
             justify-content: center;
+      }
+      .home__footerRight > div:nth-child(2) > h5{
+          margin-top: 4px;
+      }
+      .home__footerRight > div > h1 {
+            padding-bottom: 1.2rem;
       }
  }

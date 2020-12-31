@@ -70,10 +70,10 @@ function App() {
 					text: text
 				})
 				.then(() => {
-					alert('Document successfully written!')
+					alert('Príspevok bol úspešne vytvorený!')
 					functions.getPosts()
 				})
-				.catch((error) => alert('Error writing document: ', error))
+				.catch((error) => alert('Nastala chyba pri tvorbe príspevku: ', error))
 		},
 		
 		// Method that uploads image to storage and returns url to save
@@ -102,8 +102,8 @@ function App() {
 			db.collection('posts')
 				.doc(postId)
 				.delete()
-				.then(() => alert('Successfully deleted!'))
-				.catch((err) => alert('Error removing post: ', err))
+				.then(() => alert('Príspevok úspešne vytvorený!'))
+				.catch((err) => alert('Nastla chyba pri vymazávaní: ', err))
 			setPosts(posts.filter((post) => post.id !== postId))
 		},
 
@@ -112,7 +112,7 @@ function App() {
 			const delTask = storage.refFromURL(imgPath)
 			delTask
 				.delete()
-				.then( response => alert('Delete of an Image was succesful ') )
+				.then( response => alert('Vymazanie obrázku bolo úspešné!') )
 				.catch(err => alert(err) )
 		},
 
