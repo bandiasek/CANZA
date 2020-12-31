@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react'
+import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
+import emailjs from 'emailjs-com'; 
 import './styles/reset.css'
 import './styles/App.css'
-import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
 
 import Blog from './screens/Blog'
 import CreatePost from './screens/CreatePost'
@@ -113,6 +114,19 @@ function App() {
 				.delete()
 				.then( response => alert('Delete of an Image was succesful ') )
 				.catch(err => alert(err) )
+		},
+
+		// Method that sends email through emailjs 
+		sendEmail: (event) => {
+			event.preventDefault()
+
+			emailjs.sendForm('service_h52rwi7', 'template_ufte97o', event.target, 'user_d9f5M5lcv5HAk375PYvjS')
+			.then((response) => {
+				alert(response.text === 'OK' ? 'Email bol úspešne odoslaný.' : 'Nastal problém s odoslaním Emailu.')
+			  }, (error) => {
+				alert(error.text)
+			  })
+			  event.target.reset()
 		}
 	}))
 

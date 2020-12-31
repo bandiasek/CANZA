@@ -21,7 +21,7 @@ import '../styles/screens/Home.css'
 
 const Home = () => {
 	// Gettings posts
-	const { posts } = useContext(FuncContext)
+	const { posts, sendEmail } = useContext(FuncContext)
 
 	// Swipper setting
 	const params = {
@@ -154,13 +154,13 @@ const Home = () => {
 			<div className='home__contact'>
 				<div className='home__contactContent'>
 					<div className='home__contactForm'>
-						<form method='post' action='odosielanie.php'>
+						<form onSubmit={sendEmail} >
 							<h1>
 								KONTAKTUJTE
 								<span className='contactFormEdit'> NÁS</span>
 							</h1>
 							<input
-								name='meno'
+								name='form_name'
 								type='text'
 								placeholder='VÁŠE MENO'
 								required
@@ -168,13 +168,13 @@ const Home = () => {
 								maxlength='32'
 							></input>
 							<input
-								name='email'
+								name='form_email'
 								type='email'
 								placeholder='VÁŠ EMAIL'
 								required
 							></input>
 							<textarea
-								name='sprava'
+								name='form_message'
 								rows='5'
 								placeholder='VÁŠA SPRÁVA'
 								required
