@@ -1,0 +1,80 @@
+/*-----Fonts-----*/
+@font-face {
+      font-family: Raleway;
+      src: url('../../assets/fonts/Raleway-VariableFont_wght.ttf');
+    }
+@font-face {
+      font-family: Playfair Display;
+      src: url('../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf');
+    }
+
+
+/*-----Global Componentns-----*/
+
+/*-----Slide show text-----*/
+
+/*-----Newest blog posts-----*/
+
+/*-----youCAN section-----*/
+
+/*-----Contact us section-----*/
+
+/*-----Happy footer-----*/
+
+/*-----Media querrys-----*/
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+      /**** Text in SlideShow ****/
+
+      /**** FindMore section ****/
+      
+      /**** youCAN section ****/
+
+      /**** Contact Us section ****/
+
+ }
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+      /**** Text in SlideShow ****/
+
+      /**** FindMore section ****/
+
+      /**** youCAN section ****/
+
+      /**** Contact Us section ****/
+
+ }
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+      /**** Text in SlideShow ****/
+
+      /**** Newest section ****/
+
+       /**** FindMore section ****/
+
+      /**** youCAN section ****/
+
+      /**** Contact Us section ****/
+      
+      /**** Happy Footer ****/
+      
+ }
+
+
+ /*Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+      /**** Text in SlideShow ****/
+
+      /**** Newest section ****/
+
+      /**** FindMore section ****/
+
+      /**** youCAN section ****/
+
+      /**** Contact Us section ****/
+      
+      /**** Happy Footer ****/
+      
+ }

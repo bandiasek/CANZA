@@ -188,22 +188,6 @@ const Home = () => {
 				</div>
 			</div>
 
-			<div className='home__footer'>
-				<div className='home__footerLeft'></div>
-
-				<div className='home__footerRight'>
-					<div>
-						<h3>WE ARE</h3>
-						<h1>CANZA</h1>
-					</div>
-					<div>
-						<h5>&copy;Ondrej Brendza</h5>
-						<h5>&copy;Miriam Staneková</h5>
-						<h5>&copy;Project Samson</h5>
-						<h5>2020</h5>
-					</div>
-				</div>
-			</div>
 		</div>
 	)
 }
