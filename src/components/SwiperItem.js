@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import BackImg from '../assets/posts/backImg.svg'
+import BackImg from '../assets/BG/backImg.svg'
 
 import '../styles/reset.css'
 import '../styles/components/Swiper.css'

@@ -59,6 +59,7 @@ function Blog() {
 								return (
 									<div
 										className='blog__postsListItem blog__postsListBorder'
+										key={index}
 										onClick={(event) => {
 											onChangePost(event, index)
 										}}
@@ -72,8 +73,8 @@ function Blog() {
 					</div>
 
 					<div className='blog__postText'>
-						{curPost.data.text.split('(enter)').map((p) => {
-							return <p>{p}</p>
+						{curPost.data.text.split('(enter)').map((p,index) => {
+							return <p key={index}>{p}</p>
 						})}
 					</div>
 				</div>
