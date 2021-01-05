@@ -99,11 +99,51 @@
       margin: 0 2rem 0 2rem;
 }
 
-/*-----youCAN section-----*/
+/*----- Lower container -----*/
+.blog__lowerCont {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      width: 100%;
+      height: auto;
+}
 
-/*-----Contact us section-----*/
+/*-----Posts list section-----*/
+.blog__postsListCont {
+      display: flex;
+      flex: 0.3;
+      flex-direction: column;
+      align-items: center;
+}
 
-/*-----Happy footer-----*/
+/*-----Post text-----*/
+.blog__postText {
+      display: flex;
+      flex: 0.6;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 10vh 0 20vh 0;
+}
+
+.blog__postText > p {
+      font-size: 1.2rem;
+      font-weight: bolder;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.6;
+      letter-spacing: 2px;
+      text-align: left;
+      color: #00001D;
+      margin-bottom: 1.6rem;
+}
+
+.blog__postText > p:first-child:first-letter {
+      float: left;
+      font-size: 500%;
+      line-height: 0;
+      padding: 0 10px 30px 0 ;
+      margin-top: -15px;
+}
+
 
 /*-----Media querrys-----*/
 /* Large devices (desktops, less than 1200px) */
@@ -154,15 +194,5 @@
       .blog__description > h1 {
             font-size: 2rem;
       }
-
-      /**** Newest section ****/
-
-      /**** FindMore section ****/
-
-      /**** youCAN section ****/
-
-      /**** Contact Us section ****/
-      
-      /**** Happy Footer ****/
       
  }

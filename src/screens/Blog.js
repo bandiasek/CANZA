@@ -55,7 +55,36 @@ function Blog() {
 				</div>
 	
 				<div className="blog__lowerCont">
-	
+					<div className="blog__postsListCont">
+						<div className="blog__postsList">
+							<h3 className='blog__postsListBorder' >Ďalšie články</h3>
+									{
+									posts.map( 
+										( onePost, index ) => {
+											return(
+												<div className="blog__postsListItem blog__postsListBorder"
+												onClick={ (event) => { onChangePost(event, index) } }
+												>
+													<h5>#{index+1}</h5>
+													<h4>{onePost.data.name}</h4>
+												</div>
+												)
+										} 
+									)
+									}
+						</div>
+						
+					</div>
+
+					<div className="blog__postText">
+						{
+						curPost.data.text
+							.split('(enter)')
+							.map(p => { 
+								return <p>{p}</p> 
+							} )
+						}
+					</div>
 				</div>
 	
 			</div>
