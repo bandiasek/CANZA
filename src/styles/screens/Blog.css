@@ -10,10 +10,94 @@
 
 
 /*-----Global Componentns-----*/
+.blog__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+}
 
-/*-----Slide show text-----*/
+/*-----Upper container-----*/
+.blog__upperCont {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      align-items: flex-start;
+      align-self: flex-end;
+      justify-content: space-between;
+      width: 94%;
+}
 
-/*-----Newest blog posts-----*/
+.blog__upperImg {
+      display: flex;
+      flex: 0.6;
+      align-items: flex-start;
+      justify-content: flex-end;
+}
+
+.blog__upperImg > img {
+      width: 100%
+}
+
+/*----- Description styling -----*/
+.blog__description {
+      display: flex;
+      flex: 0.3;
+      flex-direction: column;
+      align-items: flex-start;
+}
+
+.blog__description > h3 {
+      font-weight: bold;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #5A8181;
+      margin-top: 5vh;
+}
+
+.blog__description > h1 {
+      font-size: 4rem;
+      font-weight: medium;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.4;
+      text-align: left;
+      color: #00001D;
+      margin: 6vh 0 8vh 0;
+}
+
+.blog__descriptionAuthorDate {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
+}
+
+.blog__descriptionAuthorDate > h5 {
+      font-weight: bold;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #C9C9C9;
+}
+
+.blog__descriptionAuthorDate > h4 {
+      font-weight: bold;
+      font-family: 'Raleway', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      color: #5A8181;
+}
+
+.blog__line {
+      background-color: #5A8181;
+      height: 2px;
+      width: 2rem;
+      margin: 0 2rem 0 2rem;
+}
 
 /*-----youCAN section-----*/
 
@@ -24,48 +108,52 @@
 /*-----Media querrys-----*/
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) { 
-      /**** Text in SlideShow ****/
-
-      /**** FindMore section ****/
+      /**** Text sizes and margins****/
+      .blog__description > h1 {
+            font-size: 3rem;
+            margin: 3vh 0 5vh 0;
+      }
       
-      /**** youCAN section ****/
-
-      /**** Contact Us section ****/
 
  }
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) { 
-      /**** Text in SlideShow ****/
-
-      /**** FindMore section ****/
-
-      /**** youCAN section ****/
-
-      /**** Contact Us section ****/
-
+      /**** Descriptions font sizes****/
+      .blog__description > h1 {
+            font-size: 2.5rem;
+            margin: 2vh 0 3vh 0;
+      }
+      .blog__description h4, .blog__description h3 {
+            font-size: 0.8rem;
+      }
  }
 
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) { 
-      /**** Text in SlideShow ****/
-
-      /**** Newest section ****/
-
-       /**** FindMore section ****/
-
-      /**** youCAN section ****/
-
-      /**** Contact Us section ****/
-      
-      /**** Happy Footer ****/
+      /**** Upper container ****/
+      .blog__upperCont {
+            flex-direction: column-reverse;
+            align-self: center;
+            width: 88%;
+            height: auto;
+      }
+      .blog__upperImg {
+            width: 100%;
+      }
+      .blog__description > h1 {
+            margin: 2vh 0 4vh 0;
+      }
       
  }
 
 
  /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-      /**** Text in SlideShow ****/
+      /**** Upper container ****/
+      .blog__description > h1 {
+            font-size: 2rem;
+      }
 
       /**** Newest section ****/
 
