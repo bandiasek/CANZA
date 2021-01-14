@@ -24,7 +24,7 @@ function App() {
 
 	// Wraping all the functions
 	const functions = useMemo(() => ({
-		
+
 		// Sign in method, return true or false
 		signIn: (event, email, pswd) => {
 			var success;
@@ -49,6 +49,7 @@ function App() {
 							id: doc.id,
 							data: doc.data(),
 						}))
+						.sort( comparePosts )
 					)
 				)
 		},
@@ -129,6 +130,16 @@ function App() {
 			  event.target.reset()
 		}
 	}))
+
+	const comparePosts = (a, b) => {
+		if ( a.data.createdAt < b.data.createdAt ){
+			return -1;
+		    }
+		    if ( a.data.createdAt > b.data.createdAt ){
+			return 1;
+		    }
+		    return 0;
+	}
 
 	// Fetching posts at the start of the page
 	useEffect(() => {

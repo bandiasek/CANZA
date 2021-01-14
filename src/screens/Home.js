@@ -117,7 +117,7 @@ const Home = () => {
 			<div className='home__FindMore'>
 				<div className='home__FindMoreContainer'>
 					<div className='home__FindMoreBlog'>
-						<a href='####'>
+						<a href='blog'>
 							<h4>ZISTI VIAC KLIKNUTÍM</h4>
 						</a>
 						<img src={BlogImg} alt='Blog Img' />
