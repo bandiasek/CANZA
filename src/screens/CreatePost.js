@@ -174,7 +174,7 @@ const CreatePost = () => {
 
 						<div class='continerLoggedIn__posts' >
 							{posts.map((item) => (
-								<div>
+								<div class='posts__onePost'>
 									<Post
 										author={item.data.author}
 										category={item.data.category}
@@ -188,7 +188,7 @@ const CreatePost = () => {
 										onClick={(event) => onDelete(event, item.id, item.data.imgPath)}
 										key={item.id + '2'}
 									>
-										del
+										delete
 									</button>
 								</div>
 								))}

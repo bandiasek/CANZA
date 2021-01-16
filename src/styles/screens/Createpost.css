@@ -132,8 +132,24 @@
 /*-----Posts container-----*/
 .continerLoggedIn__posts {
       display: grid;
-      grid-template-columns: auto auto auto;
-      padding: 3rem;
+      grid-template-columns: auto auto;
+      margin-top: 5vh;
+}
+
+.posts__onePost {
+      position: relative;
+}
+
+.posts__onePost > button {
+      position: absolute;
+      z-index: 20;
+      bottom: 10%;
+      left: 45%;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-family: 'Raleway', sans-serif;
+      letter-spacing: 2px;
+      border: 1px solid #EEEEEE;
 }
 
 

@@ -1,18 +1,19 @@
 import React from 'react'
 
+import '../styles/components/Post.css'
+
 const Post = ({ author, category, createdAt, name, text, imgPath }) => {
       return (
-            <div>
+            <div class='post__continer'>
                   <h1>{name}</h1>
-                  <ul>
-                        <li>{author}</li>
-                        <li>{category}</li>
-                        <li>{createdAt}</li>
-                        <li>{text}</li>
-                        <img src={imgPath} alt="postIMg"/>
-                  </ul>
+                  <h3>{author}</h3>
+                  <h3>{category}</h3>
+                  <h4>{createdAt}</h4>
+                  <p>{text}</p>
+                  <img src={imgPath} alt="postIMg"/>
+
             </div>
       )
 }
             
-export default Post;
+export default Post
