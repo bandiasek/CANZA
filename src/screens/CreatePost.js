@@ -96,100 +96,103 @@ const CreatePost = () => {
 		<div class='createpost__container'>
 			{
 				isLogged ? 
-					<div>
-					<form
-						class='signIn'
-						onSubmit={(event) =>
-							onSubmit(
-								image,
-								event,
-								post.author,
-								post.category,
-								post.createdAt,
-								post.name,
-								post.text
-							)
-						}
-					>
-						<input
-							type='text'
-							name='author'
-							value={post.author}
-							placeholder='Meno autora'
-							id='author'
-							required
-							onChange={(event) => onChangeInput(event)}
-						/>
-
-						<input
-							type='text'
-							name='category'
-							value={post.category}
-							placeholder='Category'
-							id='category'
-							required
-							onChange={(event) => onChangeInput(event)}
-						/>
-
-						<input
-							type='text'
-							name='createdAt'
-							value={post.createdAt}
-							placeholder='Dátum výtvorenia'
-							id='createdAt'
-							required
-							onChange={(event) => onChangeInput(event)}
-						/>
-
-						<input
-							type='text'
-							name='name'
-							value={post.name}
-							placeholder='Názov príspevku'
-							id='name'
-							required
-							onChange={(event) => onChangeInput(event)}
-						/>
-
-						<textarea
-							type='text'
-							name='text'
-							value={post.text}
-							placeholder='Text príspevku'
-							id='text'
-							required
-							onChange={(event) => onChangeInput(event)}
-						/>
-						<input
-							type='file'
-							onChange={(event) => onChangeImage(event)}
-							required
-						/>
-
-						<button type='submit'>Vytvor post</button>
-					</form>
-
-					<div>
-						{posts.map((item) => (
-							<div>
-								<Post
-									author={item.data.author}
-									category={item.data.category}
-									createdAt={item.data.createdAt}
-									name={item.data.name}
-									text={item.data.text}
-									imgPath={item.data.imgPath}
-									key={item.id}
+					<div class='createpost__containerLoggedIn' >
+						<div class='continerLoggedIn__form'>
+							<form
+								onSubmit={(event) =>
+									onSubmit(
+										image,
+										event,
+										post.author,
+										post.category,
+										post.createdAt,
+										post.name,
+										post.text
+									)
+								}
+							>
+								<h1>Vytvorenie príspevku</h1>
+								<input
+									type='text'
+									name='author'
+									value={post.author}
+									placeholder='Meno autora'
+									id='author'
+									required
+									onChange={(event) => onChangeInput(event)}
 								/>
-								<button
-									onClick={(event) => onDelete(event, item.id, item.data.imgPath)}
-									key={item.id + '2'}
-								>
-									del
-								</button>
-							</div>
-							))}
+
+								<input
+									type='text'
+									name='category'
+									value={post.category}
+									placeholder='Category'
+									id='category'
+									required
+									onChange={(event) => onChangeInput(event)}
+								/>
+
+								<input
+									type='text'
+									name='createdAt'
+									value={post.createdAt}
+									placeholder='Dátum výtvorenia'
+									id='createdAt'
+									required
+									onChange={(event) => onChangeInput(event)}
+								/>
+
+								<input
+									type='text'
+									name='name'
+									value={post.name}
+									placeholder='Názov príspevku'
+									id='name'
+									required
+									onChange={(event) => onChangeInput(event)}
+								/>
+
+								<textarea
+									type='text'
+									name='text'
+									value={post.text}
+									placeholder='Text príspevku'
+									id='text'
+									required
+									onChange={(event) => onChangeInput(event)}
+								/>
+								<input
+									type='file'
+									onChange={(event) => onChangeImage(event)}
+									required
+								/>
+
+								<button type='submit'>Vytvor post</button>
+							</form>
 						</div>
+						
+
+						<div class='continerLoggedIn__posts' >
+							{posts.map((item) => (
+								<div>
+									<Post
+										author={item.data.author}
+										category={item.data.category}
+										createdAt={item.data.createdAt}
+										name={item.data.name}
+										text={item.data.text}
+										imgPath={item.data.imgPath}
+										key={item.id}
+									/>
+									<button
+										onClick={(event) => onDelete(event, item.id, item.data.imgPath)}
+										key={item.id + '2'}
+									>
+										del
+									</button>
+								</div>
+								))}
+							</div>
 					</div>
 
 				:

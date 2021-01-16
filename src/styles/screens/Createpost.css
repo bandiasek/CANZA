@@ -22,6 +22,14 @@
       background-size: cover;
 }
 
+.createpost__containerLoggedIn {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      background-image: url('../../assets/BG/FindMoreBG.svg');
+}
+
 /*-----Sign in-----*/
 .createpost__signIn {
       display: flex;
@@ -69,6 +77,64 @@
       text-transform: uppercase;
 }
 
+/*-----Form container-----*/
+.continerLoggedIn__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      height: 80vh;
+      margin-top: 2vh;
+      background-color: #FFFFFF;
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.15);
+      border: 1px solid #EEEEEE;
+}
+
+.continerLoggedIn__form > form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      height: 70vh;
+}
+
+.continerLoggedIn__form > form > * {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      letter-spacing: 2px;
+      border: 1px solid #EEEEEE;
+      resize: none;
+      width: 100%;
+}
+
+.continerLoggedIn__form > form > *:first-child{
+      border: none;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+}
+
+.continerLoggedIn__form > form > *:nth-child(7) {
+      border: none;
+}
+
+.continerLoggedIn__form > form > *:last-child {
+      width: 50%;
+}
+
+
+/*-----Posts container-----*/
+.continerLoggedIn__posts {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      padding: 3rem;
+}
 
 
 /*-----Media querrys-----*/
