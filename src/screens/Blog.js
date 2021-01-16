@@ -83,7 +83,7 @@ function Blog() {
 	} else {
 		return (
 			<div className='loading'>
-				<h1>Loading is taking too long ...</h1>
+				<h1>Načítavanie trvá nečakane dlho, skúste stránku načítať znova ...</h1>
 			</div>
 		)
 	}

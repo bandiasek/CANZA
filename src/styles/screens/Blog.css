@@ -251,6 +251,9 @@
             width: 80%;
             padding-bottom: 10vh;
       }
+      .blog__postsList > h3 {
+            line-height: 1.5;
+      }
  }
 
 
