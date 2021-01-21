@@ -1,0 +1,199 @@
+/*-----Fonts-----*/
+@font-face {
+      font-family: Raleway;
+      src: url('../../assets/fonts/Raleway-VariableFont_wght.ttf');
+    }
+@font-face {
+      font-family: Playfair Display;
+      src: url('../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf');
+    }
+
+
+/*-----Global Componentns-----*/
+.createpost__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 152px);
+      width: 100%;
+      background-image: url("../../assets/BG/FormBG.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+
+.createpost__containerLoggedIn {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      background-image: url('../../assets/BG/FindMoreBG.svg');
+}
+
+/*-----Sign in-----*/
+.createpost__signIn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFFFFF;
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.15);
+      border: 1px solid #EEEEEE;
+      height: 50vh;
+      width: 50%;
+      border: 10%;
+}
+
+.createpost__signIn > form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 60%;
+      height: 60%;
+}
+
+.createpost__signIn > form > * {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      letter-spacing: 2px;
+      border: 1px solid #EEEEEE;
+      resize: none;
+      width: 100%;
+}
+
+.createpost__signIn > form > *:nth-child(4){
+      width: 50%;
+}
+
+.createpost__signIn > form > *:first-child {
+      border: none;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+}
+
+/*-----Form container-----*/
+.continerLoggedIn__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      height: 80vh;
+      margin-top: 2vh;
+      background-color: #FFFFFF;
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.15);
+      border: 1px solid #EEEEEE;
+}
+
+.continerLoggedIn__form > form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      height: 70vh;
+}
+
+.continerLoggedIn__form > form > * {
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 500;
+      letter-spacing: 2px;
+      border: 1px solid #EEEEEE;
+      resize: none;
+      width: 100%;
+}
+
+.continerLoggedIn__form > form > *:first-child{
+      border: none;
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+}
+
+.continerLoggedIn__form > form > *:nth-child(7) {
+      border: none;
+}
+
+.continerLoggedIn__form > form > *:last-child {
+      width: 50%;
+}
+
+
+/*-----Posts container-----*/
+.continerLoggedIn__posts {
+      display: grid;
+      grid-template-columns: auto auto;
+      margin-top: 5vh;
+}
+
+.posts__onePost {
+      position: relative;
+}
+
+.posts__onePost > button {
+      position: absolute;
+      z-index: 20;
+      bottom: 10%;
+      left: 45%;
+      padding: 1rem 1.5rem;
+      font-size: 1rem;
+      font-family: 'Raleway', sans-serif;
+      letter-spacing: 2px;
+      border: 1px solid #EEEEEE;
+}
+
+
+/*-----Media querrys-----*/
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+      
+      .createpost__signIn {
+            margin-top: -20%;
+      }
+
+      /**** sign in ****/
+      .createpost__signIn {
+            width: 80%;
+      }
+ }
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+      
+ }
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+     
+ }
+
+
+ /*Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+      /**** sign in ****/
+      .createpost__signIn > form > * {
+            margin-top: 10px;
+            font-size: 0.8rem;
+      }
+      .createpost__signIn > form {
+            height: 80%;
+      }
+      .createpost__signIn > form > *:nth-child(4) {
+            width: 80%;
+      }
+      .createpost__signIn > form > *:first-child {
+            font-size: 1.5rem;
+            padding: 0;
+            margin-bottom: 1.5rem;
+      }
+ }

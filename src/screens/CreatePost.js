@@ -3,6 +3,8 @@ import React, { useState, useContext } from 'react'
 import { FuncContext } from '../components/Context'
 import Post from '../components/Post'
 
+import '../styles/screens/Createpost.css'
+
 const CreatePost = () => {
 	// Storing login data
 	const [user, setUser] = useState({
@@ -90,134 +92,144 @@ const CreatePost = () => {
 		delPostImg(imgPath)
 		delPost(postId)
 	}
-
-	if (isLogged) {
-		return (
-			<div className='CreatePost'>
-				<form
-					className='signIn'
-					onSubmit={(event) =>
-						onSubmit(
-							image,
-							event,
-							post.author,
-							post.category,
-							post.createdAt,
-							post.name,
-							post.text
-						)
-					}
-				>
-					<input
-						type='text'
-						name='author'
-						value={post.author}
-						placeholder='Meno autora'
-						id='author'
-						required
-						onChange={(event) => onChangeInput(event)}
-					/>
-
-					<input
-						type='text'
-						name='category'
-						value={post.category}
-						placeholder='Category'
-						id='category'
-						required
-						onChange={(event) => onChangeInput(event)}
-					/>
-
-					<input
-						type='text'
-						name='createdAt'
-						value={post.createdAt}
-						placeholder='Dátum výtvorenia'
-						id='createdAt'
-						required
-						onChange={(event) => onChangeInput(event)}
-					/>
-
-					<input
-						type='text'
-						name='name'
-						value={post.name}
-						placeholder='Názov príspevku'
-						id='name'
-						required
-						onChange={(event) => onChangeInput(event)}
-					/>
-
-					<textarea
-						type='text'
-						name='text'
-						value={post.text}
-						placeholder='Text príspevku'
-						id='text'
-						required
-						onChange={(event) => onChangeInput(event)}
-					/>
-					<input
-						type='file'
-						onChange={(event) => onChangeImage(event)}
-						required
-					/>
-
-					<button type='submit'>Vytvor post</button>
-				</form>
-
-				<div>
-					{posts.map((item) => (
-						<div>
-							<Post
-								author={item.data.author}
-								category={item.data.category}
-								createdAt={item.data.createdAt}
-								name={item.data.name}
-								text={item.data.text}
-								imgPath={item.data.imgPath}
-								key={item.id}
-							/>
-							<button
-								onClick={(event) => onDelete(event, item.id, item.data.imgPath)}
-								key={item.id + '2'}
+	return(
+		<div class='createpost__container'>
+			{
+				isLogged ? 
+					<div class='createpost__containerLoggedIn' >
+						<div class='continerLoggedIn__form'>
+							<form
+								onSubmit={(event) =>
+									onSubmit(
+										image,
+										event,
+										post.author,
+										post.category,
+										post.createdAt,
+										post.name,
+										post.text
+									)
+								}
 							>
-								del
-							</button>
+								<h1>Vytvorenie príspevku</h1>
+								<input
+									type='text'
+									name='author'
+									value={post.author}
+									placeholder='Meno autora'
+									id='author'
+									required
+									onChange={(event) => onChangeInput(event)}
+								/>
+
+								<input
+									type='text'
+									name='category'
+									value={post.category}
+									placeholder='Category'
+									id='category'
+									required
+									onChange={(event) => onChangeInput(event)}
+								/>
+
+								<input
+									type='text'
+									name='createdAt'
+									value={post.createdAt}
+									placeholder='Dátum výtvorenia'
+									id='createdAt'
+									required
+									onChange={(event) => onChangeInput(event)}
+								/>
+
+								<input
+									type='text'
+									name='name'
+									value={post.name}
+									placeholder='Názov príspevku'
+									id='name'
+									required
+									onChange={(event) => onChangeInput(event)}
+								/>
+
+								<textarea
+									type='text'
+									name='text'
+									value={post.text}
+									placeholder='Text príspevku'
+									id='text'
+									required
+									onChange={(event) => onChangeInput(event)}
+								/>
+								<input
+									type='file'
+									onChange={(event) => onChangeImage(event)}
+									required
+								/>
+
+								<button type='submit'>Vytvor post</button>
+							</form>
 						</div>
-					))}
+						
+
+						<div class='continerLoggedIn__posts' >
+							{posts.map((item) => (
+								<div class='posts__onePost'>
+									<Post
+										author={item.data.author}
+										category={item.data.category}
+										createdAt={item.data.createdAt}
+										name={item.data.name}
+										text={item.data.text}
+										imgPath={item.data.imgPath}
+										key={item.id}
+									/>
+									<button
+										onClick={(event) => onDelete(event, item.id, item.data.imgPath)}
+										key={item.id + '2'}
+									>
+										delete
+									</button>
+								</div>
+								))}
+							</div>
+					</div>
+
+				:
+
+				<div class='createpost__signIn'>
+					<form onSubmit={(event) => signIn(event, user.email, user.pswd)}>
+						<h1>Login</h1>
+						<input
+							type='email'
+							name='email'
+							value={user.email}
+							placeholder='Enter your email'
+							id='email'
+							required
+							onChange={(event) => onChangeInput(event)}
+						/>
+
+						<input
+							type='password'
+							name='pswd'
+							value={user.pswd}
+							placeholder='Enter your password'
+							id='pswd'
+							required
+							onChange={(event) => onChangeInput(event)}
+						/>
+
+						<button type='submit'>
+							Sign in
+						</button>
+					</form>
 				</div>
-			</div>
-		)
-	} else {
-		return (
-			<div>
-				<form className='signIn'>
-					<input
-						type='text'
-						name='email'
-						value={user.email}
-						placeholder='Enter your email'
-						id='email'
-						onChange={(event) => onChangeInput(event)}
-					/>
 
-					<input
-						type='password'
-						name='pswd'
-						value={user.pswd}
-						placeholder='Enter your password'
-						id='pswd'
-						onChange={(event) => onChangeInput(event)}
-					/>
-
-					<button onClick={(event) => signIn(event, user.email, user.pswd)}>
-						Sign in
-					</button>
-				</form>
-			</div>
-		)
-	}
+			}
+		</div>
+		
+	)
 }
 
 export default CreatePost
