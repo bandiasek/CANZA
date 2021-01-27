@@ -14,13 +14,15 @@ import { auth, db, storage } from './firebase'
 import Loader from './components/Loader'
 
 import Logo from './assets/LogoNav.svg'
-import Ham from './assets/HamNav.svg'
+import Ham from './assets/navbar/HamNav.svg'
+import Back from './assets/navbar/Back.svg'
 
 function App() {
 	// Storing posts
 	const [posts, setPosts] = useState([])
 	const [isLogged, setIsLogged] = useState(false)
 	const [isLoaded, setIsLoaded] = useState(false)
+	const [navbarExpanded, setNavbarExpanded] = useState(false)
 
 	// Wraping all the functions
 	const functions = useMemo(() => ({
@@ -167,7 +169,23 @@ function App() {
 							</div>
 	
 							<div className='app__navbarRight'>
-								<img src={Ham} alt='Navigation hamburger Icon' />
+								{
+									navbarExpanded 
+									? 
+										<div className="app__navbarExpandedOpacity">
+											<div className="app__navbarExpandedContainer">
+												<img src={Back} alt="Back image (X)"/>
+												<ul>
+													<li>DOMOV</li>
+													<li>CVIČENIE</li>
+													<li>STRAVA</li>
+													<li>BLOG</li>
+												</ul>
+											</div>
+										</div>	
+									: 
+										<img src={Ham} alt='Navigation hamburger Icon' /> 
+								}
 							</div>
 						</div>
 	
