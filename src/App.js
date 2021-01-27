@@ -22,7 +22,7 @@ function App() {
 	const [posts, setPosts] = useState([])
 	const [isLogged, setIsLogged] = useState(false)
 	const [isLoaded, setIsLoaded] = useState(false)
-	const [navbarExpanded, setNavbarExpanded] = useState(false)
+	const [navbarExpanded, setNavbarExpanded] = useState(true)
 
 	// Wraping all the functions
 	const functions = useMemo(() => ({
@@ -143,6 +143,25 @@ function App() {
 		    return 0;
 	}
 
+	// Handler for navigation hide
+	const navbarMove = () => {
+		if (navbarExpanded) {
+			document.querySelector('.app__navbarExpandedOpacity').style.display =  'flex';
+			setTimeout(()=>{
+				document.querySelector('.app__navbarExpandedContainer').style.transform =  'translateX(0)';
+				document.querySelector('.app__navbarExpandedOpacity').style.opacity =  1 ;
+			}
+			,50)
+
+		} else {
+			document.querySelector('.app__navbarExpandedContainer').style.transform =  'translateX(100%)';
+			document.querySelector('.app__navbarExpandedOpacity').style.opacity =  0 ;
+			setTimeout(()=>(
+				document.querySelector('.app__navbarExpandedOpacity').style.display =  'none'
+			),600)
+		}
+	}
+
 	// Fetching posts at the start of the page
 	useEffect(() => {
 		functions.getPosts()
@@ -168,24 +187,31 @@ function App() {
 								</h3>
 							</div>
 	
-							<div className='app__navbarRight'>
-								{
-									navbarExpanded 
-									? 
+							<div className='app__navbarRight'> 
 										<div className="app__navbarExpandedOpacity">
 											<div className="app__navbarExpandedContainer">
-												<img src={Back} alt="Back image (X)"/>
-												<ul>
-													<li>DOMOV</li>
-													<li>CVIČENIE</li>
-													<li>STRAVA</li>
-													<li>BLOG</li>
-												</ul>
+												<div className="app__navbarExpandedItems">
+													<img src={Back} alt="Back image (X)" onClick={(e)=>{
+														e.preventDefault()
+														setNavbarExpanded(!navbarExpanded)
+														navbarMove()
+													}} />
+													<ul>
+														<li>DOMOV</li>
+														<li>CVIČENIE</li>
+														<li>STRAVA</li>
+														<li>BLOG</li>
+													</ul>
+												</div>
 											</div>
 										</div>	
-									: 
-										<img src={Ham} alt='Navigation hamburger Icon' /> 
-								}
+									 
+										<img src={Ham} alt='Navigation hamburger Icon' onClick={(e)=>{
+											e.preventDefault()
+											setNavbarExpanded(!navbarExpanded)
+											navbarMove()
+										}}/> 
+								
 							</div>
 						</div>
 	

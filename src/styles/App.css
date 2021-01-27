@@ -53,3 +53,204 @@
       color: #628989;
 
 }
+
+.app__navbarRight > img {
+      cursor: pointer;
+      z-index: 100;
+}
+
+.app__navbarExpandedOpacity {
+      transition: .5s ease-in;
+      position: fixed;
+      display: none;
+      flex-direction: column;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 10;
+      opacity: 0;
+}
+
+.app__navbarExpandedContainer {
+      transition: .6s ease-in;
+      align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+      width: 25rem;
+      height: 100vh;
+      border-left: 1.5rem solid #628989;
+      background-color: #FFFFFF; 
+      transform: translateX(100%);
+      z-index: 110;
+}
+
+.app__navbarExpandedItems {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 60%;
+      height: 70%;
+}
+
+.app__navbarExpandedItems > img {
+      padding: 0.5rem;
+      margin-top: 2.5rem;
+      align-self: flex-end;
+      cursor: pointer;
+      transform: scale(1);
+
+      -webkit-transition: all .3s ease;
+      -moz-transition: all .3s ease;
+      -ms-transition: all .3s ease;
+      transition: all .3s ease;
+}
+
+.app__navbarExpandedItems > ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      height: 50%;
+}
+
+.app__navbarExpandedItems > ul > li {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: 'Raleway', serif;
+      letter-spacing: 2px;
+      cursor: pointer;
+      text-align: left;
+      transform: scale(1);
+      color: #00001D;
+      
+      -webkit-transition: all .3s ease;
+      -moz-transition: all .3s ease;
+      -ms-transition: all .3s ease;
+      transition: all .3s ease;
+}
+
+/*-----Navbar Animation-----*/
+.app__navbarExpandedItems > ul > li:hover,
+.app__navbarExpandedItems > img:hover {
+      transform: scale(1.1);
+}
+
+
+/*-----Happy footer-----*/
+.home__footer {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      width: 100%;
+      height: 20vh;
+      background-color: #01011D;
+}
+
+.home__footerLeft {
+      display: flex;
+      flex: 0.5;
+      background-image: url("../assets/BG/FooterBG.svg");
+}
+
+.home__footerRight {
+      display: flex;
+      flex: 0.5;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+
+.home__footerRight > div > h3 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+}
+
+.home__footerRight > div > h1 {
+      font-family: 'Playfair Display', serif;
+      color: #C78567;
+      font-size: 1.8rem;
+      margin-top: 5px;
+      padding-bottom: 2rem;
+      text-align: center;
+}
+
+.home__footerRight > div > h5 {
+      font-family: 'Playfair Display', serif;
+      color:white;
+      text-align: center;
+      font-size: 0.6rem;
+      letter-spacing: 1px;
+}
+
+.home__footerRight > div:nth-child(2) > h5{
+      margin-top: 4px;
+  }
+
+
+/*-----Media querrys-----*/
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+      /**** Upper container ****/
+
+ }
+
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+      /**** Upper container ****/
+
+ }
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+     /**** Happy Footer ****/
+      .home__footerLeft {
+            display: none;
+      }
+      .home__footerRight {
+                  flex: 1;
+                  flex-direction: row;
+                  justify-content: space-around;
+      }
+
+ }
+
+
+ /*Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+      /**** Navbar ****/
+      .app__navbarExpandedContainer {
+            width: calc(100vw - 1.5rem)
+      }
+      .app__navbarExpandedItems {
+            width: 80%;
+      }
+      .app__navbarExpandedItems > ul {
+            align-items: center;
+      }
+
+      /**** Happy Footer ****/
+      .home__footer{
+            padding: 15px 0 15px 0;
+      }
+      .home__footerLeft {
+            display: none;
+      }
+      .home__footerRight { 
+            flex-direction: column;
+            justify-content: center;
+      }
+      .home__footerRight > div > h1 {
+            padding-bottom: 1.2rem;
+      }
+ }
