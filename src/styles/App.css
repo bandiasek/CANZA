@@ -51,7 +51,6 @@
 
 .app__navbarColor {
       color: #628989;
-
 }
 
 .app__navbarRight > img {
@@ -109,7 +108,7 @@
       transition: all .3s ease;
 }
 
-.app__navbarExpandedItems > ul {
+.app__navbarUl {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -117,7 +116,7 @@
       height: 50%;
 }
 
-.app__navbarExpandedItems > ul > li {
+.app__navbarItem {
       font-size: 1.2rem;
       font-weight: bold;
       font-family: 'Raleway', serif;
@@ -126,6 +125,7 @@
       text-align: left;
       transform: scale(1);
       color: #00001D;
+      text-decoration: none;
       
       -webkit-transition: all .3s ease;
       -moz-transition: all .3s ease;
@@ -133,8 +133,14 @@
       transition: all .3s ease;
 }
 
+.app__navbarItem.active {
+      color: #628989;
+      background: none;
+}
+
+
 /*-----Navbar Animation-----*/
-.app__navbarExpandedItems > ul > li:hover,
+.app__navbarItem:hover,
 .app__navbarExpandedItems > img:hover {
       transform: scale(1.1);
 }

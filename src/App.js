@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
+import { Route, BrowserRouter as Router, NavLink, Switch } from 'react-router-dom'
 import emailjs from 'emailjs-com'; 
 import './styles/reset.css'
 import './styles/App.css'
@@ -145,6 +145,7 @@ function App() {
 
 	// Handler for navigation hide
 	const navbarMove = () => {
+		setNavbarExpanded(!navbarExpanded)
 		if (navbarExpanded) {
 			document.querySelector('.app__navbarExpandedOpacity').style.display =  'flex';
 			setTimeout(()=>{
@@ -172,7 +173,7 @@ function App() {
 				document.querySelector('.container').style.opacity = 1
 			),50)
 		    },3000);
-	}, [])
+	}, [isLoaded])
 
 	if (isLoaded) {
 		return (
@@ -193,33 +194,60 @@ function App() {
 												<div className="app__navbarExpandedItems">
 													<img src={Back} alt="Back image (X)" onClick={(e)=>{
 														e.preventDefault()
-														setNavbarExpanded(!navbarExpanded)
 														navbarMove()
 													}} />
-													<ul>
-														<li>DOMOV</li>
-														<li>CVIČENIE</li>
-														<li>STRAVA</li>
-														<li>BLOG</li>
-													</ul>
+													<div className="app__navbarUl">
+														<NavLink 
+															className="app__navbarItem" 
+															exact={true}
+															activeClassName="active"
+															onClick={e => navbarMove() } 
+															to='/'>
+																 DOMOV
+														</NavLink>
+														<NavLink 
+															className="app__navbarItem" 
+															exact={true} 
+															activeClassName="active"
+															onClick={e => navbarMove() }
+															to='/cvicenie'>
+																CVIČENIE
+														</NavLink>
+														<NavLink 
+															className="app__navbarItem" 
+															exact={true} 
+															activeClassName="active" 
+															onClick={e => navbarMove() }
+															to='/strava'>
+																STRAVA
+														</NavLink>
+														<NavLink 
+															className="app__navbarItem"
+															exact={true}
+															activeClassName="active"
+															onClick={e => navbarMove() }
+															to='/blog'>
+																BLOG
+														</NavLink>
+													</div>
 												</div>
 											</div>
 										</div>	
 									 
 										<img src={Ham} alt='Navigation hamburger Icon' onClick={(e)=>{
 											e.preventDefault()
-											setNavbarExpanded(!navbarExpanded)
 											navbarMove()
 										}}/> 
 								
 							</div>
 						</div>
-	
-						<Route path='/' exact component={Home} />
-						<Route path='/strava' component={Food} />
-						<Route path='/trening' component={Training} />
-						<Route path='/blog' exact component={Blog} />
-						<Route path='/createpost' component={CreatePost} />
+						<Switch>
+							<Route path='/createpost' component={CreatePost} />
+							<Route path='/blog' component={Blog} />
+							<Route path='/strava' component={Food} />
+							<Route path='/cvicenie' component={Training} />
+							<Route path='/' component={Home} />
+						</Switch>	
 					</div>
 					
 					<div className='home__footer'>
