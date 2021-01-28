@@ -12,6 +12,7 @@ import Home from './screens/Home'
 import { FuncContext } from './components/Context'
 import { auth, db, storage } from './firebase'
 import Loader from './components/Loader'
+import PageNotFound from './screens/PageNotFound';
 
 import Logo from './assets/LogoNav.svg'
 import Ham from './assets/navbar/HamNav.svg'
@@ -242,11 +243,12 @@ function App() {
 							</div>
 						</div>
 						<Switch>
+							<Route path='/' exact component={Home} />
 							<Route path='/createpost' component={CreatePost} />
 							<Route path='/blog' component={Blog} />
 							<Route path='/strava' component={Food} />
 							<Route path='/cvicenie' component={Training} />
-							<Route path='/' component={Home} />
+							<Route path='' component={PageNotFound} />
 						</Switch>	
 					</div>
 					
