@@ -1,0 +1,172 @@
+/*-----Fonts-----*/
+@font-face {
+      font-family: Raleway;
+      src: url('../../assets/fonts/Raleway-VariableFont_wght.ttf');
+    }
+@font-face {
+      font-family: Playfair Display;
+      src: url('../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf');
+    }
+
+
+/*-----Global Componentns-----*/
+.food__containerFluid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+}
+
+/*-----Welcome Section-----*/
+.food__welcomeSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      min-height: calc(100vh - 152px);
+      background-image: url('../../assets/food/WaterMark.svg');
+      background-size: cover;
+      z-index: -100;
+}
+
+.food__welcomeSectionImg {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 88%;
+      height: 65vh;
+      margin-top: 5vh;
+}
+
+.food__welcomeSectionText {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background-image: url('../../assets/food/WelcomeImg.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+}
+
+.food__welcomeSectionImg > img {
+      position: absolute;
+      bottom: -4rem;
+      left: -3rem;
+      z-index: -50;
+
+}
+
+.food__welcomeSectionText > h1 {
+      font-size: 6em;
+      font-family: 'Playfair Display', serif;
+      line-height: 2;
+      letter-spacing: 2px;
+      color: white;
+      margin: 5% 0 0 calc(25% - 10px);
+}
+
+.food__welcomeSectionTextH2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 25%;
+}
+
+.food__welcomeSectionTextH2 > h2 {
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      font-weight: bold;
+      font-family: 'Raleway', sans-serif;
+      color: white;
+      margin-left: 1vw;
+      line-height: 1.4;
+      text-align: center;
+}
+
+.food__welcomeSectionDash {
+      height: 4px;
+      width: 1.5vw;
+      align-self: center;
+      background-color: #628989;
+}
+
+
+
+/*-----Media querrys-----*/
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) { 
+      /**** Text in Welcome section ****/
+      .food__welcomeSectionText > h1 {
+            font-size: 5rem
+      }
+      .food__welcomeSectionTextH2 > h2 {
+            font-size: 1rem
+      }
+
+ }
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) { 
+      /**** Text in Welcome section ****/
+      .food__welcomeSectionText > h1 {
+            font-size: 4rem;
+      }
+      .food__welcomeSectionTextH2 > h2 {
+            font-size: 0.8rem;
+      }
+      .food__welcomeSectionDash {
+            height: 3px;
+      }
+      /**** Border in Welcome section ****/
+      .food__welcomeSectionImg > img {
+            bottom: -2rem;
+            left: -1.5rem;
+      }
+ }
+
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) { 
+      /**** Text in Welcome section ****/
+      .food__welcomeSectionText {
+            transform: rotateY(180deg);
+            background-position: center;
+      }
+      .food__welcomeSectionText > h1 {
+            font-size: 3rem;
+            margin: 5% 0 0 0;
+            transform: rotateY(180deg);
+      }
+      .food__welcomeSectionTextH2 {
+            margin: 0;
+            transform: rotateY(180deg);
+      }
+       /**** Border in Welcome section ****/
+       .food__welcomeSectionImg > img {
+             display: none;
+       }
+      
+ }
+
+
+ /*Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+      /**** Text in Welcome section ****/
+      .food__welcomeSectionText > h1 {
+            font-size: 2rem;
+            margin: -40% 0 0 0;
+            line-height: 3;
+      }
+      .food__welcomeSectionTextH2 {
+           width: 65vw;
+      }
+      .food__welcomeSectionDash {
+            display: none;
+      }
+
+ }
