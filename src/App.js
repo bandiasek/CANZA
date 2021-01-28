@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import { Route, BrowserRouter as Router, Link } from 'react-router-dom'
+import { Route, BrowserRouter as Router, NavLink, Switch } from 'react-router-dom'
 import emailjs from 'emailjs-com'; 
 import './styles/reset.css'
 import './styles/App.css'
@@ -12,15 +12,18 @@ import Home from './screens/Home'
 import { FuncContext } from './components/Context'
 import { auth, db, storage } from './firebase'
 import Loader from './components/Loader'
+import PageNotFound from './screens/PageNotFound';
 
 import Logo from './assets/LogoNav.svg'
-import Ham from './assets/HamNav.svg'
+import Ham from './assets/navbar/HamNav.svg'
+import Back from './assets/navbar/Back.svg'
 
 function App() {
 	// Storing posts
 	const [posts, setPosts] = useState([])
 	const [isLogged, setIsLogged] = useState(false)
 	const [isLoaded, setIsLoaded] = useState(false)
+	const [navbarExpanded, setNavbarExpanded] = useState(true)
 
 	// Wraping all the functions
 	const functions = useMemo(() => ({
@@ -141,6 +144,26 @@ function App() {
 		    return 0;
 	}
 
+	// Handler for navigation hide
+	const navbarMove = () => {
+		setNavbarExpanded(!navbarExpanded)
+		if (navbarExpanded) {
+			document.querySelector('.app__navbarExpandedOpacity').style.display =  'flex';
+			setTimeout(()=>{
+				document.querySelector('.app__navbarExpandedContainer').style.transform =  'translateX(0)';
+				document.querySelector('.app__navbarExpandedOpacity').style.opacity =  1 ;
+			}
+			,50)
+
+		} else {
+			document.querySelector('.app__navbarExpandedContainer').style.transform =  'translateX(100%)';
+			document.querySelector('.app__navbarExpandedOpacity').style.opacity =  0 ;
+			setTimeout(()=>(
+				document.querySelector('.app__navbarExpandedOpacity').style.display =  'none'
+			),600)
+		}
+	}
+
 	// Fetching posts at the start of the page
 	useEffect(() => {
 		functions.getPosts()
@@ -151,7 +174,7 @@ function App() {
 				document.querySelector('.container').style.opacity = 1
 			),50)
 		    },3000);
-	}, [])
+	}, [isLoaded])
 
 	if (isLoaded) {
 		return (
@@ -166,16 +189,67 @@ function App() {
 								</h3>
 							</div>
 	
-							<div className='app__navbarRight'>
-								<img src={Ham} alt='Navigation hamburger Icon' />
+							<div className='app__navbarRight'> 
+										<div className="app__navbarExpandedOpacity">
+											<div className="app__navbarExpandedContainer">
+												<div className="app__navbarExpandedItems">
+													<img src={Back} alt="Back image (X)" onClick={(e)=>{
+														e.preventDefault()
+														navbarMove()
+													}} />
+													<div className="app__navbarUl">
+														<NavLink 
+															className="app__navbarItem" 
+															exact={true}
+															activeClassName="active"
+															onClick={e => navbarMove() } 
+															to='/'>
+																 DOMOV
+														</NavLink>
+														<NavLink 
+															className="app__navbarItem" 
+															exact={true} 
+															activeClassName="active"
+															onClick={e => navbarMove() }
+															to='/cvicenie'>
+																CVIČENIE
+														</NavLink>
+														<NavLink 
+															className="app__navbarItem" 
+															exact={true} 
+															activeClassName="active" 
+															onClick={e => navbarMove() }
+															to='/strava'>
+																STRAVA
+														</NavLink>
+														<NavLink 
+															className="app__navbarItem"
+															exact={true}
+															activeClassName="active"
+															onClick={e => navbarMove() }
+															to='/blog'>
+																BLOG
+														</NavLink>
+													</div>
+												</div>
+											</div>
+										</div>	
+									 
+										<img src={Ham} alt='Navigation hamburger Icon' onClick={(e)=>{
+											e.preventDefault()
+											navbarMove()
+										}}/> 
+								
 							</div>
 						</div>
-	
-						<Route path='/' exact component={Home} />
-						<Route path='/strava' component={Food} />
-						<Route path='/trening' component={Training} />
-						<Route path='/blog' exact component={Blog} />
-						<Route path='/createpost' component={CreatePost} />
+						<Switch>
+							<Route path='/' exact component={Home} />
+							<Route path='/createpost' component={CreatePost} />
+							<Route path='/blog' component={Blog} />
+							<Route path='/strava' component={Food} />
+							<Route path='/cvicenie' component={Training} />
+							<Route path='' component={PageNotFound} />
+						</Switch>	
 					</div>
 					
 					<div className='home__footer'>

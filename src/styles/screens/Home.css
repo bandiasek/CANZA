@@ -303,57 +303,6 @@
       color: #C78567;
 }
 
-/*-----Happy footer-----*/
-.home__footer {
-      display: flex;
-      flex: 1;
-      flex-direction: row;
-      width: 100%;
-      height: 20vh;
-      background-color: #01011D;
-}
-
-.home__footerLeft {
-      display: flex;
-      flex: 0.5;
-      background-image: url("../../assets/BG/FooterBG.svg");
-}
-
-.home__footerRight {
-      display: flex;
-      flex: 0.5;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-}
-
-.home__footerRight > div > h3 {
-      font-family: 'Raleway', sans-serif;
-      font-size: 0.8rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-align: center;
-      color: white;
-      text-transform: uppercase;
-}
-
-.home__footerRight > div > h1 {
-      font-family: 'Playfair Display', serif;
-      color: #C78567;
-      font-size: 1.8rem;
-      margin-top: 5px;
-      padding-bottom: 2rem;
-      text-align: center;
-}
-
-.home__footerRight > div > h5 {
-      font-family: 'Playfair Display', serif;
-      color:white;
-      text-align: center;
-      font-size: 0.6rem;
-      letter-spacing: 1px;
-}
-
 /*-----Media querrys-----*/
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) { 
