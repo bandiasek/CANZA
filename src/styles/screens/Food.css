@@ -51,7 +51,6 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-
 }
 
 .food__welcomeSectionImg > img {
@@ -96,9 +95,52 @@
       background-color: #628989;
 }
 
+/*-----Quotation section-----*/
+.food__quoteSection {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 88%;
+      min-height: 20vh;
+      margin-bottom: 10vh;
+}
+
+.food__quoteSection > img {
+      display: flex;
+      flex: 0.2;
+}
+
+.food__quoteSection > h1 {
+      display: flex;
+      flex: 0.7;
+      flex-direction: column;
+      font-size: 3.4rem;
+      font-family: 'Playfair Display', serif;
+      line-height: 1.4;
+      letter-spacing: 2px;
+      color: #00001D;
+      margin-top: 2vh;
+}
+
+.food__quoteSectionTextEdit {
+      color: #628989;
+      margin-left: auto;
+      text-align: center;
+}
+
 
 
 /*-----Media querrys-----*/
+/* Only for quoteSection Heading */
+@media (max-width: 1380px) {
+      /**** QuoteSection text ****/
+      .food__quoteSection > h1 {
+            flex: 0.76;
+            font-size: 3rem;
+      }
+}
+
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) { 
       /**** Text in Welcome section ****/
@@ -107,6 +149,13 @@
       }
       .food__welcomeSectionTextH2 > h2 {
             font-size: 1rem
+      }
+
+       /**** QuoteSection text ****/
+       .food__quoteSection > h1 {
+            font-size: 2.5rem;
+            margin-top: 0;
+            align-self: center;
       }
 
  }
@@ -127,6 +176,15 @@
             bottom: -2rem;
             left: -1.5rem;
       }
+
+      /**** QuoteSection text ****/
+      .food__quoteSection > h1 {
+            font-size: 2rem;
+            text-align: center;
+      }
+      .food__quoteSectionTextEdit {
+            margin-left: 0;
+      }
  }
 
 
@@ -135,7 +193,6 @@
       /**** Text in Welcome section ****/
       .food__welcomeSectionText {
             transform: rotateY(180deg);
-            background-position: center;
       }
       .food__welcomeSectionText > h1 {
             font-size: 3rem;
@@ -150,6 +207,19 @@
        .food__welcomeSectionImg > img {
              display: none;
        }
+
+       /**** QuoteSection text ****/
+      .food__quoteSection {
+            flex-direction: column;
+            justify-content: flex-end;
+      }
+      .food__quoteSection > h1 {
+            flex: 0.2;
+      }
+      .food__quoteSection > img {
+            display: none;
+      }
+
       
  }
 
@@ -158,15 +228,29 @@
 @media (max-width: 575.98px) {
       /**** Text in Welcome section ****/
       .food__welcomeSectionText > h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin: -40% 0 0 0;
             line-height: 3;
+      }
+      .food__welcomeSectionTextH2 > h2 {
+            font-size: 0.7rem;
       }
       .food__welcomeSectionTextH2 {
            width: 65vw;
       }
       .food__welcomeSectionDash {
             display: none;
+      }
+
+      /**** QuoteSection text ****/
+      .food__quoteSection > img {
+            display: flex;
+            align-self: center;
+            width: 100%;
+            margin-bottom: 5vh;
+      }
+      .food__quoteSection > h1 {
+            font-size: 1.6rem;
       }
 
  }
