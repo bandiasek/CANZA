@@ -129,6 +129,57 @@
       text-align: center;
 }
 
+/*-----Food Items section-----*/
+.food__itemsSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 40vh;
+      width: 100%;
+      background-image: url('../../assets/food/WaterMark.svg');
+      background-size: cover;
+}
+
+.food__itemsSectionContainer {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 78%;
+}
+
+.food__itemsSectionItem {
+      display: flex;
+      flex: 0.18;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      height: 25vh;
+
+}
+
+.food__itemsSectionItem > img {
+      height: 54px;
+}
+
+.food__itemsSectionItem > h1 {
+      text-align: left;
+      font-size: 1.2rem;
+      font-family: 'Raleway', sans-serif;
+      font-weight: bolder;
+      letter-spacing: 2px;
+      color: #00001D;
+}
+
+.food__itemsSectionItem > p {
+      font-family: 'Raleway', sans-serif;
+      letter-spacing: 2px;
+      line-height: 1.6;
+      font-size: 0.8rem;
+      color: #7E7B7B;
+}
 
 
 /*-----Media querrys-----*/
@@ -158,6 +209,16 @@
             align-self: center;
       }
 
+      /**** Food items section ****/
+      .food__itemsSectionItem {
+            flex: 0.22;
+            align-items: center;
+            height: 28vh;
+      }
+      .food__itemsSectionItem {
+            text-align: center;
+      }
+
  }
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) { 
@@ -184,6 +245,26 @@
       }
       .food__quoteSectionTextEdit {
             margin-left: 0;
+      }
+
+      /**** Food items section ****/
+      .food__itemsSectionItem {
+            flex: 1 1;
+            height: 20vh;
+            margin: 3rem 0 3rem 0;
+      }
+      .food__itemsSectionItem:nth-child(1), .food__itemsSectionItem:nth-child(4) {
+            margin-right: 2rem;
+      }
+      .food__itemsSectionItem:nth-child(2), .food__itemsSectionItem:nth-child(5) {
+            margin-left: 2rem;
+      }
+      .food__itemsSectionContainer {
+            flex-wrap: wrap;
+      }
+      .food__breakRow {
+            height: 0;
+            flex-basis: 100%;
       }
  }
 
@@ -220,6 +301,11 @@
             display: none;
       }
 
+       /**** Food items section ****/
+      .food__itemsSectionItem {
+            height: 25vh;
+      }
+
       
  }
 
@@ -252,5 +338,27 @@
       .food__quoteSection > h1 {
             font-size: 1.6rem;
       }
+
+      /**** Food items section ****/
+      .food__itemsSectionItem {
+            flex: auto;
+            height: 25vh;
+            justify-content: center;
+            margin: 3rem 0 3rem 0;
+      }
+      .food__itemsSectionItem > * {
+            margin-bottom: 16px;
+      }
+      .food__itemsSectionItem:nth-child(1), .food__itemsSectionItem:nth-child(4) {
+            margin-right: 0rem;
+      }
+      .food__itemsSectionItem:nth-child(2), .food__itemsSectionItem:nth-child(5) {
+            margin-left: 0rem;
+      }
+      .food__itemsSectionContainer {
+            flex-direction: column;
+            height: auto
+      }
+
 
  }

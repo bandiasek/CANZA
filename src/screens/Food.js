@@ -2,6 +2,10 @@ import React from 'react'
 
 import QuoteImg from '../assets/food/QuoteImg.svg'
 import BackImg from '../assets/food/BackImg.svg'
+import ItemLeafs from '../assets/food/ItemLeafs.svg'
+import ItemCart from '../assets/food/ItemCart.svg'
+import ItemApple from '../assets/food/ItemApple.svg'
+import ItemMeat from '../assets/food/ItemMeat.svg'
 
 import '../styles/screens/Food.css'
 
@@ -35,22 +39,30 @@ const Food = () => {
 
                     <div className="food__itemsSection">
                         <div className="food__itemsSectionContainer">
-                            <div className="food__itemSectionItem">
-                                <img src="" alt=""/>
-                                <h1></h1>
-                                <p></p>
+                            <div className="food__itemsSectionItem">
+                                <img src={ItemLeafs} alt="Food item Icon Leafs"/>
+                                <h1>S CHUŤOU</h1>
+                                <p>Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in turpis condimentum porttitor et quis felis. Curabitur quis accumsan neque. </p>
                             </div>
 
-                            <div className="food__itemSectionItem">
-                                <img src="" alt=""/>
-                                <h1></h1>
-                                <p></p>
+                            <div className="food__itemsSectionItem">
+                                <img src={ItemCart} alt="Food item Icon Shopping Cart"/>
+                                <h1>SPRÁVNE</h1>
+                                <p>Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in turpis condimentum porttitor et quis felis. Curabitur quis accumsan neque. </p>
                             </div>
 
-                            <div className="food__itemSectionItem">
-                                <img src="" alt=""/>
-                                <h1></h1>
-                                <p></p>
+                            <div className="food__breakRow"></div>
+
+                            <div className="food__itemsSectionItem">
+                                <img src={ItemApple} alt="Food item Icon Apple"/>
+                                <h1>CHUTNE</h1>
+                                <p>Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in turpis condimentum porttitor et quis felis. Curabitur quis accumsan neque. </p>
+                            </div>
+
+                            <div className="food__itemsSectionItem">
+                                <img src={ItemMeat} alt="Food item Icon Meat"/>
+                                <h1>DOBRE</h1>
+                                <p>Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in turpis condimentum porttitor et quis felis. Curabitur quis accumsan neque. </p>
                             </div>
                             
                         </div>
