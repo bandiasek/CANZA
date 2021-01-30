@@ -519,22 +519,4 @@
             margin-top: 10px;
             font-size: 0.8rem;
       }
-      
-      /**** Happy Footer ****/
-      .home__footer{
-            padding: 15px 0 15px 0;
-      }
-      .home__footerLeft {
-            display: none;
-      }
-      .home__footerRight { 
-            flex-direction: column;
-            justify-content: center;
-      }
-      .home__footerRight > div:nth-child(2) > h5{
-          margin-top: 4px;
-      }
-      .home__footerRight > div > h1 {
-            padding-bottom: 1.2rem;
-      }
  }
