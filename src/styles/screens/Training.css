@@ -9,7 +9,7 @@
 }
 
 /*-----Global Componentns-----*/
-.food__containerFluid {
+.training__containerFluid {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -17,7 +17,7 @@
 }
 
 /*-----Welcome Section-----*/
-.food__welcomeSection {
+.training__welcomeSection {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -28,7 +28,7 @@
 	z-index: 1;
 }
 
-.food__welcomeSectionImg {
+.training__welcomeSectionImg {
 	display: flex;
 	position: relative;
 	flex-direction: column;
@@ -40,27 +40,27 @@
 	z-index: 10;
 }
 
-.food__welcomeSectionText {
+.training__welcomeSectionText {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	width: 100%;
 	height: 100%;
-	background-image: url("../../assets/food/WelcomeImg.svg");
+	background-image: url("../../assets/training/WelcomeImg.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 }
 
-.food__welcomeSectionImg > img {
+.training__welcomeSectionImg > img {
 	position: absolute;
 	bottom: -4rem;
 	left: -3rem;
 	z-index: -50;
 }
 
-.food__welcomeSectionText > h1 {
+.training__welcomeSectionText > h1 {
 	font-size: 6em;
 	font-family: "Playfair Display", serif;
 	line-height: 2;
@@ -69,14 +69,14 @@
 	margin: 5% 0 0 calc(25% - 10px);
 }
 
-.food__welcomeSectionTextH2 {
+.training__welcomeSectionTextH2 {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	margin-left: 25%;
 }
 
-.food__welcomeSectionTextH2 > h2 {
+.training__welcomeSectionTextH2 > h2 {
 	font-size: 1.2rem;
 	letter-spacing: 3px;
 	font-weight: bold;
@@ -87,7 +87,7 @@
 	text-align: center;
 }
 
-.food__welcomeSectionDash {
+.training__welcomeSectionDash {
 	height: 4px;
 	width: 1.5vw;
 	align-self: center;
@@ -95,7 +95,7 @@
 }
 
 /*-----Quotation section-----*/
-.food__quoteSection {
+.training__quoteSection {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -105,12 +105,12 @@
 	margin-bottom: 10vh;
 }
 
-.food__quoteSection > img {
+.training__quoteSection > img {
 	display: flex;
 	flex: 0.2;
 }
 
-.food__quoteSection > h1 {
+.training__quoteSection > h1 {
 	display: flex;
 	flex: 0.7;
 	flex-direction: column;
@@ -122,14 +122,14 @@
 	margin-top: 2vh;
 }
 
-.food__quoteSectionTextEdit {
+.training__quoteSectionTextEdit {
 	color: #628989;
 	margin-left: auto;
 	text-align: center;
 }
 
-/*-----Food Items section-----*/
-.food__itemsSection {
+/*-----training Items section-----*/
+.training__itemsSection {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -140,7 +140,7 @@
 	background-size: cover;
 }
 
-.food__itemsSectionContainer {
+.training__itemsSectionContainer {
 	display: flex;
 	flex: 1;
 	flex-direction: row;
@@ -149,11 +149,11 @@
 	width: 78%;
 }
 
-.food__breakRow {
+.training__breakRow {
 	display: none;
 }
 
-.food__itemsSectionItem {
+.training__itemsSectionItem {
 	display: flex;
 	flex: 0.18;
 	flex-direction: column;
@@ -162,11 +162,11 @@
 	height: 25vh;
 }
 
-.food__itemsSectionItem > img {
+.training__itemsSectionItem > img {
 	height: 54px;
 }
 
-.food__itemsSectionItem > h1 {
+.training__itemsSectionItem > h1 {
 	text-align: left;
 	font-size: 1.2rem;
 	font-family: "Raleway", sans-serif;
@@ -175,7 +175,7 @@
 	color: #00001d;
 }
 
-.food__itemsSectionItem > p {
+.training__itemsSectionItem > p {
 	font-family: "Raleway", sans-serif;
 	letter-spacing: 2px;
 	line-height: 1.6;
@@ -184,7 +184,7 @@
 }
 
 /*-----Introduction Section-----*/
-.food__introduction {
+.training__introduction {
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
@@ -194,7 +194,7 @@
 	margin: 25vh 0 10vh 0;
 }
 
-.food__introductionContianer {
+.training__introductionContianer {
 	display: flex;
 	flex: 1;
 	flex-direction: row;
@@ -204,13 +204,14 @@
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-.food__introductionContianer > img {
+.training__introductionContianer > img {
 	display: flex;
+	object-fit: contain;
 	flex: 0.2;
 	margin: -14% 0 0 -16%;
 }
 
-.food__introductionDescription {
+.training__introductionDescription {
 	display: flex;
 	flex: 0.8;
 	flex-direction: column;
@@ -219,7 +220,7 @@
 	padding: 3rem;
 }
 
-.food__introductionDescription > h1 {
+.training__introductionDescription > h1 {
 	text-align: left;
 	font-size: 2.4rem;
 	font-family: "Playfair Display", serif;
@@ -228,7 +229,7 @@
 	color: #00001d;
 }
 
-.food__introductionDescription > p {
+.training__introductionDescription > p {
 	font-family: "Raleway", sans-serif;
 	letter-spacing: 2px;
 	line-height: 1.4;
@@ -241,7 +242,7 @@
 /* Only for quoteSection Heading */
 @media (max-width: 1380px) {
 	/**** QuoteSection text ****/
-	.food__quoteSection > h1 {
+	.training__quoteSection > h1 {
 		flex: 0.76;
 		font-size: 3rem;
 	}
@@ -250,113 +251,113 @@
 /* Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {
 	/**** Text in Welcome section ****/
-	.food__welcomeSectionText > h1 {
+	.training__welcomeSectionText > h1 {
 		font-size: 5rem;
 	}
-	.food__welcomeSectionTextH2 > h2 {
+	.training__welcomeSectionTextH2 > h2 {
 		font-size: 1rem;
 	}
 
 	/**** QuoteSection text ****/
-	.food__quoteSection > h1 {
+	.training__quoteSection > h1 {
 		font-size: 2.5rem;
 		margin-top: 0;
 		align-self: center;
 	}
 
-	/**** Food items section ****/
-	.food__itemsSectionItem {
+	/**** training items section ****/
+	.training__itemsSectionItem {
 		flex: 0.22;
 		align-items: center;
 		height: 28vh;
 	}
-	.food__itemsSectionItem {
+	.training__itemsSectionItem {
 		text-align: center;
 	}
 
 	/**** Introduction Section ****/
-	.food__introduction {
+	.training__introduction {
 		margin: 5vh 0 5vh 0;
 	}
-	.food__introductionContianer > img {
+	.training__introductionContianer > img {
 		max-width: 50%;
 		height: auto;
 		margin: 0 0 0 -16%;
 	}
-	.food__introductionDescription {
+	.training__introductionDescription {
 		padding: 2rem 3rem;
 	}
-	.food__introductionDescription > p {
+	.training__introductionDescription > p {
 		font-size: 0.8rem;
 	}
 }
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
 	/**** Text in Welcome section ****/
-	.food__welcomeSectionText > h1 {
+	.training__welcomeSectionText > h1 {
 		font-size: 4rem;
 	}
-	.food__welcomeSectionTextH2 > h2 {
+	.training__welcomeSectionTextH2 > h2 {
 		font-size: 0.8rem;
 	}
-	.food__welcomeSectionDash {
+	.training__welcomeSectionDash {
 		height: 3px;
 	}
 	/**** Border in Welcome section ****/
-	.food__welcomeSectionImg > img {
+	.training__welcomeSectionImg > img {
 		bottom: -2rem;
 		left: -1.5rem;
 	}
 
 	/**** QuoteSection text ****/
-	.food__quoteSection > h1 {
+	.training__quoteSection > h1 {
 		font-size: 2rem;
 		text-align: center;
 	}
-	.food__quoteSectionTextEdit {
+	.training__quoteSectionTextEdit {
 		margin-left: 0;
 	}
 
-	/**** Food items section ****/
-	.food__itemsSectionItem {
+	/**** training items section ****/
+	.training__itemsSectionItem {
 		flex: 1 1;
 		height: 20vh;
 		margin: 3rem 0 3rem 0;
 	}
-	.food__itemsSectionItem:nth-child(1),
-	.food__itemsSectionItem:nth-child(4) {
+	.training__itemsSectionItem:nth-child(1),
+	.training__itemsSectionItem:nth-child(4) {
 		margin-right: 2rem;
 	}
-	.food__itemsSectionItem:nth-child(2),
-	.food__itemsSectionItem:nth-child(5) {
+	.training__itemsSectionItem:nth-child(2),
+	.training__itemsSectionItem:nth-child(5) {
 		margin-left: 2rem;
 	}
-	.food__itemsSectionContainer {
+	.training__itemsSectionContainer {
 		flex-wrap: wrap;
 	}
-	.food__breakRow {
+	.training__breakRow {
 		display: flex;
 		height: 0;
 		flex-basis: 100%;
 	}
 
 	/**** Introduction Section ****/
-	.food__introduction {
+	.training__introduction {
 		flex-direction: column;
 		margin: 10vh 0 15vh 0;
 		width: 100%;
 	}
-	.food__introductionContianer {
+	.training__introductionContianer {
 		flex-direction: column-reverse;
 		align-items: center;
 	}
-	.food__introductionContianer > img {
+	.training__introductionContianer > img {
 		max-width: 75%;
 		height: auto;
 		margin: 0 0 -13% 0;
 	}
-	.food__introductionDescription > p,
-	.food__introductionDescription > h1 {
+	.training__introductionDescription > p,
+	.training__introductionDescription > h1 {
 		width: 100%;
 		text-align: center;
 	}
@@ -365,37 +366,37 @@
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
 	/**** Text in Welcome section ****/
-	.food__welcomeSectionText {
+	.training__welcomeSectionText {
 		transform: rotateY(180deg);
 	}
-	.food__welcomeSectionText > h1 {
+	.training__welcomeSectionText > h1 {
 		font-size: 3rem;
 		margin: 5% 0 0 0;
 		transform: rotateY(180deg);
 	}
-	.food__welcomeSectionTextH2 {
+	.training__welcomeSectionTextH2 {
 		margin: 0;
 		transform: rotateY(180deg);
 	}
 	/**** Border in Welcome section ****/
-	.food__welcomeSectionImg > img {
+	.training__welcomeSectionImg > img {
 		display: none;
 	}
 
 	/**** QuoteSection text ****/
-	.food__quoteSection {
+	.training__quoteSection {
 		flex-direction: column;
 		justify-content: flex-end;
 	}
-	.food__quoteSection > h1 {
+	.training__quoteSection > h1 {
 		flex: 0.2;
 	}
-	.food__quoteSection > img {
+	.training__quoteSection > img {
 		display: none;
 	}
 
-	/**** Food items section ****/
-	.food__itemsSectionItem {
+	/**** training items section ****/
+	.training__itemsSectionItem {
 		height: 25vh;
 	}
 }
@@ -403,64 +404,64 @@
 /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 	/**** Text in Welcome section ****/
-	.food__welcomeSectionText > h1 {
+	.training__welcomeSectionText > h1 {
 		font-size: 1.8rem;
 		margin: -40% 0 0 0;
 		line-height: 3;
 	}
-	.food__welcomeSectionTextH2 > h2 {
+	.training__welcomeSectionTextH2 > h2 {
 		font-size: 0.7rem;
 	}
-	.food__welcomeSectionTextH2 {
+	.training__welcomeSectionTextH2 {
 		width: 65vw;
 	}
-	.food__welcomeSectionDash {
+	.training__welcomeSectionDash {
 		display: none;
 	}
 
 	/**** QuoteSection text ****/
-	.food__quoteSection > img {
+	.training__quoteSection > img {
 		display: flex;
 		align-self: center;
 		width: 100%;
 		margin-bottom: 5vh;
 	}
-	.food__quoteSection > h1 {
+	.training__quoteSection > h1 {
 		font-size: 1.6rem;
 	}
 
-	/**** Food items section ****/
-	.food__itemsSectionItem {
+	/**** training items section ****/
+	.training__itemsSectionItem {
 		flex: auto;
 		height: 25vh;
 		justify-content: center;
 		margin: 3rem 0 3rem 0;
 	}
-	.food__itemsSectionItem > * {
+	.training__itemsSectionItem > * {
 		margin-bottom: 16px;
 	}
-	.food__itemsSectionItem:nth-child(1),
-	.food__itemsSectionItem:nth-child(4) {
+	.training__itemsSectionItem:nth-child(1),
+	.training__itemsSectionItem:nth-child(4) {
 		margin-right: 0rem;
 	}
-	.food__itemsSectionItem:nth-child(2),
-	.food__itemsSectionItem:nth-child(5) {
+	.training__itemsSectionItem:nth-child(2),
+	.training__itemsSectionItem:nth-child(5) {
 		margin-left: 0rem;
 	}
-	.food__itemsSectionContainer {
+	.training__itemsSectionContainer {
 		flex-direction: column;
 		height: auto;
 	}
 
 	/**** Introduction Section ****/
-	.food__introductionContianer > img {
+	.training__introductionContianer > img {
 		max-width: 90%;
 		margin: 0 0 -15% 0;
 	}
-	.food__introductionDescription {
+	.training__introductionDescription {
 		padding: 2rem;
 	}
-	.food__introductionDescription > h1 {
+	.training__introductionDescription > h1 {
 		line-height: 1.4;
 		padding-bottom: 2rem;
 	}
