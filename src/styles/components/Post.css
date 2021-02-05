@@ -1,71 +1,70 @@
 /*-----Fonts-----*/
 @font-face {
-      font-family: Raleway;
-      src: url('../../assets/fonts/Raleway-VariableFont_wght.ttf');
-    }
+	font-family: Raleway;
+	src: url("../../assets/fonts/Raleway-VariableFont_wght.ttf");
+}
 @font-face {
-      font-family: Playfair Display;
-      src: url('../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf');
-    }
+	font-family: Playfair Display;
+	src: url("../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf");
+}
 
 /*-----Global Componentns-----*/
 .post__continer {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #FFFFFF;
-      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.15);
-      border: 1px solid #EEEEEE;
-      margin: 5%;
-      padding: 5% 5% 20% 5%;
-      height: 80vh;
-      position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #ffffff;
+	box-shadow: 0 4px 7px rgba(0, 0, 0, 0.15);
+	border: 1px solid #eeeeee;
+	margin: 5%;
+	padding: 5% 5% 20% 5%;
+	height: 80vh;
+	position: relative;
 }
 
 /*-----Direct Styling-----*/
 .post__continer > h1 {
-      font-size: 1.2rem;
-      font-weight: bold;
-      font-family: 'Raleway', serif;
-      letter-spacing: 2px;
-      text-align: center;
-      color: #00001D;
+	font-size: 1.2rem;
+	font-weight: bold;
+	font-family: "Raleway", serif;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #00001d;
 }
 
 .post__continer > h3 {
-      font-size: 1rem;
-      font-weight: bolder;
-      font-family: 'Raleway', serif;
-      letter-spacing: 2px;
-      text-align: center;
-      color: #00001D;
+	font-size: 1rem;
+	font-weight: bolder;
+	font-family: "Raleway", serif;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #00001d;
 }
 
 .post__continer > h4 {
-      font-size: 1rem;
-      font-weight: bolder;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 2px;
-      text-align: center;
-      color: #5A8181;
-      border-bottom: 1px solid  #5A8181;
-      padding-bottom: 1rem;
-      width: 100%;
+	font-size: 1rem;
+	font-weight: bolder;
+	font-family: "Playfair Display", serif;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #5a8181;
+	border-bottom: 1px solid #5a8181;
+	padding-bottom: 1rem;
+	width: 100%;
 }
 
 .post__continer > p {
-      font-size: 0.8rem;
-      font-family: 'Raleway', serif;
-      line-height: 1.2;
-      letter-spacing: 2px;
-      text-align: center;
-      color: #00001D;
+	font-size: 0.8rem;
+	font-family: "Raleway", serif;
+	line-height: 1.2;
+	letter-spacing: 2px;
+	text-align: center;
+	color: #00001d;
 }
 
 .post__continer > img {
-      width: 100%;
-      max-width: 334px;
-      max-height: 310px;
+	width: 100%;
+	max-width: 334px;
+	max-height: 310px;
 }
-
