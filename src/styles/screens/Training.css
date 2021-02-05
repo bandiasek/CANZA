@@ -1,7 +1,7 @@
 /*-----Rest of CSS is in FoodAndTraining.css-----*/
 /*-----Welcome Section-----*/
-.food__welcomeSectionText {
-	background-image: url("../../assets/food/WelcomeImg.png");
+.training__welcomeSectionText {
+	background-image: url("../../assets/training/WelcomeImg.png");
 }
 
 /*-----Media querrys-----*/

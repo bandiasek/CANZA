@@ -97,18 +97,16 @@ const Home = () => {
 
 					<div className='home__newestPosts'>
 						<Swiper {...params} className='home__newestPostsSwiper'>
-							{
-								posts.map(post => (
-									<div key={post.id} >
-										<SwiperItem 
-											category={post.data.category}
-											imgPath={post.data.imgPath}
-											name={post.data.name}
-											key={post.id}
-										/>
-									</div>	
-								))
-							}
+							{posts.map((post) => (
+								<div key={post.id}>
+									<SwiperItem
+										category={post.data.category}
+										imgPath={post.data.imgPath}
+										name={post.data.name}
+										key={post.id}
+									/>
+								</div>
+							))}
 						</Swiper>
 					</div>
 				</div>
@@ -154,7 +152,7 @@ const Home = () => {
 			<div className='home__contact'>
 				<div className='home__contactContent'>
 					<div className='home__contactForm'>
-						<form onSubmit={sendEmail} >
+						<form onSubmit={sendEmail}>
 							<h1>
 								KONTAKTUJTE
 								<span className='contactFormEdit'> NÁS</span>
@@ -187,7 +185,6 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-
 		</div>
 	)
 }

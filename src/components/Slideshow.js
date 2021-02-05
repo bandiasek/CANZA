@@ -42,7 +42,7 @@ const properties = {
 	autoplay: true,
 	canSwipe: false,
 	indicators: true,
-	indicators: (i) => <div className='each-indicator' ></div>,
+	indicators: (i) => <div className='each-indicator'></div>,
 }
 
 const Slideshow = () => {

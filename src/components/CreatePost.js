@@ -17,10 +17,10 @@ const CreatePost = () => {
 	const onChangeHandler = (event) => {
 		event.preventDefault()
 		setPost({
-			 ...post, [event.currentTarget.name]: event.currentTarget.value 
-			})
+			...post,
+			[event.currentTarget.name]: event.currentTarget.value,
+		})
 	}
-
 
 	return (
 		<div className='CreatePost'>
@@ -61,15 +61,25 @@ const CreatePost = () => {
 					onChange={(event) => onChangeHandler(event)}
 				/>
 
-				<button onClick={(event) => {
-					createPost(event, post.author, post.postName, post.createdAt, post.postText)
-					setPost({
-						author: '',
-						postName: '',
-						createdAt: '',
-						postText: '',
-					})
-					}}>Vytvor post</button>
+				<button
+					onClick={(event) => {
+						createPost(
+							event,
+							post.author,
+							post.postName,
+							post.createdAt,
+							post.postText
+						)
+						setPost({
+							author: '',
+							postName: '',
+							createdAt: '',
+							postText: '',
+						})
+					}}
+				>
+					Vytvor post
+				</button>
 			</form>
 		</div>
 	)

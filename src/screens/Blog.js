@@ -73,7 +73,7 @@ function Blog() {
 					</div>
 
 					<div className='blog__postText'>
-						{curPost.data.text.split('(enter)').map((p,index) => {
+						{curPost.data.text.split('(enter)').map((p, index) => {
 							return <p key={index}>{p}</p>
 						})}
 					</div>
@@ -83,7 +83,9 @@ function Blog() {
 	} else {
 		return (
 			<div className='loading'>
-				<h1>Načítavanie trvá nečakane dlho, skúste stránku načítať znova ...</h1>
+				<h1>
+					Načítavanie trvá nečakane dlho, skúste stránku načítať znova ...
+				</h1>
 			</div>
 		)
 	}

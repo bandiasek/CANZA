@@ -1,78 +1,74 @@
 /*-----Resizing component + img -----*/
 .slideshow__container {
-      width: 100%;
-      height: auto;
-      max-height: 75vh;
-      position: relative;
-      overflow: hidden;
+	width: 100%;
+	height: auto;
+	max-height: 75vh;
+	position: relative;
+	overflow: hidden;
 }
 
-
 .slideshow__itemImg {
-      width: 100%;
-      height: auto;
+	width: 100%;
+	height: auto;
 }
 
 /*-----Changing Incicators + hover, transition...-----*/
 .indicators {
-      position: absolute;
-      bottom: 10%;
-      width: 100%;
+	position: absolute;
+	bottom: 10%;
+	width: 100%;
 }
 
 .each-indicator {
-      height: 10px;
-      width: 10px;
-      margin-left: 1vw;
-      margin-right: 1vw;
-      background-color: white;
-      cursor: pointer;
-      border-radius: 50%;
+	height: 10px;
+	width: 10px;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	background-color: white;
+	cursor: pointer;
+	border-radius: 50%;
 }
 
 .each-indicator:not(:hover) {
-      transform: scale(1);
-      transition: 0.25s;
+	transform: scale(1);
+	transition: 0.25s;
 }
 
 .each-indicator:hover {
-      background-color: #a3bdbd;
-      transform: scale(1.15);
-      transition: 0.25s;
+	background-color: #a3bdbd;
+	transform: scale(1.15);
+	transition: 0.25s;
 }
 
 .active {
-      background-color: #5A8181;
+	background-color: #5a8181;
 }
 
 /*-----Media querrys-----*/
 /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-      .each-indicator {
-            height: 6px;
-            width: 6px;
-      }
- }
+	.each-indicator {
+		height: 6px;
+		width: 6px;
+	}
+}
 
 /* Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) { 
-      .each-indicator {
-            height: 8px;
-            width: 8px;
-      }
-      .slideshow__itemImg  {
-            height: 75vh;
-            object-fit: cover;
-      }
- }
+@media (max-width: 767.98px) {
+	.each-indicator {
+		height: 8px;
+		width: 8px;
+	}
+	.slideshow__itemImg {
+		height: 75vh;
+		object-fit: cover;
+	}
+}
 
 /* Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) { 
-      
- }
+@media (max-width: 991.98px) {
+}
 
 /* Large devices (desktops, less than 1200px) */
-@media (max-width: 1199.98px) { 
-
- }
-
+@media (max-width: 1199.98px) {
+}
