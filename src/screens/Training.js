@@ -12,7 +12,7 @@ import '../styles/screens/FoodAndTraining.css'
 import '../styles/screens/Training.css'
 
 const Training = () => {
-    return (
+	return (
 		<div className='f_a_t__containerFluid'>
 			<div className='f_a_t__welcomeSection'>
 				<div className='f_a_t__welcomeSectionImg'>
@@ -31,10 +31,10 @@ const Training = () => {
 			<div className='f_a_t__quoteSection'>
 				<img src={QuoteImg} alt='Quote section img' />
 				<h1>
-                    Nebudeme ti klamať,
+					Nebudeme ti klamať,
 					<br />
 					<span className='f_a_t__quoteSectionTextEdit'>
-                        tu si a tu treba poriadne makať.
+						tu si a tu treba poriadne makať.
 					</span>
 				</h1>
 			</div>
@@ -45,7 +45,10 @@ const Training = () => {
 						<img src={ItemDumbbell} alt='Training item Icon Leafs' />
 						<h1>S CHUŤOU</h1>
 						<p>
-						Vždy dostatočne motivovaný dať zo seba maximu! Mať chuť a "drive" byť lepší a trénovať, trénovať, trénovať... Nezáleží či si chlap alebo žena, starý alebo mladý, nikdy veci nie sú tak zlé, aby nebola chuť ísť cvičiť!{' '}
+							Vždy dostatočne motivovaný dať zo seba maximu! Mať chuť a "drive"
+							byť lepší a trénovať, trénovať, trénovať... Nezáleží či si chlap
+							alebo žena, starý alebo mladý, nikdy veci nie sú tak zlé, aby
+							nebola chuť ísť cvičiť!{' '}
 						</p>
 					</div>
 
@@ -53,7 +56,10 @@ const Training = () => {
 						<img src={ItemBiceps} alt='Training item Icon Shopping Cart' />
 						<h1>SPRÁVNE</h1>
 						<p>
-						Nie nadarmo sa vraví "Quality Over Quantity". Správnym spôsobom všetko ide ľahšie. Najdi si PRE TEBA správny spôsob a nevzdavaj sa. Niekedy to môže trvať rok, dva, možno aj tri mesiace, no dôležité je ho nájsť! {' '}
+							Nie nadarmo sa vraví "Quality Over Quantity". Správnym spôsobom
+							všetko ide ľahšie. Najdi si PRE TEBA správny spôsob a nevzdavaj
+							sa. Niekedy to môže trvať rok, dva, možno aj tri mesiace, no
+							dôležité je ho nájsť!{' '}
 						</p>
 					</div>
 
@@ -63,7 +69,9 @@ const Training = () => {
 						<img src={ItemClock} alt='Training item Icon Apple' />
 						<h1>NEPONÁHĽAJ</h1>
 						<p>
-							Všetko ma svoj čas. Trénuj rozvážne a buď trpezlivý/á. Niekdy sa výsledky ukážu o mesiac, inokedy zasa o rok, inokedy zasa o päť. Dôležité je vytrvať!{' '}
+							Všetko ma svoj čas. Trénuj rozvážne a buď trpezlivý/á. Niekdy sa
+							výsledky ukážu o mesiac, inokedy zasa o rok, inokedy zasa o päť.
+							Dôležité je vytrvať!{' '}
 						</p>
 					</div>
 
@@ -71,7 +79,9 @@ const Training = () => {
 						<img src={ItemWeight} alt='Training item Icon Meat' />
 						<h1>DOBRE</h1>
 						<p>
-							Ak robíš maximum, vedieš si DOBRE. Nepozeraj a neporovnávaj sa. Každý máme svoju cestu, svoje tempo, svoje možnosti. Nenechaj sa demotivovať okolnosťami. Vedieš si DOBRE! {' '}
+							Ak robíš maximum, vedieš si DOBRE. Nepozeraj a neporovnávaj sa.
+							Každý máme svoju cestu, svoje tempo, svoje možnosti. Nenechaj sa
+							demotivovať okolnosťami. Vedieš si DOBRE!{' '}
 						</p>
 					</div>
 				</div>
@@ -83,7 +93,15 @@ const Training = () => {
 					<div className='f_a_t__introductionDescription'>
 						<h1>Prečo trénovať ?</h1>
 						<p>
-							Samotný tréning, pohyb je pre ľudské telo prirodzený. Moderná doba človeka núti sedieť v kancelárií, škole, doma či dokonca v dopravných prostriedkoch. V minulosti ľudské telo bolo vystavené pohybu a aktivite deň čo deň. Ľudia mali lepšiu imunitu, boli silnejší a často krát viac osvalený ako my teraz. Preto sa pohyb považuje pre telo ako nevyhnutný. Či máš záľubu v tréningu s váhami, s vlastným telom alebo možno iné športy, vôbec nezáleží. Ide hlavne o to, že sa hýbeš a nútiš svoje telo k zlepšeniu sily či vytrvalosti.  
+							Samotný tréning, pohyb je pre ľudské telo prirodzený. Moderná doba
+							človeka núti sedieť v kancelárií, škole, doma či dokonca v
+							dopravných prostriedkoch. V minulosti ľudské telo bolo vystavené
+							pohybu a aktivite deň čo deň. Ľudia mali lepšiu imunitu, boli
+							silnejší a často krát viac osvalený ako my teraz. Preto sa pohyb
+							považuje pre telo ako nevyhnutný. Či máš záľubu v tréningu s
+							váhami, s vlastným telom alebo možno iné športy, vôbec nezáleží.
+							Ide hlavne o to, že sa hýbeš a nútiš svoje telo k zlepšeniu sily
+							či vytrvalosti.
 						</p>
 					</div>
 				</div>
