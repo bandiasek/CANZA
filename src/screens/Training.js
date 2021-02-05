@@ -45,9 +45,7 @@ const Training = () => {
 						<img src={ItemDumbbell} alt='Training item Icon Leafs' />
 						<h1>S CHUŤOU</h1>
 						<p>
-							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
-							turpis condimentum porttitor et quis felis. Curabitur quis
-							accumsan neque.{' '}
+						Vždy dostatočne motivovaný dať zo seba maximu! Mať chuť a "drive" byť lepší a trénovať, trénovať, trénovať... Nezáleží či si chlap alebo žena, starý alebo mladý, nikdy veci nie sú tak zlé, aby nebola chuť ísť cvičiť!{' '}
 						</p>
 					</div>
 
@@ -55,9 +53,7 @@ const Training = () => {
 						<img src={ItemBiceps} alt='Training item Icon Shopping Cart' />
 						<h1>SPRÁVNE</h1>
 						<p>
-							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
-							turpis condimentum porttitor et quis felis. Curabitur quis
-							accumsan neque.{' '}
+						Nie nadarmo sa vraví "Quality Over Quantity". Správnym spôsobom všetko ide ľahšie. Najdi si PRE TEBA správny spôsob a nevzdavaj sa. Niekedy to môže trvať rok, dva, možno aj tri mesiace, no dôležité je ho nájsť! {' '}
 						</p>
 					</div>
 
@@ -67,9 +63,7 @@ const Training = () => {
 						<img src={ItemClock} alt='Training item Icon Apple' />
 						<h1>NEPONÁHĽAJ</h1>
 						<p>
-							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
-							turpis condimentum porttitor et quis felis. Curabitur quis
-							accumsan neque.{' '}
+							Všetko ma svoj čas. Trénuj rozvážne a buď trpezlivý/á. Niekdy sa výsledky ukážu o mesiac, inokedy zasa o rok, inokedy zasa o päť. Dôležité je vytrvať!{' '}
 						</p>
 					</div>
 
@@ -77,9 +71,7 @@ const Training = () => {
 						<img src={ItemWeight} alt='Training item Icon Meat' />
 						<h1>DOBRE</h1>
 						<p>
-							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
-							turpis condimentum porttitor et quis felis. Curabitur quis
-							accumsan neque.{' '}
+							Ak robíš maximum, vedieš si DOBRE. Nepozeraj a neporovnávaj sa. Každý máme svoju cestu, svoje tempo, svoje možnosti. Nenechaj sa demotivovať okolnosťami. Vedieš si DOBRE! {' '}
 						</p>
 					</div>
 				</div>
@@ -89,9 +81,9 @@ const Training = () => {
 				<div className='f_a_t__introductionContianer'>
 					<img src={IntroductionImg} alt='Introduction Img floating left' />
 					<div className='f_a_t__introductionDescription'>
-						<h1>Ako začať ?</h1>
+						<h1>Prečo trénovať ?</h1>
 						<p>
-                        Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in turpis condimentum porttitor et quis felis. Curabitur quis accumsan neque. Pellentesque iaculis suscipit purus sed bibendum. Nulla gravida congue massa, ac hendrerit dui tempus ac. Sed vehicula ut diam sit amet gravida. Etiam facilisis ligula et metus fermentum tempus. Mauris tempus elit sapien, sed sollicitudin eros maximus ac. Vestibulum accumsan vestibulum mi, non euismod urna auctor non. Suspendisse lacinia interdum nulla, nec eleifend nibh feugiat sit amet.
+							Samotný tréning, pohyb je pre ľudské telo prirodzený. Moderná doba človeka núti sedieť v kancelárií, škole, doma či dokonca v dopravných prostriedkoch. V minulosti ľudské telo bolo vystavené pohybu a aktivite deň čo deň. Ľudia mali lepšiu imunitu, boli silnejší a často krát viac osvalený ako my teraz. Preto sa pohyb považuje pre telo ako nevyhnutný. Či máš záľubu v tréningu s váhami, s vlastným telom alebo možno iné športy, vôbec nezáleží. Ide hlavne o to, že sa hýbeš a nútiš svoje telo k zlepšeniu sily či vytrvalosti.  
 						</p>
 					</div>
 				</div>

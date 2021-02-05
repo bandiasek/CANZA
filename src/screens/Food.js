@@ -45,31 +45,25 @@ const Food = () => {
 						<img src={ItemLeafs} alt='f_a_t item Icon Leafs' />
 						<h1>S CHUŤOU</h1>
 						<p>
-							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
-							turpis condimentum porttitor et quis felis. Curabitur quis
-							accumsan neque.{' '}
+							Strava ti musí chutiť. Akonáhle ti nechutí a premáhaš sa, tak je obrovská šanca že ti takáto strava nevydrží dlho. Riešenie je nájsť jedálniček a spôsob stravovania ktorý bude zdravý a bude ti chutiť!{' '}
 						</p>
 					</div>
 
 					<div className='f_a_t__itemsSectionItem'>
-						<img src={ItemCart} alt='f_a_t item Icon Shopping Cart' />
+						<img src={ItemApple} alt='f_a_t item Icon Shopping Cart' />
 						<h1>SPRÁVNE</h1>
 						<p>
-							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
-							turpis condimentum porttitor et quis felis. Curabitur quis
-							accumsan neque.{' '}
+							Správne množstvo a správna kvalita. Predstav si že máš kvet (svoje telo) a zalievaš ho vodou. Je rozdiel či ho zaleješ s vodou v ktorej je saponát alebo s vodou v ktorej hnojivo. Vyber si správny typ živín! {' '}
 						</p>
 					</div>
 
 					<div className='f_a_t__breakRow'></div>
 
 					<div className='f_a_t__itemsSectionItem'>
-						<img src={ItemApple} alt='f_a_t item Icon Apple' />
-						<h1>CHUTNE</h1>
+						<img src={ItemCart} alt='f_a_t item Icon Apple' />
+						<h1>ROZUMNE</h1>
 						<p>
-							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
-							turpis condimentum porttitor et quis felis. Curabitur quis
-							accumsan neque.{' '}
+							Stravuj sa rozumne. Nie všetko čo je zdravé je drahé. V tejto dobe je zaužívané že nekvalitné jedlá su lacnejšie, avšak stále sú tu kvalitné zdroje potravy za rozumné ceny. Nie vždy drahšie znamená lepšie! {' '}
 						</p>
 					</div>
 
@@ -77,9 +71,7 @@ const Food = () => {
 						<img src={ItemMeat} alt='f_a_t item Icon Meat' />
 						<h1>DOBRE</h1>
 						<p>
-							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
-							turpis condimentum porttitor et quis felis. Curabitur quis
-							accumsan neque.{' '}
+							Ak robiš maximum vedieš si DOBRE. Nenechaj sa odradiť zlyhaním. Stane sa že zlyháš a dáš si niečo čo ti moc neprospieva. Riešením nie je to vzdať ale čím skôr sa vrátiť naspäť na zdravú cestu! {' '}
 						</p>
 					</div>
 				</div>
@@ -91,12 +83,12 @@ const Food = () => {
 					<div className='f_a_t__introductionDescription'>
 						<h1>Vážne je dôležitá ?</h1>
 						<p>
-							Áno. Poďme si vysvetli prečo. Strava ako táka tvorí 80% úspechu
-							bez ohľadu nato, aký je váš cieľ. Či chcete schudnúť, naberať,
+							Strava ako táka tvorí 80% úspechu
+							bez ohľadu nato, aký je tvoj cieľ. Či chceš schudnúť, naberať,
 							udržiavať si váhu alebo zlepšiť zdravie, bez kvalitnej stravy,
-							stavebného materiálu pre telo, to nepôjde. Predstavte si vaše telo
-							ako motor. Ak chcete aby fungoval správne a spoľahlivo musíte sa o
-							neho starať a zásobovať ho kvalitným palivom (stravou). Môžete mať
+							stavebného materiálu pre telo, to nepôjde. Predstav si svoje telo
+							ako motor. Ak chceš aby fungoval správne a spoľahlivo musíš sa o
+							neho starať a zásobovať ho kvalitným palivom (stravou). Môžeš mať
 							akýkoľvek silný motor, no pri nekvalitnom palive stráca na sile,
 							kazí sa a nefunguje správne.{' '}
 						</p>

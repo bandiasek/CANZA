@@ -133,7 +133,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	min-height: 40vh;
+	min-height: 45vh;
 	width: 100%;
 	background-image: url("../../assets/BG/WaterMark.svg");
 	background-size: cover;
@@ -157,12 +157,14 @@
 	flex: 0.18;
 	flex-direction: column;
 	align-items: flex-start;
-	justify-content: space-evenly;
-	height: 25vh;
+	justify-content: flex-start;
+	height: 35vh;
 }
 
 .f_a_t__itemsSectionItem > img {
-	height: 54px;
+	min-height: 53px;
+	max-height: 54px;
+	margin-bottom: 2vh;
 }
 
 .f_a_t__itemsSectionItem > h1 {
@@ -180,6 +182,7 @@
 	line-height: 1.6;
 	font-size: 0.8rem;
 	color: #7e7b7b;
+	margin-top: 2vh;
 }
 
 /*-----Introduction Section-----*/
@@ -207,6 +210,7 @@
 	display: flex;
 	flex: 0.2;
 	margin: -14% 0 0 -16%;
+	object-fit: contain;
 }
 
 .f_a_t__introductionDescription {
@@ -431,7 +435,7 @@
 	/**** f_a_t items section ****/
 	.f_a_t__itemsSectionItem {
 		flex: auto;
-		height: 25vh;
+		height: 30vh;
 		justify-content: center;
 		margin: 3rem 0 3rem 0;
 	}
