@@ -8,18 +8,19 @@ import ItemClock from '../assets/training/ItemClock.svg'
 import ItemWeight from '../assets/training/ItemWeight.svg'
 import IntroductionImg from '../assets/training/Introduction.png'
 
+import '../styles/screens/FoodAndTraining.css'
 import '../styles/screens/Training.css'
 
 const Training = () => {
     return (
-		<div className='training__containerFluid'>
-			<div className='training__welcomeSection'>
-				<div className='training__welcomeSectionImg'>
-					<div className='training__welcomeSectionText'>
+		<div className='f_a_t__containerFluid'>
+			<div className='f_a_t__welcomeSection'>
+				<div className='f_a_t__welcomeSectionImg'>
+					<div className='f_a_t__welcomeSectionText training__welcomeSectionText'>
 						<h1>Cvičenie, radosť </h1>
 
-						<div className='training__welcomeSectionTextH2'>
-							<div className='training__welcomeSectionDash'></div>
+						<div className='f_a_t__welcomeSectionTextH2'>
+							<div className='f_a_t__welcomeSectionDash'></div>
 							<h2>V TÝCHTO DVOCH SLOVÁCH NEEXISTUJE ROZDIEL</h2>
 						</div>
 					</div>
@@ -27,21 +28,21 @@ const Training = () => {
 				</div>
 			</div>
 
-			<div className='training__quoteSection'>
+			<div className='f_a_t__quoteSection'>
 				<img src={QuoteImg} alt='Quote section img' />
 				<h1>
                     Nebudeme ti klamať,
 					<br />
-					<span className='training__quoteSectionTextEdit'>
+					<span className='f_a_t__quoteSectionTextEdit'>
                         tu si a tu treba poriadne makať.
 					</span>
 				</h1>
 			</div>
 
-			<div className='training__itemsSection'>
-				<div className='training__itemsSectionContainer'>
-					<div className='training__itemsSectionItem'>
-						<img src={ItemDumbbell} alt='Food item Icon Leafs' />
+			<div className='f_a_t__itemsSection'>
+				<div className='f_a_t__itemsSectionContainer'>
+					<div className='f_a_t__itemsSectionItem'>
+						<img src={ItemDumbbell} alt='Training item Icon Leafs' />
 						<h1>S CHUŤOU</h1>
 						<p>
 							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
@@ -50,8 +51,8 @@ const Training = () => {
 						</p>
 					</div>
 
-					<div className='training__itemsSectionItem'>
-						<img src={ItemBiceps} alt='Food item Icon Shopping Cart' />
+					<div className='f_a_t__itemsSectionItem'>
+						<img src={ItemBiceps} alt='Training item Icon Shopping Cart' />
 						<h1>SPRÁVNE</h1>
 						<p>
 							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
@@ -60,10 +61,10 @@ const Training = () => {
 						</p>
 					</div>
 
-					<div className='training__breakRow'></div>
+					<div className='f_a_t__breakRow'></div>
 
-					<div className='training__itemsSectionItem'>
-						<img src={ItemClock} alt='Food item Icon Apple' />
+					<div className='f_a_t__itemsSectionItem'>
+						<img src={ItemClock} alt='Training item Icon Apple' />
 						<h1>NEPONÁHĽAJ</h1>
 						<p>
 							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
@@ -72,8 +73,8 @@ const Training = () => {
 						</p>
 					</div>
 
-					<div className='training__itemsSectionItem'>
-						<img src={ItemWeight} alt='Food item Icon Meat' />
+					<div className='f_a_t__itemsSectionItem'>
+						<img src={ItemWeight} alt='Training item Icon Meat' />
 						<h1>DOBRE</h1>
 						<p>
 							Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in
@@ -84,10 +85,10 @@ const Training = () => {
 				</div>
 			</div>
 
-			<div className='training__introduction'>
-				<div className='training__introductionContianer'>
+			<div className='f_a_t__introduction'>
+				<div className='f_a_t__introductionContianer'>
 					<img src={IntroductionImg} alt='Introduction Img floating left' />
-					<div className='training__introductionDescription'>
+					<div className='f_a_t__introductionDescription'>
 						<h1>Ako začať ?</h1>
 						<p>
                         Pellentesque id ipsum vel ex malesuada porta. Nam at lectus in turpis condimentum porttitor et quis felis. Curabitur quis accumsan neque. Pellentesque iaculis suscipit purus sed bibendum. Nulla gravida congue massa, ac hendrerit dui tempus ac. Sed vehicula ut diam sit amet gravida. Etiam facilisis ligula et metus fermentum tempus. Mauris tempus elit sapien, sed sollicitudin eros maximus ac. Vestibulum accumsan vestibulum mi, non euismod urna auctor non. Suspendisse lacinia interdum nulla, nec eleifend nibh feugiat sit amet.

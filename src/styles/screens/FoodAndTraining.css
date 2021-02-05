@@ -1,0 +1,466 @@
+/*-----Fonts-----*/
+@font-face {
+	font-family: Raleway;
+	src: url("../../assets/fonts/Raleway-VariableFont_wght.ttf");
+}
+@font-face {
+	font-family: Playfair Display;
+	src: url("../../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf");
+}
+
+/*-----Global Componentns-----*/
+.f_a_t__containerFluid {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+/*-----Welcome Section-----*/
+.f_a_t__welcomeSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	min-height: calc(100vh - 152px);
+	background-image: url("../../assets/BG/WaterMark.svg");
+	background-size: cover;
+	z-index: 1;
+}
+
+.f_a_t__welcomeSectionImg {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 88%;
+	height: 65vh;
+	margin-top: 5vh;
+	z-index: 10;
+}
+
+.f_a_t__welcomeSectionText {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.f_a_t__welcomeSectionImg > img {
+	position: absolute;
+	bottom: -4rem;
+	left: -3rem;
+	z-index: -50;
+}
+
+.f_a_t__welcomeSectionText > h1 {
+	font-size: 6em;
+	font-family: "Playfair Display", serif;
+	line-height: 2;
+	letter-spacing: 2px;
+	color: white;
+	margin: 5% 0 0 calc(25% - 10px);
+}
+
+.f_a_t__welcomeSectionTextH2 {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 25%;
+}
+
+.f_a_t__welcomeSectionTextH2 > h2 {
+	font-size: 1.2rem;
+	letter-spacing: 3px;
+	font-weight: bold;
+	font-family: "Raleway", sans-serif;
+	color: white;
+	margin-left: 1vw;
+	line-height: 1.4;
+	text-align: center;
+}
+
+.f_a_t__welcomeSectionDash {
+	height: 4px;
+	width: 1.5vw;
+	align-self: center;
+	background-color: #628989;
+}
+
+/*-----Quotation section-----*/
+.f_a_t__quoteSection {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 88%;
+	min-height: 20vh;
+	margin-bottom: 10vh;
+}
+
+.f_a_t__quoteSection > img {
+	display: flex;
+	flex: 0.2;
+}
+
+.f_a_t__quoteSection > h1 {
+	display: flex;
+	flex: 0.7;
+	flex-direction: column;
+	font-size: 3.4rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #00001d;
+	margin-top: 2vh;
+}
+
+.f_a_t__quoteSectionTextEdit {
+	color: #628989;
+	margin-left: auto;
+	text-align: center;
+}
+
+/*-----f_a_t Items section-----*/
+.f_a_t__itemsSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 40vh;
+	width: 100%;
+	background-image: url("../../assets/BG/WaterMark.svg");
+	background-size: cover;
+}
+
+.f_a_t__itemsSectionContainer {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 78%;
+}
+
+.f_a_t__breakRow {
+	display: none;
+}
+
+.f_a_t__itemsSectionItem {
+	display: flex;
+	flex: 0.18;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	height: 25vh;
+}
+
+.f_a_t__itemsSectionItem > img {
+	height: 54px;
+}
+
+.f_a_t__itemsSectionItem > h1 {
+	text-align: left;
+	font-size: 1.2rem;
+	font-family: "Raleway", sans-serif;
+	font-weight: bolder;
+	letter-spacing: 2px;
+	color: #00001d;
+}
+
+.f_a_t__itemsSectionItem > p {
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 2px;
+	line-height: 1.6;
+	font-size: 0.8rem;
+	color: #7e7b7b;
+}
+
+/*-----Introduction Section-----*/
+.f_a_t__introduction {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	min-height: 50vh;
+	width: 88%;
+	margin: 25vh 0 10vh 0;
+}
+
+.f_a_t__introductionContianer {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	justify-content: space-between;
+	max-width: 85%;
+	min-height: 40vh;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.f_a_t__introductionContianer > img {
+	display: flex;
+	flex: 0.2;
+	margin: -14% 0 0 -16%;
+}
+
+.f_a_t__introductionDescription {
+	display: flex;
+	flex: 0.8;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-around;
+	padding: 3rem;
+}
+
+.f_a_t__introductionDescription > h1 {
+	text-align: left;
+	font-size: 2.4rem;
+	font-family: "Playfair Display", serif;
+	letter-spacing: 2px;
+	line-height: 2;
+	color: #00001d;
+}
+
+.f_a_t__introductionDescription > p {
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 2px;
+	line-height: 1.4;
+	font-size: 0.9rem;
+	text-align: left;
+	color: #7e7b7b;
+}
+
+/*-----Media querrys-----*/
+/* Only for quoteSection Heading */
+@media (max-width: 1380px) {
+	/**** QuoteSection text ****/
+	.f_a_t__quoteSection > h1 {
+		flex: 0.76;
+		font-size: 3rem;
+	}
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+	/**** Text in Welcome section ****/
+	.f_a_t__welcomeSectionText > h1 {
+		font-size: 5rem;
+	}
+	.f_a_t__welcomeSectionTextH2 > h2 {
+		font-size: 1rem;
+	}
+
+	/**** QuoteSection text ****/
+	.f_a_t__quoteSection > h1 {
+		font-size: 2.5rem;
+		margin-top: 0;
+		align-self: center;
+	}
+
+	/**** f_a_t items section ****/
+	.f_a_t__itemsSectionItem {
+		flex: 0.22;
+		align-items: center;
+		height: 28vh;
+	}
+	.f_a_t__itemsSectionItem {
+		text-align: center;
+	}
+
+	/**** Introduction Section ****/
+	.f_a_t__introduction {
+		margin: 5vh 0 5vh 0;
+	}
+	.f_a_t__introductionContianer > img {
+		max-width: 50%;
+		height: auto;
+		margin: 0 0 0 -16%;
+	}
+	.f_a_t__introductionDescription {
+		padding: 2rem 3rem;
+	}
+	.f_a_t__introductionDescription > p {
+		font-size: 0.8rem;
+	}
+}
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+	/**** Text in Welcome section ****/
+	.f_a_t__welcomeSectionText > h1 {
+		font-size: 4rem;
+	}
+	.f_a_t__welcomeSectionTextH2 > h2 {
+		font-size: 0.8rem;
+	}
+	.f_a_t__welcomeSectionDash {
+		height: 3px;
+	}
+	/**** Border in Welcome section ****/
+	.f_a_t__welcomeSectionImg > img {
+		bottom: -2rem;
+		left: -1.5rem;
+	}
+
+	/**** QuoteSection text ****/
+	.f_a_t__quoteSection > h1 {
+		font-size: 2rem;
+		text-align: center;
+	}
+	.f_a_t__quoteSectionTextEdit {
+		margin-left: 0;
+	}
+
+	/**** f_a_t items section ****/
+	.f_a_t__itemsSectionItem {
+		flex: 1 1;
+		height: 20vh;
+		margin: 3rem 0 3rem 0;
+	}
+	.f_a_t__itemsSectionItem:nth-child(1),
+	.f_a_t__itemsSectionItem:nth-child(4) {
+		margin-right: 2rem;
+	}
+	.f_a_t__itemsSectionItem:nth-child(2),
+	.f_a_t__itemsSectionItem:nth-child(5) {
+		margin-left: 2rem;
+	}
+	.f_a_t__itemsSectionContainer {
+		flex-wrap: wrap;
+	}
+	.f_a_t__breakRow {
+		display: flex;
+		height: 0;
+		flex-basis: 100%;
+	}
+
+	/**** Introduction Section ****/
+	.f_a_t__introduction {
+		flex-direction: column;
+		margin: 10vh 0 15vh 0;
+		width: 100%;
+	}
+	.f_a_t__introductionContianer {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+	.f_a_t__introductionContianer > img {
+		max-width: 75%;
+		height: auto;
+		margin: 0 0 -13% 0;
+	}
+	.f_a_t__introductionDescription > p,
+	.f_a_t__introductionDescription > h1 {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+	/**** Text in Welcome section ****/
+	.f_a_t__welcomeSectionText {
+		transform: rotateY(180deg);
+	}
+	.f_a_t__welcomeSectionText > h1 {
+		font-size: 3rem;
+		margin: 5% 0 0 0;
+		transform: rotateY(180deg);
+	}
+	.f_a_t__welcomeSectionTextH2 {
+		margin: 0;
+		transform: rotateY(180deg);
+	}
+	/**** Border in Welcome section ****/
+	.f_a_t__welcomeSectionImg > img {
+		display: none;
+	}
+
+	/**** QuoteSection text ****/
+	.f_a_t__quoteSection {
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+	.f_a_t__quoteSection > h1 {
+		flex: 0.2;
+	}
+	.f_a_t__quoteSection > img {
+		display: none;
+	}
+
+	/**** f_a_t items section ****/
+	.f_a_t__itemsSectionItem {
+		height: 25vh;
+	}
+}
+
+/*Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+	/**** Text in Welcome section ****/
+	.f_a_t__welcomeSectionText > h1 {
+		font-size: 1.8rem;
+		margin: -40% 0 0 0;
+		line-height: 3;
+	}
+	.f_a_t__welcomeSectionTextH2 > h2 {
+		font-size: 0.7rem;
+	}
+	.f_a_t__welcomeSectionTextH2 {
+		width: 65vw;
+	}
+	.f_a_t__welcomeSectionDash {
+		display: none;
+	}
+
+	/**** QuoteSection text ****/
+	.f_a_t__quoteSection > img {
+		display: flex;
+		align-self: center;
+		width: 100%;
+		margin-bottom: 5vh;
+	}
+	.f_a_t__quoteSection > h1 {
+		font-size: 1.6rem;
+	}
+
+	/**** f_a_t items section ****/
+	.f_a_t__itemsSectionItem {
+		flex: auto;
+		height: 25vh;
+		justify-content: center;
+		margin: 3rem 0 3rem 0;
+	}
+	.f_a_t__itemsSectionItem > * {
+		margin-bottom: 16px;
+	}
+	.f_a_t__itemsSectionItem:nth-child(1),
+	.f_a_t__itemsSectionItem:nth-child(4) {
+		margin-right: 0rem;
+	}
+	.f_a_t__itemsSectionItem:nth-child(2),
+	.f_a_t__itemsSectionItem:nth-child(5) {
+		margin-left: 0rem;
+	}
+	.f_a_t__itemsSectionContainer {
+		flex-direction: column;
+		height: auto;
+	}
+
+	/**** Introduction Section ****/
+	.f_a_t__introductionContianer > img {
+		max-width: 90%;
+		margin: 0 0 -15% 0;
+	}
+	.f_a_t__introductionDescription {
+		padding: 2rem;
+	}
+	.f_a_t__introductionDescription > h1 {
+		line-height: 1.4;
+		padding-bottom: 2rem;
+	}
+}
