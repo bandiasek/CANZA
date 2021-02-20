@@ -63,8 +63,6 @@ const Home = () => {
 
 	// After loading page, fetch posts
 	useEffect(() => {
-		console.log(posts)
-
 		var mySwiper = document.querySelector('.swiper-container').swiper
 		setSwiper(mySwiper)
 	}, [])
@@ -162,8 +160,6 @@ const Home = () => {
 								type='text'
 								placeholder='VÁŠE MENO'
 								required
-								minlength='3'
-								maxlength='32'
 							></input>
 							<input
 								name='form_email'

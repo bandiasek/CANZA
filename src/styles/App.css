@@ -123,6 +123,11 @@
 	color: #00001d;
 	text-decoration: none;
 
+	-webkit-user-select: none; 
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-ms-transition: all 0.3s ease;
@@ -138,6 +143,11 @@
 .app__navbarItem:hover,
 .app__navbarExpandedItems > img:hover {
 	transform: scale(1.1);
+}
+
+.app__navbarItem:active,
+.app__navbarExpandedItems > img:active {
+	transform: scale(0.9);
 }
 
 /*-----Happy footer-----*/
