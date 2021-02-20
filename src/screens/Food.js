@@ -8,6 +8,16 @@ import ItemApple from '../assets/food/ItemApple.svg'
 import ItemMeat from '../assets/food/ItemMeat.svg'
 import IntroductionImg from '../assets/food/Introduction.svg'
 
+import Protein_1 from '../assets/food/protein_1.svg'
+import Protein_2 from '../assets/food/protein_2.svg'
+import Protein_3 from '../assets/food/protein_3.svg'
+import Fat_1 from '../assets/food/fat_1.svg'
+import Fat_2 from '../assets/food/fat_2.svg'
+import Fat_3 from '../assets/food/fat_3.svg'
+import Carbs_1 from '../assets/food/carbs_1.svg'
+import Carbs_2 from '../assets/food/carbs_2.svg'
+import Carbs_3 from '../assets/food/carbs_3.svg'
+
 import '../styles/screens/FoodAndTraining.css'
 import '../styles/screens/Food.css'
 
@@ -106,6 +116,43 @@ const Food = () => {
 					</div>
 				</div>
 			</div>
+			
+			<div className="food__macros">
+				<h1><span className="macros__green">Makro</span>živiny</h1>
+				<p>Každe jedlo sa delí na konkrétne makroživiny. Je dôležité sledovať aké mnoštvo akej makroživiny do tela dávaš. Výrazne to ovplyvní tvoj výsledok.</p>
+				<div className="food__macrosContainer">
+					<div className="macrosContainer__item">
+						<h1>Bielkoviny</h1>
+						<div className="macrosContainer__itemRow">
+							<img src={Protein_1} alt="Kuracia nožka ikona"/>
+							<img src={Protein_2} alt="Ryba ikona"/>
+							<img src={Protein_3} alt="Mlieko ikona"/>	
+						</div>
+						<p>Bielkoviny alebo proteíny slúžia ako základná stavebná jednotka, ktoré pomáhajú vytvárať nové tkanivá</p>
+					</div>
+
+					<div className="macrosContainer__item">
+						<h1>Tuky</h1>
+						<div className="macrosContainer__itemRow">
+							<img src={Fat_1} alt="Avokado ikona"/>
+							<img src={Fat_2} alt="Syr ikona"/>
+							<img src={Fat_3} alt="Olivy ikona"/>	
+						</div>
+						<p>Tuky alebo lipidy môžu byť rastlinného alebo živočíšneho pôvodu a sú to látky nerozpustné vo vode, ktoré slúžia ako zdroj energie</p>
+					</div>
+
+					<div className="macrosContainer__item">
+						<h1>Sacharidy</h1>
+						<div className="macrosContainer__itemRow">
+							<img src={Carbs_1} alt="Chlieb ikona"/>
+							<img src={Carbs_2} alt="Ryža ikona"/>
+							<img src={Carbs_3} alt="Brokolica ikona"/>	
+						</div>
+						<p>Sacharidy sú najpohotovejším zdrojom energie pre organizmus, zároveň sa však podieľajú na stavebnom procese v tele</p>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	)
 }

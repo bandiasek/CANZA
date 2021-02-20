@@ -4,6 +4,101 @@
 	background-image: url("../../assets/food/WelcomeImg.png");
 }
 
+/*-----Macros Section-----*/
+.food__macros {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-top: 10vh;
+}
+
+.food__macros > h1 {
+	font-size: 4rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #00001d;
+}
+
+.macros__green {
+	color: #628989;
+}
+
+.food__macros > p {
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 2px;
+	line-height: 1.6;
+	font-size: 0.8rem;
+	color: #7e7b7b;
+	width: 80%;
+	text-align: center;
+	margin-top: 4vh;
+}
+
+/*-----Macros Container Section-----*/
+.food__macrosContainer {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	margin-top: 10vh;
+}
+
+.macrosContainer__item {
+	display: flex;
+	flex: .3;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-height: 40vh;
+	height: auto;
+	border: 1px solid #F7F7F7;
+	border-radius: 10px;
+}
+
+.macrosContainer__item > h1 {
+	font-size: 2rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #00001d;
+	text-align: center;
+	width: 80%;
+	margin-top: 4vh;
+}
+
+.macrosContainer__item > p {
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 2px;
+	line-height: 1.6;
+	font-size: 0.8rem;
+	text-align: center;
+	width: 80%;
+	color: #628989;
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+}
+
+.macrosContainer__itemRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	border-bottom: 1px solid #F7F7F7;
+	border-top: 1px solid #F7F7F7;
+	margin-top: 4vh;
+}
+
+.macrosContainer__itemRow > img {
+	height: 100%;
+	width: auto;
+	padding: 1rem;
+}
+
 /*-----Media querrys-----*/
 /* Only for quoteSection Heading */
 @media (max-width: 1380px) {
@@ -15,12 +110,41 @@
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
+	/**** Macros Section ****/
+	.food__macrosContainer {
+		flex-direction: column;
+		align-items: flex-start;
+		position: relative;
+		width: 90%;
+	}
+	.macrosContainer__item {
+		flex: auto;
+		width: 40vw;
+		margin-bottom: 5vh;
+	}
+	.macrosContainer__item:nth-child(2) {
+		position: absolute;
+		right: 0;
+	}
 }
 
 /* Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) {
+	/**** Macros Section ****/
+	.macrosContainer__item:nth-child(2) {
+		position: relative;
+		align-self: flex-end;
+	}
 }
 
 /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+	/**** Macros Section ****/
+	.macrosContainer__item, .macrosContainer__item:nth-child(2) {
+		align-self: center;
+		width: 90%;
+	}
+	.food__macros > h1 {
+		font-size: 2.8rem;
+	}
 }
