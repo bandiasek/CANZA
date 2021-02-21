@@ -18,6 +18,12 @@ import Carbs_1 from '../assets/food/carbs_1.svg'
 import Carbs_2 from '../assets/food/carbs_2.svg'
 import Carbs_3 from '../assets/food/carbs_3.svg'
 
+import Chart_1 from '../assets/food/chart_1.svg'
+import Chart_2 from '../assets/food/chart_2.svg'
+import Chart_3 from '../assets/food/chart_3.svg'
+import Chart_4 from '../assets/food/chart_4.svg'
+import Chart_5 from '../assets/food/chart_5.svg'
+
 import '../styles/screens/FoodAndTraining.css'
 import '../styles/screens/Food.css'
 
@@ -150,6 +156,32 @@ const Food = () => {
 						</div>
 						<p>Sacharidy sú najpohotovejším zdrojom energie pre organizmus, zároveň sa však podieľajú na stavebnom procese v tele</p>
 					</div>
+				</div>
+			</div>
+
+			<div className="food__charts">
+				<div className="food__chartsHeading">
+					<div className="chartsHeading__type">
+						<div className="chartsHeading__typeCircle chartsHeading__typeCirclePro"></div>
+						<h1>Bielkoviny</h1>
+					</div>
+					<div className="chartsHeading__type">
+						<div className="chartsHeading__typeCircle chartsHeading__typeCircleFat"></div>
+						<h1>Tuky</h1>
+					</div>
+					<div className="chartsHeading__type">
+						<div className="chartsHeading__typeCircle chartsHeading__typeCircleCarbs"></div>
+						<h1>Sacharidy</h1>
+					</div>
+				</div>
+				<div className="food__chartsContainer">
+					<img src={Chart_1} alt="Chudnutie graf"/>
+					<div className='f_a_t__breakRow'></div>
+					<img src={Chart_2} alt="Udržovanie graf"/>
+					<img src={Chart_3} alt="Naberanie graf"/>
+					<div className='f_a_t__breakRow'></div>
+					<img src={Chart_4} alt="Výbušnosť graf"/>
+					<img src={Chart_5} alt="Vytrvalosť graf"/>
 				</div>
 			</div>
 
