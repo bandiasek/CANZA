@@ -168,10 +168,106 @@
 	height: auto;	
 }
 
+/*-----Micros Secion-----*/
+.food__micros {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-top: 10vh;
+}
+
+.food__micros > h1 {
+	font-size: 4rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #00001d;
+}
+
+.food__micros > p {
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 2px;
+	line-height: 1.6;
+	font-size: 0.8rem;
+	color: #7e7b7b;
+	width: 70%;
+	text-align: center;
+	margin-top: 4vh;
+}
+
+/*-----Micros Vitamins Secion-----*/
+.food__microsVitamins {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: stretch;
+	width: 90%;
+	height: auto;
+	margin-top: 8vh;
+	position: relative;
+}
+
+.microsVitamins__info {
+	display: flex;
+	flex: .6;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 2rem;
+	border: 1px solid #F7F7F7;
+}
+
+.microsVitamins__info > h1 {
+	font-size: 2rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #00001d;
+	margin-bottom: 4vh;
+} 
+
+.microsVitamins__info > ul > li {
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 2px;
+	font-size: 0.8rem;
+	line-height: 1.6;
+	color: #7e7b7b;
+	margin-bottom: .2vh;
+}
+
+.microsVitamins__infoContainer {
+	display: grid;
+	grid-template-columns: repeat(7, auto);
+	row-gap: 2vh;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 90%;
+	margin-top: 4vh;
+}
+
+.microsVitamins__infoContainer > img {
+	justify-self: flex-end;
+}
+
+
+.microsVitamins__img {
+	display: flex;
+	flex: .3;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: auto;
+}
 
 /*-----Media querrys-----*/
 /* Only for quoteSection Heading */
 @media (max-width: 1380px) {
+	/**** Macros viramins grid ****/
+	.microsVitamins__infoContainer {
+		grid-template-columns: repeat(5, auto)
+	}
 }
 
 /* Large devices (desktops, less than 1200px) */
@@ -181,7 +277,24 @@
 		width: 18%;
 		height: auto;
 	}
-}
+
+	/**** Macros viramins ****/
+	.microsVitamins__img {
+		position: absolute;
+		right: -9%;
+		top: -12%;
+		transform: scale(.5);
+	}
+	.microsVitamins__info {
+		flex: 1;
+	}
+	.microsVitamins__info > ul {
+		width: 70%;
+	}
+	.microsVitamins__infoContainer {
+		grid-template-columns: repeat(7, auto)
+	}
+}	
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
@@ -217,6 +330,13 @@
 	.food__chartsContainer {
 		flex-wrap: wrap;
 	}
+
+	/**** Macros viramins ****/
+	.microsVitamins__img {
+		transform: scale(.4);
+		right: -15%;
+		top: -3%;
+	}
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -230,6 +350,20 @@
 	/**** Charts container section ****/
 	.food__chartsContainer > img {
 		margin-bottom: 4vh;
+	}
+
+	/**** Macros viramins ****/
+	.microsVitamins__img {
+		display: none;
+	}
+	.microsVitamins__info {
+		align-items: center;
+	}
+	.microsVitamins__info > ul {
+		width: 100%;
+	}
+	.microsVitamins__infoContainer {
+		grid-template-columns: repeat(6, auto);
 	}
 }
 
@@ -264,5 +398,29 @@
 	}
 	.food__chartsContainer {
 		flex-wrap: nowrap;
+	}
+
+	/**** Macros viramins ****/
+	.food__micros > h1 {
+		font-size: 2.8rem;
+	}
+	.food__micros > p {
+		font-size: .8rem;
+		width: 80%;
+	}
+	.microsVitamins__infoContainer {
+		grid-template-columns: repeat(3, auto);
+		margin-left: -5%;
+	}
+	.microsVitamins__infoContainer > img {
+		width: 80%;
+		height: auto;
+	}
+	.microsVitamins__infoContainer > img:nth-child(2){
+		width: 65%;
+		height: auto;
+	}
+	.microsVitamins__info > ul > li {
+		margin-bottom: 1vh;
 	}
 }
