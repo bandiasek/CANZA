@@ -52,6 +52,8 @@ import Min_9 from '../assets/food/micros/Min_9.svg'
 import Min_10 from '../assets/food/micros/Min_10.svg'
 import Min_11 from '../assets/food/micros/Min_11.svg'
 import Min_12 from '../assets/food/micros/Min_12.svg'
+import Min_13 from '../assets/food/micros/Min_13.svg'
+import Min_14 from '../assets/food/micros/Min_14.svg'
 
 import '../styles/screens/FoodAndTraining.css'
 import '../styles/screens/Food.css'
@@ -282,6 +284,40 @@ const Food = () => {
 						<img src={MicrosImg_1} alt='Vitamíny obrázok' />
 					</div>
 				</div>
+
+				<div className="food__microsMinerals">
+					<div className="microsMinerals__img">
+						<img src={MicrosImg_2} alt='Minerály obrázok' />
+					</div>
+					<div className="microsMinerals__info">
+						<h1>Minerály</h1>
+						<ul>
+							<li>- minerály udržiavajú správnu rovnováhu vody vo vašom tele</li>
+							<li>- podporujú zdravé kosti a stabilizujú bielkovinové štruktúry, ktoré získate z bielkovín, ktoré konzumujete, vrátane tých, ktoré tvoria vaše vlasy, pokožku a nechty</li>
+							<li>- pomáhajú distribuovať kyslík do celého tela</li>
+						</ul>
+						<div className="microsMinerals__infoContainer">
+							<img src={Min_1} alt="Kalcium v brokolici"/>
+							<img src={Min_2} alt="Probiotiká v mlieku"/>
+							<img src={Min_3} alt="Magnésium v mandľách"/>
+							<img src={Min_4} alt="NA v kuracej nožke"/>
+							<img src={Min_5} alt="CL v riasach"/>
+							<img src={Min_6} alt="K v tekvici"/>
+							<img src={Min_7} alt="S vo vajci"/>
+						</div>
+						<h1>Stopové prvky</h1>
+						<div className="microsMinerals__infoContainer">
+							<img src={Min_8} alt="FE v šaláte"/>
+							<img src={Min_9} alt="MN v ananáse"/>
+							<img src={Min_10} alt="CU v kraboch"/>
+							<img src={Min_11} alt="Zinok v mušliach"/>
+							<img src={Min_12} alt="I v riasach"/>
+							<img src={Min_13} alt="F v pomarančovom džúse"/>
+							<img src={Min_14} alt="SE v šunke"/>							
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 	)
