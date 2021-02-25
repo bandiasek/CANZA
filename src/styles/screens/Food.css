@@ -49,13 +49,13 @@
 
 .macrosContainer__item {
 	display: flex;
-	flex: .3;
+	flex: 0.3;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	min-height: 40vh;
 	height: auto;
-	border: 1px solid #F7F7F7;
+	border: 1px solid #f7f7f7;
 	border-radius: 10px;
 }
 
@@ -88,8 +88,8 @@
 	justify-content: center;
 	align-items: center;
 	width: 80%;
-	border-bottom: 1px solid #F7F7F7;
-	border-top: 1px solid #F7F7F7;
+	border-bottom: 1px solid #f7f7f7;
+	border-top: 1px solid #f7f7f7;
 	margin-top: 4vh;
 }
 
@@ -107,7 +107,7 @@
 	align-items: center;
 	width: 100%;
 	height: auto;
-	background-image: url('../../assets/BG/FoodBG.svg');
+	background-image: url("../../assets/BG/FoodBG.svg");
 	padding: 8vh 0 12vh 0;
 	margin-top: 10vh;
 }
@@ -119,7 +119,7 @@
 	align-items: center;
 	width: 40%;
 	height: auto;
-	margin-bottom: 6vh;	
+	margin-bottom: 6vh;
 }
 
 .chartsHeading__type {
@@ -137,7 +137,7 @@
 }
 
 .chartsHeading__typeCirclePro {
-	background-color: #C78567;
+	background-color: #c78567;
 }
 
 .chartsHeading__typeCircleFat {
@@ -145,7 +145,7 @@
 }
 
 .chartsHeading__typeCircleCarbs {
-	background-color: #71A0A0;
+	background-color: #71a0a0;
 }
 
 .chartsHeading__type > h1 {
@@ -165,7 +165,7 @@
 	justify-content: space-evenly;
 	align-items: center;
 	width: 90%;
-	height: auto;	
+	height: auto;
 }
 
 /*-----Micros Secion-----*/
@@ -198,7 +198,8 @@
 }
 
 /*-----Micros Vitamins & Minerals Secion-----*/
-.food__microsVitamins, .food__microsMinerals {
+.food__microsVitamins,
+.food__microsMinerals {
 	display: flex;
 	flex: 1;
 	flex-direction: row;
@@ -210,33 +211,36 @@
 	position: relative;
 }
 
-.microsVitamins__info, .microsMinerals__info {
+.microsVitamins__info,
+.microsMinerals__info {
 	display: flex;
-	flex: .6;
+	flex: 0.6;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
 	padding: 2rem;
-	border: 1px solid #F7F7F7;
+	border: 1px solid #f7f7f7;
 	position: relative;
 }
 
-.microsVitamins__info > h1, .microsMinerals__info > h1 {
+.microsVitamins__info > h1,
+.microsMinerals__info > h1 {
 	font-size: 2rem;
 	font-family: "Playfair Display", serif;
 	line-height: 1.4;
 	letter-spacing: 2px;
 	color: #00001d;
 	margin-bottom: 4vh;
-} 
+}
 
-.microsVitamins__info > ul > li, .microsMinerals__info > ul > li {
+.microsVitamins__info > ul > li,
+.microsMinerals__info > ul > li {
 	font-family: "Raleway", sans-serif;
 	letter-spacing: 2px;
 	font-size: 0.8rem;
 	line-height: 1.6;
 	color: #7e7b7b;
-	margin-bottom: .4vh;
+	margin-bottom: 0.4vh;
 }
 
 .microsVitamins__infoContainer {
@@ -249,14 +253,15 @@
 	margin-top: 4vh;
 }
 
-.microsVitamins__infoContainer > img, .microsVitamins__infoContainer > img {
+.microsVitamins__infoContainer > img,
+.microsVitamins__infoContainer > img {
 	justify-self: flex-end;
 }
 
-
-.microsVitamins__img, .microsMinerals__img {
+.microsVitamins__img,
+.microsMinerals__img {
 	display: flex;
-	flex: .3;
+	flex: 0.3;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
@@ -279,7 +284,7 @@
 }
 
 .microsMinerals__infoContainer > img {
-	transform: scale(.9);
+	transform: scale(0.9);
 }
 
 .microsMinerals__info > h1:nth-of-type(2) {
@@ -301,7 +306,7 @@
 	font-family: "Playfair Display", serif;
 	line-height: 1.4;
 	letter-spacing: 2px;
-	color: #C78567;
+	color: #c78567;
 }
 
 .food__tdee > p {
@@ -316,7 +321,8 @@
 	margin-bottom: 8vh;
 }
 
-.food__tdeeForm, .food__tdeeForm > form {
+.food__tdeeForm,
+.food__tdeeForm > form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -329,14 +335,15 @@
 	font-family: "Playfair Display", serif;
 	line-height: 1.4;
 	letter-spacing: 1px;
-	color: #C78567;
+	color: #c78567;
 	width: 100%;
 	text-align: center;
 	padding: 1vh 0 1vh 0;
-	background-image: url('../../assets/BG/FoodBG.svg');
+	background-image: url("../../assets/BG/FoodBG.svg");
 }
 
-.tdeeForm__info, .tdeeForm__sex {
+.tdeeForm__info,
+.tdeeForm__sex {
 	display: flex;
 	flex: 1;
 	flex-direction: row;
@@ -348,7 +355,7 @@
 
 .tdeeForm__info > input {
 	display: flex;
-	flex: .2;
+	flex: 0.2;
 	height: 100%;
 	padding: 1rem 1.5rem;
 	font-size: 1rem;
@@ -356,12 +363,12 @@
 	font-weight: 500;
 	letter-spacing: 2px;
 	border: 1px solid #eeeeee;
-	resize: none;	
+	resize: none;
 }
 
 .tdeeForm__option {
 	display: flex;
-	flex: .2;
+	flex: 0.2;
 	flex-direction: row-reverse;
 	justify-content: flex-end;
 	align-items: center;
@@ -382,60 +389,60 @@
 /* TDEE FORM OPTION CHECKBOX STYLING */
 .tdeeForm__option > input[type="checkbox"]:not(:checked),
 .tdeeForm__option > input[type="checkbox"]:checked {
-  position: absolute;
-  right: 1rem;
-  opacity: 0.01;
+	position: absolute;
+	right: 1rem;
+	opacity: 0.01;
 }
 
-	/* General label styling */
+/* General label styling */
 .tdeeForm__option > input[type="checkbox"]:not(:checked) + label,
 .tdeeForm__option > input[type="checkbox"]:checked + label {
-	position: relative;	
-  cursor: pointer;
+	position: relative;
+	cursor: pointer;
 }
 
-	/* General label styling when checked*/
+/* General label styling when checked*/
 .tdeeForm__option > input[type="checkbox"]:checked + label {
-	background-color: #F2F2F2;
+	background-color: #f2f2f2;
 }
 
-	/* General checkmark styling when NOT checked */
+/* General checkmark styling when NOT checked */
 .tdeeForm__option > input[type="checkbox"]:not(:checked) + label:before,
 .tdeeForm__option > input[type="checkbox"]:checked + label:before {
-  content: '';
-  position: absolute;
-  right: 1rem;
+	content: "";
+	position: absolute;
+	right: 1rem;
 	align-self: center;
-  width: 1rem;
-  height: 1rem;
-  border: none;
-  -webkit-transition: all .275s;
-transition: all .275s;
+	width: 1rem;
+	height: 1rem;
+	border: none;
+	-webkit-transition: all 0.275s;
+	transition: all 0.275s;
 }
 
-	/* General checkmark styling when ISchecked */
+/* General checkmark styling when ISchecked */
 .tdeeForm__option > input[type="checkbox"]:not(:checked) + label:after,
 .tdeeForm__option > input[type="checkbox"]:checked + label:after {
-  content: ' \2713';
-  font-size: 1rem;
-  right: 1rem;
-  align-self: center;
-  position: absolute;
-  color: #628989;
-  -webkit-transition: all .2s;
-	transition: all .2s;
+	content: " \2713";
+	font-size: 1rem;
+	right: 1rem;
+	align-self: center;
+	position: absolute;
+	color: #628989;
+	-webkit-transition: all 0.2s;
+	transition: all 0.2s;
 }
 
-	/* Adding some animation to it */
+/* Adding some animation to it */
 .tdeeForm__option > input[type="checkbox"]:not(:checked) + label:after {
-  opacity: 0;
-  -webkit-transform: scale(0) rotate(45deg);
+	opacity: 0;
+	-webkit-transform: scale(0) rotate(45deg);
 	transform: scale(0) rotate(45deg);
 }
 
 .tdeeForm__option > input[type="checkbox"]:checked + label:after {
-  opacity: 1;
-  -webkit-transform: scale(1) rotate(0);
+	opacity: 1;
+	-webkit-transform: scale(1) rotate(0);
 	transform: scale(1) rotate(0);
 }
 
@@ -445,7 +452,7 @@ transition: all .275s;
 	justify-content: space-evenly;
 	align-content: center;
 	padding: 4vh 0 4vh 0;
-	width: 90%;	
+	width: 90%;
 }
 
 /*-----Tdee results-----*/
@@ -461,7 +468,7 @@ transition: all .275s;
 
 .tdeeResult__item {
 	display: flex;
-	flex: .25;
+	flex: 0.25;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
@@ -469,33 +476,34 @@ transition: all .275s;
 }
 
 .tdeeResult__item > h1 {
-	font-size: .9rem;
+	font-size: 0.9rem;
 	font-family: "Raleway", sans-serif;
 	font-weight: bold;
 	letter-spacing: 2px;
 	line-height: 1.4;
-	color: #01011D;
+	color: #01011d;
 	text-align: center;
 }
 
 .tdeeResult__item > h1:last-of-type {
-	font-size: .8rem;
-	color: #8C8989;
+	font-size: 0.8rem;
+	color: #8c8989;
 }
 
 .tdeeResult__item > h2 {
 	font-size: 7rem;
 	font-family: "Playfair Display", serif;
 	letter-spacing: 2px;
-	color: #C78567;
+	color: #c78567;
 }
 
 /*-----Media querrys-----*/
 /* Only for quoteSection Heading */
 @media (max-width: 1380px) {
 	/**** Macros viramins grid ****/
-	.microsVitamins__infoContainer, .microsMinerals__infoContainer {
-		grid-template-columns: repeat(5, auto)
+	.microsVitamins__infoContainer,
+	.microsMinerals__infoContainer {
+		grid-template-columns: repeat(5, auto);
 	}
 }
 
@@ -512,16 +520,20 @@ transition: all .275s;
 		position: absolute;
 		right: -9%;
 		top: -12%;
-		transform: scale(.5);
+		transform: scale(0.5);
 	}
-	.microsVitamins__info, .microsMinerals__info {
+	.microsVitamins__info,
+	.microsMinerals__info {
 		flex: 1;
 	}
-	.microsVitamins__info > ul, .microsMinerals__info > ul, .microsMinerals__infoContainer {
+	.microsVitamins__info > ul,
+	.microsMinerals__info > ul,
+	.microsMinerals__infoContainer {
 		width: 70%;
 	}
-	.microsVitamins__infoContainer, .microsMinerals__infoContainer {
-		grid-template-columns: repeat(7, auto)
+	.microsVitamins__infoContainer,
+	.microsMinerals__infoContainer {
+		grid-template-columns: repeat(7, auto);
 	}
 	.microsMinerals__info {
 		align-items: flex-end;
@@ -532,7 +544,7 @@ transition: all .275s;
 	}
 	.microsMinerals__img {
 		position: absolute;
-		transform: scale(.5);
+		transform: scale(0.5);
 		left: -12%;
 		top: -12%;
 	}
@@ -541,8 +553,7 @@ transition: all .275s;
 	.tdeeResult__item > h2 {
 		font-size: 5.5rem;
 	}
-
-}	
+}
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
@@ -572,7 +583,8 @@ transition: all .275s;
 		height: auto;
 		margin-bottom: 8vh;
 	}
-	.food__chartsContainer > img:nth-child(2), .food__chartsContainer > img:nth-child(5) {
+	.food__chartsContainer > img:nth-child(2),
+	.food__chartsContainer > img:nth-child(5) {
 		margin-bottom: 0;
 	}
 	.food__chartsContainer {
@@ -581,12 +593,12 @@ transition: all .275s;
 
 	/**** Macros minerlas and viramins ****/
 	.microsVitamins__img {
-		transform: scale(.4);
+		transform: scale(0.4);
 		right: -15%;
 		top: -3%;
 	}
 	.microsMinerals__img {
-		transform: scale(.3);
+		transform: scale(0.3);
 		top: -20%;
 		left: -18%;
 	}
@@ -613,7 +625,7 @@ transition: all .275s;
 	}
 	.tdeeResult__item > h2 {
 		font-size: 5rem;
-	}	
+	}
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -630,40 +642,44 @@ transition: all .275s;
 	}
 
 	/**** Macros minerals amd viramins ****/
-	.microsVitamins__img, .microsMinerals__img {
+	.microsVitamins__img,
+	.microsMinerals__img {
 		display: none;
 	}
-	.microsVitamins__info, .microsMinerals__info {
+	.microsVitamins__info,
+	.microsMinerals__info {
 		align-items: center;
 	}
-	.microsMinerals__info > h1, .microsMinerals__info > h1:nth-of-type(2) {
+	.microsMinerals__info > h1,
+	.microsMinerals__info > h1:nth-of-type(2) {
 		width: auto;
 	}
-	.microsVitamins__info > ul, .microsMinerals__info > ul {
+	.microsVitamins__info > ul,
+	.microsMinerals__info > ul {
 		width: 100%;
 	}
 	.microsVitamins__infoContainer {
 		grid-template-columns: repeat(6, auto);
 	}
 	.microsMinerals__infoContainer {
-		grid-template-columns: repeat(4, auto);	
+		grid-template-columns: repeat(4, auto);
 	}
 
 	/**** TDEE calculator ****/
 	.food__tdee > h1 {
 		font-size: 3.5rem;
 	}
-	.tdeeForm__sex > .tdeeForm__option > label{
+	.tdeeForm__sex > .tdeeForm__option > label {
 		width: 20vw;
 	}
 	.tdeeResult__item {
 		height: 20vh;
 	}
 	.tdeeResult__item > h1 {
-		font-size: .7rem;
+		font-size: 0.7rem;
 	}
 	.tdeeResult__item > h1:nth-of-type(2) {
-		font-size: .6rem;
+		font-size: 0.6rem;
 	}
 	.tdeeResult__item > h2 {
 		font-size: 3rem;
@@ -673,7 +689,8 @@ transition: all .275s;
 /*Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 	/**** Macros Section ****/
-	.macrosContainer__item, .macrosContainer__item:nth-child(2) {
+	.macrosContainer__item,
+	.macrosContainer__item:nth-child(2) {
 		align-self: center;
 		width: 90%;
 	}
@@ -686,7 +703,7 @@ transition: all .275s;
 		width: 90%;
 	}
 	.chartsHeading__type > h1 {
-		font-size: .8rem;
+		font-size: 0.8rem;
 	}
 	.food__chartsContainer {
 		flex-direction: column;
@@ -708,22 +725,26 @@ transition: all .275s;
 		font-size: 2.8rem;
 	}
 	.food__micros > p {
-		font-size: .8rem;
+		font-size: 0.8rem;
 		width: 80%;
 	}
-	.microsVitamins__infoContainer, .microsMinerals__infoContainer {
+	.microsVitamins__infoContainer,
+	.microsMinerals__infoContainer {
 		grid-template-columns: repeat(3, auto);
 		margin-left: -5%;
 	}
-	.microsVitamins__infoContainer > img, .microsMinerals__infoContainer > img {
+	.microsVitamins__infoContainer > img,
+	.microsMinerals__infoContainer > img {
 		width: 80%;
 		height: auto;
 	}
-	.microsVitamins__infoContainer > img:nth-child(2), .microsMinerals__infoContainer:first-of-type > img:nth-child(2) {
+	.microsVitamins__infoContainer > img:nth-child(2),
+	.microsMinerals__infoContainer:first-of-type > img:nth-child(2) {
 		width: 65%;
 		height: auto;
 	}
-	.microsVitamins__info > ul > li, .microsMinerals__info > ul > li {
+	.microsVitamins__info > ul > li,
+	.microsMinerals__info > ul > li {
 		margin-bottom: 1vh;
 	}
 
@@ -732,12 +753,14 @@ transition: all .275s;
 		font-size: 2.8rem;
 		text-align: center;
 	}
-	.tdeeForm__info, .tdeeForm__sex {
+	.tdeeForm__info,
+	.tdeeForm__sex {
 		flex-direction: column;
 		width: 70%;
 		padding: 4vh 0 0 0;
 	}
-	.tdeeForm__info > input, .tdeeForm__option {
+	.tdeeForm__info > input,
+	.tdeeForm__option {
 		width: 100%;
 		margin-bottom: 4vh;
 	}

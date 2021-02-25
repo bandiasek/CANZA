@@ -70,48 +70,58 @@ const Food = () => {
 	const [tdeeResult, setTdeeResult] = useState({
 		resultDef: '---',
 		result: '---',
-		resultSur: '---'
+		resultSur: '---',
 	})
 
 	// Checked handler
 	const checkHandler = (e) => {
-		if(e.target.name === 'sex') {
+		if (e.target.name === 'sex') {
 			setTdeeData({
 				...tdeeData,
-				sex: e.target.value
+				sex: e.target.value,
 			})
 		} else {
 			setTdeeData({
 				...tdeeData,
-				activityLevel: e.target.value
+				activityLevel: e.target.value,
 			})
-		}	
+		}
 	}
 
 	// Change input handler
 	const onChangeInput = (event) => {
 		event.preventDefault()
-			setTdeeData({
-				...tdeeData,
-				[event.currentTarget.name]: event.currentTarget.value,
-			}
-		)
+		setTdeeData({
+			...tdeeData,
+			[event.currentTarget.name]: event.currentTarget.value,
+		})
 	}
-	
+
 	// Calculate if filled
 	const calculateTdee = () => {
-		if(tdeeData.weight!=='' && tdeeData.height!=='' && tdeeData.age!=='' && tdeeData.sex!=='' && tdeeData.activityLevel!=='' ) {
-			const result = (((10 * tdeeData.weight.valueOf()) + (6.25 * tdeeData.height.valueOf()) - (5 * tdeeData.age.valueOf()) + (tdeeData.sex === '5' ? 5 : -161) )  * tdeeData.activityLevel.valueOf() )
+		if (
+			tdeeData.weight !== '' &&
+			tdeeData.height !== '' &&
+			tdeeData.age !== '' &&
+			tdeeData.sex !== '' &&
+			tdeeData.activityLevel !== ''
+		) {
+			const result =
+				(10 * tdeeData.weight.valueOf() +
+					6.25 * tdeeData.height.valueOf() -
+					5 * tdeeData.age.valueOf() +
+					(tdeeData.sex === '5' ? 5 : -161)) *
+				tdeeData.activityLevel.valueOf()
 			setTdeeResult({
 				result: Math.round(result),
-				resultDef:  Math.round(result - 200),
-				resultSur:  Math.round(result + 200)
+				resultDef: Math.round(result - 200),
+				resultSur: Math.round(result + 200),
 			})
 		}
 	}
 
 	// UseEffect runs every tdeeData changes
-	useEffect(()=>{
+	useEffect(() => {
 		calculateTdee()
 		console.log('aaaaaaaa')
 		console.log(tdeeData)
@@ -295,7 +305,10 @@ const Food = () => {
 					<span className='macros__green'>Mikro</span>živiny
 				</h1>
 				<p>
-					Neprinášajú do organizmu energiu, sú však dôležité faktory, ktoré spolupôsobia pri metabolizme. Ide najmä o vitamíny (napr. vitamín A, B, C, D, E, a K), minerálne látky (napr. vápnik a fosfor) a stopové prvky (napr. železo, zinok, selén a mangán). 
+					Neprinášajú do organizmu energiu, sú však dôležité faktory, ktoré
+					spolupôsobia pri metabolizme. Ide najmä o vitamíny (napr. vitamín A,
+					B, C, D, E, a K), minerálne látky (napr. vápnik a fosfor) a stopové
+					prvky (napr. železo, zinok, selén a mangán).
 				</p>
 				<div className='food__microsVitamins'>
 					<div className='microsVitamins__info'>
@@ -343,104 +356,178 @@ const Food = () => {
 					</div>
 				</div>
 
-				<div className="food__microsMinerals">
-					<div className="microsMinerals__img">
+				<div className='food__microsMinerals'>
+					<div className='microsMinerals__img'>
 						<img src={MicrosImg_2} alt='Minerály obrázok' />
 					</div>
-					<div className="microsMinerals__info">
+					<div className='microsMinerals__info'>
 						<h1>Minerály</h1>
 						<ul>
-							<li>- minerály udržiavajú správnu rovnováhu vody vo vašom tele</li>
-							<li>- podporujú zdravé kosti a stabilizujú bielkovinové štruktúry, ktoré získate z bielkovín, ktoré konzumujete, vrátane tých, ktoré tvoria vaše vlasy, pokožku a nechty</li>
+							<li>
+								- minerály udržiavajú správnu rovnováhu vody vo vašom tele
+							</li>
+							<li>
+								- podporujú zdravé kosti a stabilizujú bielkovinové štruktúry,
+								ktoré získate z bielkovín, ktoré konzumujete, vrátane tých,
+								ktoré tvoria vaše vlasy, pokožku a nechty
+							</li>
 							<li>- pomáhajú distribuovať kyslík do celého tela</li>
 						</ul>
-						<div className="microsMinerals__infoContainer">
-							<img src={Min_1} alt="Kalcium v brokolici"/>
-							<img src={Min_2} alt="Probiotiká v mlieku"/>
-							<img src={Min_3} alt="Magnésium v mandľách"/>
-							<img src={Min_4} alt="NA v kuracej nožke"/>
-							<img src={Min_5} alt="CL v riasach"/>
-							<img src={Min_6} alt="K v tekvici"/>
-							<img src={Min_7} alt="S vo vajci"/>
+						<div className='microsMinerals__infoContainer'>
+							<img src={Min_1} alt='Kalcium v brokolici' />
+							<img src={Min_2} alt='Probiotiká v mlieku' />
+							<img src={Min_3} alt='Magnésium v mandľách' />
+							<img src={Min_4} alt='NA v kuracej nožke' />
+							<img src={Min_5} alt='CL v riasach' />
+							<img src={Min_6} alt='K v tekvici' />
+							<img src={Min_7} alt='S vo vajci' />
 						</div>
 						<h1>Stopové prvky</h1>
-						<div className="microsMinerals__infoContainer">
-							<img src={Min_8} alt="FE v šaláte"/>
-							<img src={Min_9} alt="MN v ananáse"/>
-							<img src={Min_10} alt="CU v kraboch"/>
-							<img src={Min_11} alt="Zinok v mušliach"/>
-							<img src={Min_12} alt="I v riasach"/>
-							<img src={Min_13} alt="F v pomarančovom džúse"/>
-							<img src={Min_14} alt="SE v šunke"/>							
+						<div className='microsMinerals__infoContainer'>
+							<img src={Min_8} alt='FE v šaláte' />
+							<img src={Min_9} alt='MN v ananáse' />
+							<img src={Min_10} alt='CU v kraboch' />
+							<img src={Min_11} alt='Zinok v mušliach' />
+							<img src={Min_12} alt='I v riasach' />
+							<img src={Min_13} alt='F v pomarančovom džúse' />
+							<img src={Min_14} alt='SE v šunke' />
 						</div>
 					</div>
 				</div>
 			</div>
-			
-			<div className="food__tdee">
+
+			<div className='food__tdee'>
 				<h1>TDEE kalkulačka</h1>
-				<p>TDEE - Celkový výdaj energie za deň je údaj, ktorý vyjadruje, koľko kalórií potrebuje telo za celý deň spáliť. Zahŕňa tvoj bazálny metabolizmus, BMR - teda koľko spáli tvoje telo za deň v pokoji, vynásobený úrovňou aktivity. Aktivita môže byť zamestnanie, cvičenie alebo iné fyzické činnosti. Samozrejme, každe telo je iné, preto tento údaj slúži len orientačne.</p>
-				<div className="food__tdeeForm">
+				<p>
+					TDEE - Celkový výdaj energie za deň je údaj, ktorý vyjadruje,
+					koľko kalórií potrebuje telo za celý deň spáliť. Zahŕňa tvoj bazálny
+					metabolizmus, BMR - teda koľko spáli tvoje telo za deň v pokoji,
+					vynásobený úrovňou aktivity. Aktivita môže byť zamestnanie, cvičenie
+					alebo iné fyzické činnosti. Samozrejme, každe telo je iné, preto tento
+					údaj slúži len orientačne.
+				</p>
+				<div className='food__tdeeForm'>
 					<form>
 						<h1>Základné údaje</h1>
-						<div className="tdeeForm__info">
-							<input type="number" name="weight" min='1' required placeholder='VÁHA (kg)' onChange={e => onChangeInput(e)}/>
-							<input type="number" name="height" min='1' required placeholder='VÝŠKA (cm)' onChange={e => onChangeInput(e)}/>
-							<input type="number" name='age' min='1' required placeholder='VEK' onChange={e => onChangeInput(e)}/>
+						<div className='tdeeForm__info'>
+							<input
+								type='number'
+								name='weight'
+								min='1'
+								required
+								placeholder='VÁHA (kg)'
+								onChange={(e) => onChangeInput(e)}
+							/>
+							<input
+								type='number'
+								name='height'
+								min='1'
+								required
+								placeholder='VÝŠKA (cm)'
+								onChange={(e) => onChangeInput(e)}
+							/>
+							<input
+								type='number'
+								name='age'
+								min='1'
+								required
+								placeholder='VEK'
+								onChange={(e) => onChangeInput(e)}
+							/>
 						</div>
 						<h1>Pohlavie</h1>
-						<div className="tdeeForm__sex">
+						<div className='tdeeForm__sex'>
 							<div className='tdeeForm__option'>
-								<input type="checkbox" name="sex" id="male" value="5" onChange={e => checkHandler(e)} checked={ tdeeData.sex === '5' ? true : false }/>
-								<label htmlFor="male">MUŽ</label>
+								<input
+									type='checkbox'
+									name='sex'
+									id='male'
+									value='5'
+									onChange={(e) => checkHandler(e)}
+									checked={tdeeData.sex === '5' ? true : false}
+								/>
+								<label htmlFor='male'>MUŽ</label>
 							</div>
 							<div className='tdeeForm__option'>
-								<input type="checkbox" name="sex" id="female"value="-161" onChange={e => checkHandler(e)} checked={ tdeeData.sex === '-161' ? true : false }/>
-								<label htmlFor="female">ŽENA</label>
+								<input
+									type='checkbox'
+									name='sex'
+									id='female'
+									value='-161'
+									onChange={(e) => checkHandler(e)}
+									checked={tdeeData.sex === '-161' ? true : false}
+								/>
+								<label htmlFor='female'>ŽENA</label>
 							</div>
 						</div>
 						<h1>Aktivity za týždeň</h1>
-						<div className="tdeeForm__activity">
+						<div className='tdeeForm__activity'>
 							<div className='tdeeForm__option'>
-								<input type="checkbox" name="actvity" id="inactive" value="1.2" onChange={e => checkHandler(e)} checked={ tdeeData.activityLevel === '1.2' ? true : false }/>
-								<label htmlFor="inactive">Žiadne</label>
+								<input
+									type='checkbox'
+									name='actvity'
+									id='inactive'
+									value='1.2'
+									onChange={(e) => checkHandler(e)}
+									checked={tdeeData.activityLevel === '1.2' ? true : false}
+								/>
+								<label htmlFor='inactive'>Žiadne</label>
 							</div>
 							<div className='tdeeForm__option'>
-								<input type="checkbox" name="actvity" id="moder-active" value="1.375" onChange={e => checkHandler(e)} checked={ tdeeData.activityLevel === '1.375' ? true : false } />
-								<label htmlFor="moder-active">Menej ako 3</label>
+								<input
+									type='checkbox'
+									name='actvity'
+									id='moder-active'
+									value='1.375'
+									onChange={(e) => checkHandler(e)}
+									checked={tdeeData.activityLevel === '1.375' ? true : false}
+								/>
+								<label htmlFor='moder-active'>Menej ako 3</label>
 							</div>
 							<div className='f_a_t__breakRow'></div>
 							<div className='tdeeForm__option'>
-								<input type="checkbox" name="actvity" id="active" value="1.550" onChange={e => checkHandler(e)} checked={ tdeeData.activityLevel === '1.550' ? true : false }/>
-								<label htmlFor="active">3 - 5 krát</label>
+								<input
+									type='checkbox'
+									name='actvity'
+									id='active'
+									value='1.550'
+									onChange={(e) => checkHandler(e)}
+									checked={tdeeData.activityLevel === '1.550' ? true : false}
+								/>
+								<label htmlFor='active'>3 - 5 krát</label>
 							</div>
 							<div className='tdeeForm__option'>
-								<input type="checkbox" name="actvity" id="very-active" value="1.725"
-								onChange={e => checkHandler(e)} checked={ tdeeData.activityLevel === '1.725' ? true : false } />
-								<label htmlFor="very-active">Každý deň</label>
+								<input
+									type='checkbox'
+									name='actvity'
+									id='very-active'
+									value='1.725'
+									onChange={(e) => checkHandler(e)}
+									checked={tdeeData.activityLevel === '1.725' ? true : false}
+								/>
+								<label htmlFor='very-active'>Každý deň</label>
 							</div>
 						</div>
 					</form>
 				</div>
-				<div className="food__tdeeResult">
-					<div className="tdeeResult__item">
+				<div className='food__tdeeResult'>
+					<div className='tdeeResult__item'>
 						<h1>AK CHCETE SCHUDNÚŤ</h1>
 						<h2>{tdeeResult.resultDef}</h2>
 						<h1>KALÓRII DENNE</h1>
 					</div>
-					<div className="tdeeResult__item">
+					<div className='tdeeResult__item'>
 						<h1>AK NECHCETE MENIŤ</h1>
 						<h2>{tdeeResult.result}</h2>
 						<h1>KALÓRII DENNE</h1>
 					</div>
-					<div className="tdeeResult__item">
+					<div className='tdeeResult__item'>
 						<h1>AK CHCETE NABRAŤ</h1>
 						<h2>{tdeeResult.resultSur}</h2>
 						<h1>KALÓRII DENNE</h1>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	)
 }
