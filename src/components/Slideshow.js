@@ -1,11 +1,11 @@
 import React from 'react'
 import { Slide } from 'react-slideshow-image'
 
-import img1 from '../assets/slideShow/image_1.svg'
-import img2 from '../assets/slideShow/image_2.svg'
-import img3 from '../assets/slideShow/image_3.svg'
-import img4 from '../assets/slideShow/image_4.svg'
-import img5 from '../assets/slideShow/image_5.svg'
+import img1 from '../assets/slideShow/image_1.png'
+import img2 from '../assets/slideShow/image_2.png'
+import img3 from '../assets/slideShow/image_3.png'
+import img4 from '../assets/slideShow/image_4.png'
+import img5 from '../assets/slideShow/image_5.png'
 
 import 'react-slideshow-image/dist/styles.css'
 import '../styles/components/Slideshow.css'
@@ -42,7 +42,7 @@ const properties = {
 	autoplay: true,
 	canSwipe: false,
 	indicators: true,
-	indicators: (i) => <div className='each-indicator'></div>,
+	indicators: (i) => <div className='each-indicator' key={i} ></div>,
 }
 
 const Slideshow = () => {
