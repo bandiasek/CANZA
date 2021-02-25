@@ -121,7 +121,7 @@ const Home = () => {
 					</div>
 
 					<div className='home__FindMoreTraining'>
-						<a href='####'>
+						<a href='cvicenie'>
 							<h4>ZISTI VIAC KLIKNUTÍM</h4>
 						</a>
 						<img src={TrainingImg} alt='Training Img' />
@@ -129,7 +129,7 @@ const Home = () => {
 					</div>
 
 					<div className='home__FindMoreFood'>
-						<a href='####'>
+						<a href='strava'>
 							<h4>ZISTI VIAC KLIKNUTÍM</h4>
 						</a>
 						<img src={FoodImg} alt='Food Img' />

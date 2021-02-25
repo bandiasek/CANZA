@@ -286,6 +286,210 @@
 	margin-bottom: 0;
 }
 
+/*-----TDEE calculator-----*/
+.food__tdee {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin-top: 9vh;
+	margin-bottom: 1vh;
+}
+
+.food__tdee > h1 {
+	font-size: 4rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #C78567;
+}
+
+.food__tdee > p {
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 2px;
+	line-height: 1.6;
+	font-size: 0.8rem;
+	color: #7e7b7b;
+	width: 70%;
+	text-align: center;
+	margin-top: 4vh;
+	margin-bottom: 8vh;
+}
+
+.food__tdeeForm, .food__tdeeForm > form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: auto;
+}
+
+.food__tdeeForm > form > h1 {
+	font-size: 1.2rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 1px;
+	color: #C78567;
+	width: 100%;
+	text-align: center;
+	padding: 1vh 0 1vh 0;
+	background-image: url('../../assets/BG/FoodBG.svg');
+}
+
+.tdeeForm__info, .tdeeForm__sex {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 80%;
+	padding: 4vh 0 4vh 0;
+}
+
+.tdeeForm__info > input {
+	display: flex;
+	flex: .2;
+	height: 100%;
+	padding: 1rem 1.5rem;
+	font-size: 1rem;
+	font-family: "Raleway", sans-serif;
+	font-weight: 500;
+	letter-spacing: 2px;
+	border: 1px solid #eeeeee;
+	resize: none;	
+}
+
+.tdeeForm__option {
+	display: flex;
+	flex: .2;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+	align-items: center;
+	height: 100%;
+	border: 1px solid #eeeeee;
+	position: relative;
+}
+
+.tdeeForm__option > label {
+	font-size: 1rem;
+	font-family: "Raleway", sans-serif;
+	font-weight: 500;
+	letter-spacing: 2px;
+	width: 100%;
+	padding: 1rem 1.5rem 1rem 2.5rem;
+}
+
+/* TDEE FORM OPTION CHECKBOX STYLING */
+.tdeeForm__option > input[type="checkbox"]:not(:checked),
+.tdeeForm__option > input[type="checkbox"]:checked {
+  position: absolute;
+  right: 1rem;
+  opacity: 0.01;
+}
+
+	/* General label styling */
+.tdeeForm__option > input[type="checkbox"]:not(:checked) + label,
+.tdeeForm__option > input[type="checkbox"]:checked + label {
+	position: relative;	
+  cursor: pointer;
+}
+
+	/* General label styling when checked*/
+.tdeeForm__option > input[type="checkbox"]:checked + label {
+	background-color: #F2F2F2;
+}
+
+	/* General checkmark styling when NOT checked */
+.tdeeForm__option > input[type="checkbox"]:not(:checked) + label:before,
+.tdeeForm__option > input[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  right: 1rem;
+	align-self: center;
+  width: 1rem;
+  height: 1rem;
+  border: none;
+  -webkit-transition: all .275s;
+transition: all .275s;
+}
+
+	/* General checkmark styling when ISchecked */
+.tdeeForm__option > input[type="checkbox"]:not(:checked) + label:after,
+.tdeeForm__option > input[type="checkbox"]:checked + label:after {
+  content: ' \2713';
+  font-size: 1rem;
+  right: 1rem;
+  align-self: center;
+  position: absolute;
+  color: #628989;
+  -webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+	/* Adding some animation to it */
+.tdeeForm__option > input[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(45deg);
+	transform: scale(0) rotate(45deg);
+}
+
+.tdeeForm__option > input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(0);
+	transform: scale(1) rotate(0);
+}
+
+.tdeeForm__activity {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-content: center;
+	padding: 4vh 0 4vh 0;
+	width: 90%;	
+}
+
+/*-----Tdee results-----*/
+.food__tdeeResult {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 80%;
+	margin: 8vh 0 8vh 0;
+}
+
+.tdeeResult__item {
+	display: flex;
+	flex: .25;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 25vh;
+}
+
+.tdeeResult__item > h1 {
+	font-size: .9rem;
+	font-family: "Raleway", sans-serif;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 1.4;
+	color: #01011D;
+	text-align: center;
+}
+
+.tdeeResult__item > h1:last-of-type {
+	font-size: .8rem;
+	color: #8C8989;
+}
+
+.tdeeResult__item > h2 {
+	font-size: 7rem;
+	font-family: "Playfair Display", serif;
+	letter-spacing: 2px;
+	color: #C78567;
+}
+
 /*-----Media querrys-----*/
 /* Only for quoteSection Heading */
 @media (max-width: 1380px) {
@@ -332,6 +536,12 @@
 		left: -12%;
 		top: -12%;
 	}
+
+	/**** TDEE calculator ****/
+	.tdeeResult__item > h2 {
+		font-size: 5.5rem;
+	}
+
 }	
 
 /* Medium devices (tablets, less than 992px) */
@@ -386,6 +596,24 @@
 	.microsMinerals__infoContainer {
 		width: 100%;
 	}
+
+	/**** TDEE calculator ****/
+	.tdeeForm__activity {
+		flex-wrap: wrap;
+		padding: 4vh 0 0 0;
+	}
+	.tdeeForm__activity > .tdeeForm__option > label {
+		width: 20vw;
+	}
+	.tdeeForm__activity > .tdeeForm__option {
+		margin-bottom: 4vh;
+	}
+	.tdeeForm__info > input {
+		width: 20%;
+	}
+	.tdeeResult__item > h2 {
+		font-size: 5rem;
+	}	
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -419,6 +647,26 @@
 	}
 	.microsMinerals__infoContainer {
 		grid-template-columns: repeat(4, auto);	
+	}
+
+	/**** TDEE calculator ****/
+	.food__tdee > h1 {
+		font-size: 3.5rem;
+	}
+	.tdeeForm__sex > .tdeeForm__option > label{
+		width: 20vw;
+	}
+	.tdeeResult__item {
+		height: 20vh;
+	}
+	.tdeeResult__item > h1 {
+		font-size: .7rem;
+	}
+	.tdeeResult__item > h1:nth-of-type(2) {
+		font-size: .6rem;
+	}
+	.tdeeResult__item > h2 {
+		font-size: 3rem;
 	}
 }
 
@@ -477,5 +725,38 @@
 	}
 	.microsVitamins__info > ul > li, .microsMinerals__info > ul > li {
 		margin-bottom: 1vh;
+	}
+
+	/**** TDEE calculator ****/
+	.food__tdee > h1 {
+		font-size: 2.8rem;
+		text-align: center;
+	}
+	.tdeeForm__info, .tdeeForm__sex {
+		flex-direction: column;
+		width: 70%;
+		padding: 4vh 0 0 0;
+	}
+	.tdeeForm__info > input, .tdeeForm__option {
+		width: 100%;
+		margin-bottom: 4vh;
+	}
+	.tdeeForm__activity {
+		flex-wrap: nowrap;
+		flex-direction: column;
+		width: 70%;
+	}
+	.tdeeForm__option > label {
+		width: 100% !important;
+	}
+	.food__tdeeResult {
+		flex-direction: column;
+		margin: 8vh 0 0 0;
+	}
+	.tdeeResult__item {
+		margin-bottom: 6vh;
+	}
+	.tdeeResult__item > h2 {
+		margin: 1vh 0 1vh 0;
 	}
 }

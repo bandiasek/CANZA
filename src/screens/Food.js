@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import QuoteImg from '../assets/food/QuoteImg.svg'
 import BackImg from '../assets/food/BackImg.svg'
@@ -59,6 +59,64 @@ import '../styles/screens/FoodAndTraining.css'
 import '../styles/screens/Food.css'
 
 const Food = () => {
+	// Stpring tdee calculator data
+	const [tdeeData, setTdeeData] = useState({
+		weight: '',
+		height: '',
+		age: '',
+		sex: '',
+		activityLevel: '',
+	})
+	const [tdeeResult, setTdeeResult] = useState({
+		resultDef: '---',
+		result: '---',
+		resultSur: '---'
+	})
+
+	// Checked handler
+	const checkHandler = (e) => {
+		if(e.target.name === 'sex') {
+			setTdeeData({
+				...tdeeData,
+				sex: e.target.value
+			})
+		} else {
+			setTdeeData({
+				...tdeeData,
+				activityLevel: e.target.value
+			})
+		}	
+	}
+
+	// Change input handler
+	const onChangeInput = (event) => {
+		event.preventDefault()
+			setTdeeData({
+				...tdeeData,
+				[event.currentTarget.name]: event.currentTarget.value,
+			}
+		)
+	}
+	
+	// Calculate if filled
+	const calculateTdee = () => {
+		if(tdeeData.weight!=='' && tdeeData.height!=='' && tdeeData.age!=='' && tdeeData.sex!=='' && tdeeData.activityLevel!=='' ) {
+			const result = (((10 * tdeeData.weight.valueOf()) + (6.25 * tdeeData.height.valueOf()) - (5 * tdeeData.age.valueOf()) + (tdeeData.sex === '5' ? 5 : -161) )  * tdeeData.activityLevel.valueOf() )
+			setTdeeResult({
+				result: Math.round(result),
+				resultDef:  Math.round(result - 200),
+				resultSur:  Math.round(result + 200)
+			})
+		}
+	}
+
+	// UseEffect runs every tdeeData changes
+	useEffect(()=>{
+		calculateTdee()
+		console.log('aaaaaaaa')
+		console.log(tdeeData)
+	}, [tdeeData])
+
 	return (
 		<div className='f_a_t__containerFluid'>
 			<div className='f_a_t__welcomeSection'>
@@ -317,8 +375,72 @@ const Food = () => {
 						</div>
 					</div>
 				</div>
-
 			</div>
+			
+			<div className="food__tdee">
+				<h1>TDEE kalkulačka</h1>
+				<p>TDEE - Celkový výdaj energie za deň je údaj, ktorý vyjadruje, koľko kalórií potrebuje telo za celý deň spáliť. Zahŕňa tvoj bazálny metabolizmus, BMR - teda koľko spáli tvoje telo za deň v pokoji, vynásobený úrovňou aktivity. Aktivita môže byť zamestnanie, cvičenie alebo iné fyzické činnosti. Samozrejme, každe telo je iné, preto tento údaj slúži len orientačne.</p>
+				<div className="food__tdeeForm">
+					<form>
+						<h1>Základné údaje</h1>
+						<div className="tdeeForm__info">
+							<input type="number" name="weight" min='1' required placeholder='VÁHA (kg)' onChange={e => onChangeInput(e)}/>
+							<input type="number" name="height" min='1' required placeholder='VÝŠKA (cm)' onChange={e => onChangeInput(e)}/>
+							<input type="number" name='age' min='1' required placeholder='VEK' onChange={e => onChangeInput(e)}/>
+						</div>
+						<h1>Pohlavie</h1>
+						<div className="tdeeForm__sex">
+							<div className='tdeeForm__option'>
+								<input type="checkbox" name="sex" id="male" value="5" onChange={e => checkHandler(e)} checked={ tdeeData.sex === '5' ? true : false }/>
+								<label htmlFor="male">MUŽ</label>
+							</div>
+							<div className='tdeeForm__option'>
+								<input type="checkbox" name="sex" id="female"value="-161" onChange={e => checkHandler(e)} checked={ tdeeData.sex === '-161' ? true : false }/>
+								<label htmlFor="female">ŽENA</label>
+							</div>
+						</div>
+						<h1>Aktivity za týždeň</h1>
+						<div className="tdeeForm__activity">
+							<div className='tdeeForm__option'>
+								<input type="checkbox" name="actvity" id="inactive" value="1.2" onChange={e => checkHandler(e)} checked={ tdeeData.activityLevel === '1.2' ? true : false }/>
+								<label htmlFor="inactive">Žiadne</label>
+							</div>
+							<div className='tdeeForm__option'>
+								<input type="checkbox" name="actvity" id="moder-active" value="1.375" onChange={e => checkHandler(e)} checked={ tdeeData.activityLevel === '1.375' ? true : false } />
+								<label htmlFor="moder-active">Menej ako 3</label>
+							</div>
+							<div className='f_a_t__breakRow'></div>
+							<div className='tdeeForm__option'>
+								<input type="checkbox" name="actvity" id="active" value="1.550" onChange={e => checkHandler(e)} checked={ tdeeData.activityLevel === '1.550' ? true : false }/>
+								<label htmlFor="active">3 - 5 krát</label>
+							</div>
+							<div className='tdeeForm__option'>
+								<input type="checkbox" name="actvity" id="very-active" value="1.725"
+								onChange={e => checkHandler(e)} checked={ tdeeData.activityLevel === '1.725' ? true : false } />
+								<label htmlFor="very-active">Každý deň</label>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div className="food__tdeeResult">
+					<div className="tdeeResult__item">
+						<h1>AK CHCETE SCHUDNÚŤ</h1>
+						<h2>{tdeeResult.resultDef}</h2>
+						<h1>KALÓRII DENNE</h1>
+					</div>
+					<div className="tdeeResult__item">
+						<h1>AK NECHCETE MENIŤ</h1>
+						<h2>{tdeeResult.result}</h2>
+						<h1>KALÓRII DENNE</h1>
+					</div>
+					<div className="tdeeResult__item">
+						<h1>AK CHCETE NABRAŤ</h1>
+						<h2>{tdeeResult.resultSur}</h2>
+						<h1>KALÓRII DENNE</h1>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	)
 }
