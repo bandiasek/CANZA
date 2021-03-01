@@ -73,6 +73,15 @@ const Food = () => {
 		resultSur: '---',
 	})
 
+	const [macrosResult, setMacrosResult] = useState({
+		carbs: '---',
+		fat: '---',
+		proteins: '---',
+		kcalCarbs: 0,
+		kcalFat: 0,
+		kcalProt: 0
+	})
+
 	// Checked handler
 	const checkHandler = (e) => {
 		if (e.target.name === 'sex') {
