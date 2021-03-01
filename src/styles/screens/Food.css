@@ -446,6 +446,7 @@
 	transform: scale(1) rotate(0);
 }
 
+
 .tdeeForm__activity {
 	display: flex;
 	flex-direction: row;
@@ -750,7 +751,7 @@
 
 	/**** TDEE calculator ****/
 	.food__tdee > h1 {
-		font-size: 2.8rem;
+		font-size: 2.4rem;
 		text-align: center;
 	}
 	.tdeeForm__info,

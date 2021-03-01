@@ -223,7 +223,7 @@ function App() {
 							</div>
 
 							<div className='app__navbarRight'>
-								<div className='app__navbarExpandedOpacity'>
+								<div className='app__navbarExpandedOpacity' onClick={(e) => navbarMove()} >
 									<div className='app__navbarExpandedContainer'>
 										<div className='app__navbarExpandedItems'>
 											<img
