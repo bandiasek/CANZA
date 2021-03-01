@@ -3,7 +3,7 @@ import { FuncContext } from '../components/Context'
 
 import '../styles/screens/Blog.css'
 
-function Blog() {
+function Blog({propsIndex}) {
 	// Getting data from useContext
 	const { posts } = useContext(FuncContext)
 
@@ -17,6 +17,7 @@ function Blog() {
 		}
 		if (posts[index] !== null) {
 			setCurPost(posts[index])
+			window.scrollTo({top: 0, behavior: 'smooth'})
 		} else {
 			alert('Nastala chyba pri výbere Príspevku')
 		}
@@ -25,6 +26,9 @@ function Blog() {
 	// Hook that runs after viewing content
 	useEffect(() => {
 		// Setting cur posts to first index
+		if(propsIndex!==null) {
+			console.log(propsIndex)
+		}
 		onChangePost(null, 0)
 	}, [])
 

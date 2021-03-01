@@ -107,6 +107,11 @@
 	padding: 0 1.5rem 1.5rem 1.5rem;
 	transform: scale(1.2);
 	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.newestHeadingSwitch > img:active {
+	transform: scale(.9);
 }
 
 .home__newestPosts {
@@ -157,6 +162,11 @@
 	align-self: flex-end;
 	margin: 2.5rem 2rem 1.5rem 0;
 	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.home__FindMoreContainer > * > a:active {
+	transform: scale(.9);
 }
 
 .home__FindMoreContainer > * > a > h4 {
@@ -292,7 +302,13 @@
 	color: #638a8a;
 	padding: 3%;
 	border: 1.5px solid #638a8a;
+	transition: all 0.3s ease;
 }
+
+.home__contactForm > form > *:last-child:active {
+	transform: scale(.9);
+}
+
 ::placeholder {
 	color: #dedede;
 }
