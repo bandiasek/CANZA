@@ -307,6 +307,7 @@
 	line-height: 1.4;
 	letter-spacing: 2px;
 	color: #c78567;
+	max-width: 90%;
 }
 
 .food__tdee > p {
@@ -498,6 +499,139 @@
 	color: #c78567;
 }
 
+/*-----Calculating macros, macros result section-----*/
+.food__macrosResult {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	height: auto;
+	background-image: url("../../assets/BG/FoodBG.svg");
+	margin-top: 8vh;
+	padding-bottom: 4vh;
+}
+
+.food__macrosResult > h1 {
+	width: 80%;
+	font-size: 4rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #00001d;
+	text-align: center;
+	margin: 4vh 0 8vh 0;
+}
+
+.macrosResult__container {
+	display: flex;
+	flex: 1;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 88%;
+	height: 25vh;
+	background-color: #FFFFFF;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+	margin: 2vh 0 2vh 0 ;
+}
+
+.macrosResult__name {
+	display: flex;
+	flex: .25;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background-color: #C78567;
+}
+
+.macrosResult__name > h1 {
+	font-size: 2rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+.macrosResult__info {
+	display: flex;
+	flex: .6;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	height: 100%;
+}
+
+.macrosResult__infoHeading {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 70%;
+}
+
+.macrosResult__infoHeading > h1 {
+	font-size: 1.6rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #00001d;
+	text-align: center;
+}
+
+.macrosResult__small {
+	font-size: 50%;
+}
+
+.macrosResult__info > ul {
+	width: 100%;
+}
+
+.macrosResult__info > ul > li {
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 2px;
+	font-size: 0.8rem;
+	line-height: 1.6;
+	color: #7e7b7b;
+	margin-bottom: 0.4vh;
+}
+
+.macrosResult__result {
+	display: flex;
+	flex: .1;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	height: 100%;
+}
+
+.macrosResult__result > h1 {
+	font-size: 3rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #C78567;
+	text-align: center;
+}
+
+/*-----Macros section color edit-----*/
+.prot > .macrosResult__name {
+	background-color: #527474;
+}
+
+.prot > .macrosResult__result > h1 {
+	color: #527474;
+}
+
+.carbs > .macrosResult__name {
+	background-color: #71A0A0;
+}
+
+.carbs > .macrosResult__result > h1{
+	color: #71A0A0;
+}
+
 /*-----Media querrys-----*/
 /* Only for quoteSection Heading */
 @media (max-width: 1380px) {
@@ -505,6 +639,11 @@
 	.microsVitamins__infoContainer,
 	.microsMinerals__infoContainer {
 		grid-template-columns: repeat(5, auto);
+	}
+
+	/**** Macros result section ****/
+	.macrosResult__infoHeading {
+		width: 90%;
 	}
 }
 
@@ -553,6 +692,14 @@
 	/**** TDEE calculator ****/
 	.tdeeResult__item > h2 {
 		font-size: 5.5rem;
+	}
+
+	/**** Macros result section ****/
+	.macrosResult__info > ul > li {
+		font-size: 0.7rem;
+	}
+	.macrosResult__infoHeading > h1 {
+		font-size: 1.4rem;
 	}
 }
 
@@ -627,6 +774,35 @@
 	.tdeeResult__item > h2 {
 		font-size: 5rem;
 	}
+
+	/**** Macros result section ****/
+	.macrosResult__container {
+		flex-direction: column;
+		height: auto;
+	}
+	.macrosResult__name {
+		width: 100%;
+	}
+	.macrosResult__name > h1 {
+		margin: 2vh 0 2vh 0;
+	}
+	.macrosResult__info {
+		margin: 4vh 0;
+		max-width: 90%;
+	}
+	.macrosResult__info > ul > li {
+		font-size: 0.8rem;
+	}
+	.macrosResult__infoHeading {
+		justify-content: space-evenly;
+		margin-bottom: 4vh;
+	}
+	.macrosResult__infoHeading > h1 {
+		font-size: 1.6rem;
+	}
+	.macrosResult__result {
+		margin-bottom: 4vh;
+	}
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -684,6 +860,17 @@
 	}
 	.tdeeResult__item > h2 {
 		font-size: 3rem;
+	}
+
+	/**** Macros result section ****/
+	.food__macrosResult > h1 {
+		font-size: 3.5rem;
+	}
+	.macrosResult__infoHeading {
+		flex-direction: column;
+	}
+	.macrosResult__infoHeading > h1:first-of-type {
+		margin-bottom: 1vh;
 	}
 }
 
@@ -783,4 +970,17 @@
 	.tdeeResult__item > h2 {
 		margin: 1vh 0 1vh 0;
 	}
+
+	/**** Macros result section ****/
+	.food__macrosResult > h1 {
+		font-size: 2.8rem;
+	}
+	.macrosResult__infoHeading > h1 {
+		font-size: 1.2rem;
+	}
+	.macrosResult__info > ul > li {
+		font-size: .7rem;
+		margin: 1vh 0;
+	}
+	
 }

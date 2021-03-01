@@ -77,9 +77,9 @@ const Food = () => {
 		carbs: '---',
 		fat: '---',
 		proteins: '---',
-		kcalCarbs: 0,
-		kcalFat: 0,
-		kcalProt: 0
+		kcalCarbs: '---',
+		kcalFat: '---',
+		kcalProt: '---'
 	})
 
 	// Checked handler
@@ -129,12 +129,36 @@ const Food = () => {
 		}
 	}
 
-	// UseEffect runs every tdeeData changes
+	// Calculate macros result 
+	const calculateMacros = () => {
+		if(tdeeResult.result !== '---') {
+			const fatSubResult = Math.round(tdeeResult.result.valueOf() * 0.3)
+			const protSubResult = Math.round(tdeeResult.result.valueOf() * 0.3)
+			const carbsSubResult = Math.round(tdeeResult.result.valueOf() * 0.4)
+			const fatResult = Math.round(fatSubResult / 9)
+			const protResult = Math.round(protSubResult / 4)
+			const carbsResult = Math.round(carbsSubResult / 4)
+
+			setMacrosResult({
+				carbs: carbsResult.toString(),
+				fat: fatResult.toString(),
+				proteins: protResult.toString(),
+				kcalCarbs: carbsSubResult.toString(),
+				kcalFat: fatSubResult.toString(),
+				kcalProt: protSubResult.toString()
+			})
+		}
+	}
+
+	// UseEffect runs every tdeeData changes, tdeeResult changes
 	useEffect(() => {
 		calculateTdee()
-		console.log('aaaaaaaa')
-		console.log(tdeeData)
 	}, [tdeeData])
+
+	useEffect(()=> {
+		calculateMacros()
+		console.log(macrosResult)
+	}, [tdeeResult])
 
 	return (
 		<div className='f_a_t__containerFluid'>
@@ -537,6 +561,104 @@ const Food = () => {
 					</div>
 				</div>
 			</div>
+
+			<div className="food__macrosResult">
+				<h1>Vyvážený Jedálniček</h1>
+				<div className="macrosResult__container fat">
+					<div className="macrosResult__name">
+						<h1>TUKY</h1>
+					</div>
+					<div className="macrosResult__info">
+						<div className="macrosResult__infoHeading">
+							<h1>
+								{tdeeResult.result}<span className="macrosResult__small">kcal </span>
+								 * 0.3 = {' '} 
+								{macrosResult.kcalFat}<span className="macrosResult__small">kcal </span>
+							</h1>
+							<h1>
+								{macrosResult.kcalFat}<span className="macrosResult__small">kcal </span>
+								 / 9<span className="macrosResult__small">kcal </span>
+								= {' '} 
+								{macrosResult.fat}<span className="macrosResult__small">g </span>
+							</h1>
+						</div>
+						<ul>
+							<li> - 1g tuku má 9 kcal</li>
+							<li> - 30 % z celodenného príjmu by mali tvoriť tuky</li>
+							<li> - u mužov sa používa taktiež pomer 0.8g až 1g na 1kg telesnej váhy</li>
+							<li> - u žien z dôvodu zachovania menštruačného cyklu sa používa pomer 1.2g až 1.6g na 1 kg telesnej váhy</li>
+						</ul>
+					</div>
+					<div className="macrosResult__result">
+						<h1>
+							{macrosResult.fat}<span className="macrosResult__small">g </span>
+						</h1>	
+					</div>
+				</div>
+				<div className="macrosResult__container prot">
+					<div className="macrosResult__name">
+						<h1>BIELKOVINY</h1>
+					</div>
+					<div className="macrosResult__info">
+						<div className="macrosResult__infoHeading">
+							<h1>
+								{tdeeResult.result}<span className="macrosResult__small">kcal </span>
+								 * 0.3 = {' '} 
+								{macrosResult.kcalProt}<span className="macrosResult__small">kcal </span>
+							</h1>
+							<h1>
+								{macrosResult.kcalProt}<span className="macrosResult__small">kcal </span>
+								 / 4<span className="macrosResult__small">kcal </span>
+								= {' '} 
+								{macrosResult.proteins}<span className="macrosResult__small">g </span>
+							</h1>
+						</div>
+						<ul>
+							<li> - 1g bielkoviny má 4 kcal</li>
+							<li> - 30 % z celodenného príjmu by mali tvoriť bielkoviny</li>
+							<li> - priemerné ľudské telo dokáže vstrebať maximálne 2.2g bielkoviny na 1 kg telesnej váhy</li>
+							<li> - pri prekročení maximálneho príjmu bielkovín hrozia zažívacie ťažkosti, smradľavý pot a podobne</li>
+						</ul>
+					</div>
+					<div className="macrosResult__result">
+						<h1>
+							{macrosResult.proteins}<span className="macrosResult__small">g</span>
+						</h1>	
+					</div>
+				</div>
+				<div className="macrosResult__container carbs">
+					<div className="macrosResult__name">
+						<h1>SACHARIDY</h1>
+					</div>
+					<div className="macrosResult__info">
+						<div className="macrosResult__infoHeading">
+							<h1>
+								{tdeeResult.result}<span className="macrosResult__small">kcal </span>
+								 * 0.4 = {' '} 
+								{macrosResult.kcalCarbs}<span className="macrosResult__small">kcal </span>
+							</h1>
+							<h1>
+								{macrosResult.kcalCarbs}<span className="macrosResult__small">kcal </span>
+								 / 4<span className="macrosResult__small">kcal </span>
+								= {' '} 
+								{macrosResult.carbs}<span className="macrosResult__small">g </span>
+							</h1>
+						</div>
+						<ul>
+							<li> - 1g sacharidu má 4 kcal</li>
+							<li> - 40 % z celodenného príjmu by mali tvoriť sacharidy</li>
+							<li> - sacharidy sú potrebné pre správne vstrebávanie bielkovín a celkový chod organizmu</li>
+							<li> - netreba zabúdať na vlákninu, na 1000 kcal je potrebné konzumovať 14g vlákniny v strave</li>
+						</ul>
+					</div>
+					<div className="macrosResult__result">
+						<h1>
+							{macrosResult.carbs}<span className="macrosResult__small">g </span>
+						</h1>	
+					</div>
+				</div>
+			</div>
+
 		</div>
 	)
 }
