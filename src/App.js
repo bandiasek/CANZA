@@ -162,10 +162,10 @@ function App() {
 	}))
 
 	const comparePosts = (a, b) => {
-		if (a.data.createdAt < b.data.createdAt) {
+		if (a.data.createdAt > b.data.createdAt) {
 			return -1
 		}
-		if (a.data.createdAt > b.data.createdAt) {
+		if (a.data.createdAt < b.data.createdAt) {
 			return 1
 		}
 		return 0
