@@ -627,7 +627,8 @@
 	background-color: #71a0a0;
 }
 
-.carbs > .macrosResult__result > h1 , .food__waterEdit {
+.carbs > .macrosResult__result > h1,
+.food__waterEdit {
 	color: #71a0a0;
 }
 
@@ -672,7 +673,7 @@
 
 .waterContainer__info {
 	display: flex;
-	flex: .6;
+	flex: 0.6;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
@@ -728,21 +729,69 @@
 	margin-top: 2vh;
 	font-family: "Raleway", sans-serif;
 	letter-spacing: 1px;
-	font-size: .9rem;
+	font-size: 0.9rem;
 	line-height: 1.2;
-	color: #01011D;
+	color: #01011d;
 	font-weight: bold;
 	text-align: center;
 }
 
 .waterContainer__img {
 	display: flex;
-	flex: .3;
+	flex: 0.3;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: auto;
+}
 
+/*-----Water text-----*/
+.food__water > h2 {
+	font-family: "Raleway", sans-serif;
+	letter-spacing: 2px;
+	line-height: 1.6;
+	font-size: 0.8rem;
+	color: #00001d;
+	width: 80%;
+	text-align: center;
+	margin-bottom: 8vh;
+}
+
+/*-----Ending Quote-----*/
+.food__end {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 6vh 0 6vh 0;
+	width: 100%;
+	background-image: url("../../assets/BG/FoodBG.svg");
+}
+
+.food__end > h1 {
+	font-size: 2rem;
+	font-family: "Raleway", serif;
+	line-height: 1.4;
+	letter-spacing: 4px;
+	color: #00001d;
+	text-align: center;
+	width: 80%;
+	margin-bottom: 2vh;
+}
+
+.food__end > h2 {
+	font-size: 1.2rem;
+	font-family: "Playfair Display", serif;
+	line-height: 1.4;
+	letter-spacing: 2px;
+	color: #7e7b7b;
+	text-align: right;
+	width: 85%;
+}
+
+.foodEnd__edit {
+	color: #c78567;
+	font-weight: bold;
 }
 
 /*-----Media querrys-----*/
@@ -918,7 +967,8 @@
 	}
 
 	/**** Water section ****/
-	.food__waterContainer, .waterContainer__info {
+	.food__waterContainer,
+	.waterContainer__info {
 		flex-direction: column;
 		align-items: center;
 	}
@@ -926,8 +976,6 @@
 	.waterContainer__img {
 		display: none;
 	}
-	
-		
 }
 
 /* Small devices (landscape phones, less than 768px) */
@@ -1123,13 +1171,21 @@
 	}
 	.waterContainerInfo__item {
 		align-items: center;
-		flex: .3;
+		flex: 0.3;
 	}
 	.waterContainerInfo__item > img {
 		width: 80%;
 		height: auto;
 	}
 	.waterContainerInfo__item > h1 {
-		font-size: .7rem;
+		font-size: 0.7rem;
+	}
+
+	/**** Food ending ****/
+	.food__end > h1 {
+		font-size: 1.6rem;
+	}
+	.food__end > h2 {
+		font-size: 1rem;
 	}
 }

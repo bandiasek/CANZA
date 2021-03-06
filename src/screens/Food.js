@@ -563,7 +563,7 @@ const Food = () => {
 			</div>
 
 			<div className='food__macrosResult'>
-				<h1>Vyvážený Jedálniček</h1>
+				<h1>Denný kalorický príjem</h1>
 				<div className='macrosResult__container fat'>
 					<div className='macrosResult__name'>
 						<h1>TUKY</h1>
@@ -691,40 +691,71 @@ const Food = () => {
 					</div>
 				</div>
 			</div>
-			<div className="food__water">
+			<div className='food__water'>
 				<h1>
-					<span className="macros__green">Pitný </span>
+					<span className='macros__green'>Pitný </span>
 					režim
 				</h1>
-				<p>Tekutiny sú tým najzásadnejším, čo do svojho organizmu privádzame. Naše telo je tvorené z viac ako 70% práve vody. Jej množstvo záleží na mnohých faktoroch, na pohlaví, na veku, na aktuálnej úrovni množstva svalovej hmoty alebo napríklad aj na tom, či ste chorí alebo či ste úplne fit. Všetky tieto faktory ovplyvňujú množstvo tekutín v organizme. </p>
-			</div>
-			<div className="food__waterContainer">
-				<div className="waterContainer__info">
-					<h1>Príjem tekutín pri športovej aktivite</h1>
-					<ul>
-						<li>- človek by mal v priemere za deň prijať 30-50 ml tekutín na 1kg svojej váhy</li>
-						<li>- bunkové procesy v tele sú založené na vode, a bez nej nedokážeme správne fungovať</li>
-						<li>- pri zvýšenej fyzickej aktivite, je príjem tekutín ešte dôležitejší</li>
-					</ul>
-					<div className="waterContainerInfo__container">
-						<div className="waterContainerInfo__item">
-							<img src={Water250} alt="Voda pred tréningom 250ml"/>
-							<h1>tesne pred začatím tréningu</h1>
-						</div>
-						<div className="waterContainerInfo__item">
-							<img src={Water200} alt="Voda na každých 15 min tréningu"/>
-							<h1>na každých 15 minút tréningu</h1>
-						</div>
-						<div className="waterContainerInfo__item">
-							<img src={Water250} alt="Voda po ukončení tréningu"/>
-							<h1>po skončené tréningu</h1>
+				<p>
+					Tekutiny sú tým najzásadnejším, čo do svojho organizmu privádzame.
+					Naše telo je tvorené z viac ako 70% práve vody. Jej množstvo záleží na
+					mnohých faktoroch, na pohlaví, na veku, na aktuálnej úrovni množstva
+					svalovej hmoty alebo napríklad aj na tom, či ste chorí alebo či ste
+					úplne fit. Všetky tieto faktory ovplyvňujú množstvo tekutín v
+					organizme.{' '}
+				</p>
+				<div className='food__waterContainer'>
+					<div className='waterContainer__info'>
+						<h1>Príjem tekutín pri športovej aktivite</h1>
+						<ul>
+							<li>
+								- človek by mal v priemere za deň prijať 30-50 ml tekutín na 1kg
+								svojej váhy
+							</li>
+							<li>
+								- bunkové procesy v tele sú založené na vode, a bez nej
+								nedokážeme správne fungovať
+							</li>
+							<li>
+								- pri zvýšenej fyzickej aktivite, je príjem tekutín ešte
+								dôležitejší
+							</li>
+						</ul>
+						<div className='waterContainerInfo__container'>
+							<div className='waterContainerInfo__item'>
+								<img src={Water250} alt='Voda pred tréningom 250ml' />
+								<h1>tesne pred začatím tréningu</h1>
+							</div>
+							<div className='waterContainerInfo__item'>
+								<img src={Water200} alt='Voda na každých 15 min tréningu' />
+								<h1>na každých 15 minút tréningu</h1>
+							</div>
+							<div className='waterContainerInfo__item'>
+								<img src={Water250} alt='Voda po ukončení tréningu' />
+								<h1>po skončené tréningu</h1>
+							</div>
 						</div>
 					</div>
+					<div className='waterContainer__img'>
+						<img src={WaterImg} alt='Obrázok vody' />
+					</div>
 				</div>
-				<div className="waterContainer__img">
-					<img src={WaterImg} alt="Obrázok vody"/>
-				</div>
+				<h2>
+					Myslite teda na svoje telo, myslite na to, že musíte piť. Dostatočný
+					príjem vody je nevyhnutný na zabezpečenie správneho fungovania
+					metabolizmu, celkovú hydratáciu a odvod škodlivých látok z tela.
+				</h2>
 			</div>
+			<div className='food__end'>
+				<h1>
+					{'„'}
+					<span className='foodEnd__edit'>Úspech</span> je súčet malých snáh
+					opakovaných <span className='foodEnd__edit'>deň čo deň</span>
+					{'”'}
+				</h1>
+				<h2>- Robert Collier</h2>
+			</div>
+			<span className='foodEnd__edit'></span>
 		</div>
 	)
 }
