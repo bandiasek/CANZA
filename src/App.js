@@ -196,6 +196,23 @@ function App() {
 		}
 	}
 
+	// Function that checks scroll level
+	const scrollTopCheck = () => {
+		var scrollY = window.scrollY
+		if(scrollY < 900) {
+			document.querySelector('.app__arrow').style.display = 'none';
+		} else {
+			document.querySelector('.app__arrow').style.display = 'block';
+		}
+	}
+
+	window.addEventListener('scroll', scrollTopCheck)
+
+	// Function that checks scroll level
+	const scrollTop = () => {
+		window.scrollTo({top: 0, behavior: 'smooth'})
+	}
+
 	// Fetching posts at the start of the page
 	useEffect(() => {
 		functions.getPosts()
@@ -286,6 +303,7 @@ function App() {
 								/>
 							</div>
 						</div>
+						<div className="app__arrow" onClick={ e => scrollTop() }></div>
 						<Switch>
 							<Route path='/' exact component={Home} />
 							<Route path='/createpost' component={CreatePost} />
