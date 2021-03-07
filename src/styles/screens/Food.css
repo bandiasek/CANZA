@@ -668,7 +668,7 @@
 	justify-content: space-evenly;
 	align-items: flex-start;
 	width: 90%;
-	margin: 8vh 0 8vh 0;
+	margin: 8vh 0 2vh 0;
 }
 
 .waterContainer__info {
@@ -752,7 +752,7 @@
 	line-height: 1.6;
 	font-size: 0.8rem;
 	color: #00001d;
-	width: 80%;
+	width: 70%;
 	text-align: center;
 	margin-bottom: 8vh;
 }
