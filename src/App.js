@@ -22,6 +22,7 @@ import PageNotFound from './screens/PageNotFound'
 import Logo from './assets/LogoNav.svg'
 import Ham from './assets/navbar/HamNav.svg'
 import Back from './assets/navbar/Back.svg'
+import ArrowScroll from './assets/arrows/scrollTop.svg'
 
 function App() {
 	// Storing posts
@@ -199,10 +200,17 @@ function App() {
 	// Function that checks scroll level
 	const scrollTopCheck = () => {
 		var scrollY = window.scrollY
-		if(scrollY < 900) {
-			document.querySelector('.app__arrow').style.display = 'none';
-		} else {
-			document.querySelector('.app__arrow').style.display = 'block';
+		var winHeight = window.innerHeight
+		var winWidth = window.innerWidth
+
+		if (scrollY < winHeight) {
+			document.querySelector('.app__arrow').style.right = '-100px'
+		} else if (scrollY > winHeight) {
+			if (winWidth < 576) {
+				document.querySelector('.app__arrow').style.right = '+10px'
+			} else if (winWidth > 576) {
+				document.querySelector('.app__arrow').style.right = '+50px'
+			}
 		}
 	}
 
@@ -210,7 +218,7 @@ function App() {
 
 	// Function that checks scroll level
 	const scrollTop = () => {
-		window.scrollTo({top: 0, behavior: 'smooth'})
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 
 	// Fetching posts at the start of the page
@@ -240,7 +248,10 @@ function App() {
 							</div>
 
 							<div className='app__navbarRight'>
-								<div className='app__navbarExpandedOpacity' onClick={(e) => navbarMove()} >
+								<div
+									className='app__navbarExpandedOpacity'
+									onClick={(e) => navbarMove()}
+								>
 									<div className='app__navbarExpandedContainer'>
 										<div className='app__navbarExpandedItems'>
 											<img
@@ -303,7 +314,9 @@ function App() {
 								/>
 							</div>
 						</div>
-						<div className="app__arrow" onClick={ e => scrollTop() }></div>
+						<div className='app__arrow' onClick={(e) => scrollTop()}>
+							<img src={ArrowScroll} alt='Šipka na scrollovanie' />
+						</div>
 						<Switch>
 							<Route path='/' exact component={Home} />
 							<Route path='/createpost' component={CreatePost} />
