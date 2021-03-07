@@ -4,7 +4,7 @@ import '../styles/components/Post.css'
 
 const Post = ({ author, category, createdAt, name, text, imgPath }) => {
 	return (
-		<div class='post__continer'>
+		<div className='post__continer'>
 			<h1>{name}</h1>
 			<h3>{author}</h3>
 			<h3>{category}</h3>

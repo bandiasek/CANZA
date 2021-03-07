@@ -27,7 +27,7 @@ import ArrowScroll from './assets/arrows/scrollTop.svg'
 function App() {
 	// Storing posts
 	const [posts, setPosts] = useState([])
-	const [isLogged, setIsLogged] = useState(false)
+	const [isLogged, setIsLogged] = useState(true)
 	const [isLoaded, setIsLoaded] = useState(false)
 	const [navbarExpanded, setNavbarExpanded] = useState(true)
 

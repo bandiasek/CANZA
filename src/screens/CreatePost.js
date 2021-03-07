@@ -93,10 +93,10 @@ const CreatePost = () => {
 		delPost(postId)
 	}
 	return (
-		<div class='createpost__container'>
+		<div className='createpost__container'>
 			{isLogged ? (
-				<div class='createpost__containerLoggedIn'>
-					<div class='continerLoggedIn__form'>
+				<div className='createpost__containerLoggedIn'>
+					<div className='continerLoggedIn__form'>
 						<form
 							onSubmit={(event) =>
 								onSubmit(
@@ -170,32 +170,34 @@ const CreatePost = () => {
 						</form>
 					</div>
 
-					<div class='continerLoggedIn__posts'>
-						{posts.map((item) => (
-							<div class='posts__onePost'>
-								<Post
-									author={item.data.author}
-									category={item.data.category}
-									createdAt={item.data.createdAt}
-									name={item.data.name}
-									text={item.data.text}
-									imgPath={item.data.imgPath}
-									key={item.id}
-								/>
-								<button
-									onClick={(event) =>
-										onDelete(event, item.id, item.data.imgPath)
-									}
-									key={item.id + '2'}
-								>
-									delete
-								</button>
-							</div>
-						))}
+					<div className='posts__containerGrid'>
+						<div className='continerLoggedIn__posts'>
+							{posts.map((item) => (
+								<div className='posts__onePost'>
+									<Post
+										author={item.data.author}
+										category={item.data.category}
+										createdAt={item.data.createdAt}
+										name={item.data.name}
+										text={item.data.text}
+										imgPath={item.data.imgPath}
+										key={item.id}
+									/>
+									<button
+										onClick={(event) =>
+											onDelete(event, item.id, item.data.imgPath)
+										}
+										key={item.id + '2'}
+									>
+										delete
+									</button>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
 			) : (
-				<div class='createpost__signIn'>
+				<div className='createpost__signIn'>
 					<form onSubmit={(event) => signIn(event, user.email, user.pswd)}>
 						<h1>Login</h1>
 						<input

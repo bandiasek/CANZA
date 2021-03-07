@@ -751,7 +751,7 @@ const Food = () => {
 					{'„'}
 					<span className='foodEnd__edit'>Úspech</span> je súčet malých snáh
 					opakovaných <span className='foodEnd__edit'>deň čo deň</span>
-					{'”'}
+					{'.”'}
 				</h1>
 				<h2>- Robert Collier</h2>
 			</div>
