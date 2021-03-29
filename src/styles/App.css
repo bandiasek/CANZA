@@ -214,10 +214,6 @@
 	margin-top: 4px;
 }
 
-.home__footerRight > div:nth-child(2) {
-	margin-top: -25px;
-}
-
 /*-----Scroll Arrow-----*/
 .app__arrow {
 	position: fixed;
@@ -269,6 +265,10 @@
 		flex: 1;
 		flex-direction: row;
 		justify-content: space-around;
+	}
+
+	.home__footerRight > div:nth-child(2) {
+		margin-top: -25px;
 	}
 }
 

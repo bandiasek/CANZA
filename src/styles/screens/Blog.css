@@ -270,4 +270,7 @@
 	.blog__description > h1 {
 		font-size: 2rem;
 	}
+	.blog__postText {
+		width: 82%;
+	}
 }
