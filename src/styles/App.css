@@ -30,6 +30,7 @@
 .app__navbarLeft {
 	display: flex;
 	flex-direction: row;
+	cursor: pointer;
 }
 
 .app__navbarLeft > h3 {

@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import {
-	Route,
-	BrowserRouter as Router,
-	NavLink,
-	Switch,
-} from 'react-router-dom'
+import { Route, NavLink, Switch } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+
 import emailjs from 'emailjs-com'
 import './styles/reset.css'
 import './styles/App.css'
@@ -27,7 +24,7 @@ import ArrowScroll from './assets/arrows/scrollTop.svg'
 function App() {
 	// Storing posts
 	const [posts, setPosts] = useState([])
-	const [isLogged, setIsLogged] = useState(true)
+	const [isLogged, setIsLogged] = useState(false)
 	const [isLoaded, setIsLoaded] = useState(false)
 	const [navbarExpanded, setNavbarExpanded] = useState(true)
 
@@ -221,6 +218,12 @@ function App() {
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 
+	// Funcion that handles logo, redirecting to home page
+	const history = useHistory()
+	const redirectHome = () => {
+		history.push('/')
+	}
+
 	// Fetching posts at the start of the page
 	useEffect(() => {
 		functions.getPosts()
@@ -237,113 +240,111 @@ function App() {
 	if (isLoaded) {
 		return (
 			<FuncContext.Provider value={functions}>
-				<Router>
-					<div className='container'>
-						<div className='app__navbar'>
-							<div className='app__navbarLeft'>
-								<img src={Logo} alt='Navbar Canza Logo' />
-								<h3>
-									CAN<span className='app__navbarColor'>ZA</span>
-								</h3>
-							</div>
+				<div className='container'>
+					<div className='app__navbar'>
+						<div className='app__navbarLeft' onClick={redirectHome}>
+							<img src={Logo} alt='Navbar Canza Logo' />
+							<h3>
+								CAN<span className='app__navbarColor'>ZA</span>
+							</h3>
+						</div>
 
-							<div className='app__navbarRight'>
-								<div
-									className='app__navbarExpandedOpacity'
-									onClick={(e) => navbarMove()}
-								>
-									<div className='app__navbarExpandedContainer'>
-										<div className='app__navbarExpandedItems'>
-											<img
-												src={Back}
-												alt='Back image (X)'
-												onClick={(e) => {
-													e.preventDefault()
-													navbarMove()
-												}}
-											/>
-											<div className='app__navbarUl'>
-												<NavLink
-													className='app__navbarItem'
-													exact={true}
-													activeClassName='active'
-													onClick={(e) => navbarMove()}
-													to='/'
-												>
-													DOMOV
-												</NavLink>
-												<NavLink
-													className='app__navbarItem'
-													exact={true}
-													activeClassName='active'
-													onClick={(e) => navbarMove()}
-													to='/cvicenie'
-												>
-													CVIČENIE
-												</NavLink>
-												<NavLink
-													className='app__navbarItem'
-													exact={true}
-													activeClassName='active'
-													onClick={(e) => navbarMove()}
-													to='/strava'
-												>
-													STRAVA
-												</NavLink>
-												<NavLink
-													className='app__navbarItem'
-													exact={true}
-													activeClassName='active'
-													onClick={(e) => navbarMove()}
-													to='/blog'
-												>
-													BLOG
-												</NavLink>
-											</div>
+						<div className='app__navbarRight'>
+							<div
+								className='app__navbarExpandedOpacity'
+								onClick={(e) => navbarMove()}
+							>
+								<div className='app__navbarExpandedContainer'>
+									<div className='app__navbarExpandedItems'>
+										<img
+											src={Back}
+											alt='Back image (X)'
+											onClick={(e) => {
+												e.preventDefault()
+												navbarMove()
+											}}
+										/>
+										<div className='app__navbarUl'>
+											<NavLink
+												className='app__navbarItem'
+												exact={true}
+												activeClassName='active'
+												onClick={(e) => navbarMove()}
+												to='/'
+											>
+												DOMOV
+											</NavLink>
+											<NavLink
+												className='app__navbarItem'
+												exact={true}
+												activeClassName='active'
+												onClick={(e) => navbarMove()}
+												to='/cvicenie'
+											>
+												CVIČENIE
+											</NavLink>
+											<NavLink
+												className='app__navbarItem'
+												exact={true}
+												activeClassName='active'
+												onClick={(e) => navbarMove()}
+												to='/strava'
+											>
+												STRAVA
+											</NavLink>
+											<NavLink
+												className='app__navbarItem'
+												exact={true}
+												activeClassName='active'
+												onClick={(e) => navbarMove()}
+												to='/blog'
+											>
+												BLOG
+											</NavLink>
 										</div>
 									</div>
 								</div>
-
-								<img
-									src={Ham}
-									alt='Navigation hamburger Icon'
-									onClick={(e) => {
-										e.preventDefault()
-										navbarMove()
-									}}
-								/>
 							</div>
-						</div>
-						<div className='app__arrow' onClick={(e) => scrollTop()}>
-							<img src={ArrowScroll} alt='Šipka na scrollovanie' />
-						</div>
-						<Switch>
-							<Route path='/' exact component={Home} />
-							<Route path='/createpost' component={CreatePost} />
-							<Route path='/blog' component={Blog} />
-							<Route path='/strava' component={Food} />
-							<Route path='/cvicenie' component={Training} />
-							<Route path='' component={PageNotFound} />
-						</Switch>
-					</div>
 
-					<div className='home__footer'>
-						<div className='home__footerLeft'></div>
-
-						<div className='home__footerRight'>
-							<div>
-								<h3>WE ARE</h3>
-								<h1>CANZA</h1>
-							</div>
-							<div>
-								<h5>&copy;Ondrej Brendza</h5>
-								<h5>&copy;Miriam Staneková</h5>
-								<h5>&copy;Project Samson</h5>
-								<h5>2020</h5>
-							</div>
+							<img
+								src={Ham}
+								alt='Navigation hamburger Icon'
+								onClick={(e) => {
+									e.preventDefault()
+									navbarMove()
+								}}
+							/>
 						</div>
 					</div>
-				</Router>
+					<div className='app__arrow' onClick={(e) => scrollTop()}>
+						<img src={ArrowScroll} alt='Šipka na scrollovanie' />
+					</div>
+					<Switch>
+						<Route path='/' exact component={Home} />
+						<Route path='/createpost' component={CreatePost} />
+						<Route path='/blog' component={Blog} />
+						<Route path='/strava' component={Food} />
+						<Route path='/cvicenie' component={Training} />
+						<Route path='' component={PageNotFound} />
+					</Switch>
+				</div>
+
+				<div className='home__footer'>
+					<div className='home__footerLeft'></div>
+
+					<div className='home__footerRight'>
+						<div>
+							<h3>WE ARE</h3>
+							<h1>CANZA</h1>
+						</div>
+						<div>
+							<h5>&copy;Ondrej Brendza</h5>
+							<h5>&copy;Miriam Staneková</h5>
+							<h5>&copy;Project Samson</h5>
+							<h5>2020</h5>
+						</div>
+					</div>
+				</div>
 			</FuncContext.Provider>
 		)
 	} else {
