@@ -3,6 +3,7 @@ import { Route, NavLink, Switch } from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 
 import emailjs from 'emailjs-com'
+import smoothscroll from 'smoothscroll-polyfill'
 import './styles/reset.css'
 import './styles/App.css'
 
@@ -214,6 +215,7 @@ function App() {
 	window.addEventListener('scroll', scrollTopCheck)
 
 	// Function that checks scroll level
+	smoothscroll.polyfill()
 	const scrollTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}

@@ -107,7 +107,7 @@
 .blog__lowerCont {
 	display: flex;
 	flex-direction: row;
-	justify-content: start;
+	justify-content: flex-start;
 	width: 100%;
 	height: auto;
 }
