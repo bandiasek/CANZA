@@ -28,7 +28,7 @@ const Home = () => {
 		slidesPerView: 3,
 		slidesPerGroup: 1,
 		spaceBetween: 10,
-		loop: true,
+		loop: false,
 		freemode: false,
 		breakpoints: {
 			1300: {
@@ -95,13 +95,11 @@ const Home = () => {
 
 					<div className='home__newestPosts'>
 						<Swiper {...params} className='home__newestPostsSwiper'>
-							{posts.map((post) => (
-								<div key={post.id}>
+							{posts.map((post, i) => (
+								<div key={i}>
 									<SwiperItem
-										category={post.data.category}
-										imgPath={post.data.imgPath}
-										name={post.data.name}
-										key={post.id}
+										key={i}
+										post={post}
 									/>
 								</div>
 							))}

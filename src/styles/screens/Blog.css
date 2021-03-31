@@ -35,7 +35,7 @@
 	align-items: flex-start;
 	justify-content: flex-end;
 	height: 100%;
-	background-color: royalblue;
+	background-color: #5a8181;
 }
 
 .blog__upperImg > img {
@@ -107,7 +107,7 @@
 .blog__lowerCont {
 	display: flex;
 	flex-direction: row;
-	justify-content: start;
+	justify-content: flex-start;
 	width: 100%;
 	height: auto;
 }
@@ -269,5 +269,8 @@
 	/**** Upper container ****/
 	.blog__description > h1 {
 		font-size: 2rem;
+	}
+	.blog__postText {
+		width: 82%;
 	}
 }

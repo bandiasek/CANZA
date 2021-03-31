@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import BackImg from '../assets/BG/backImg.svg'
 
 import '../styles/reset.css'
 import '../styles/components/Swiper.css'
 
-const SwiperItem = ({ category, imgPath, name }) => {
+const SwiperItem = ({ post }) => {
 	// Defining styles
 	const [style, setStyle] = useState({ top: 0, left: 0, position: 'absolute' })
 	const styles = [
@@ -13,6 +14,7 @@ const SwiperItem = ({ category, imgPath, name }) => {
 		{ top: 0, right: 0, position: 'absolute' },
 		{ bottom: 0, right: 0, position: 'absolute' },
 	]
+	const history = useHistory()
 
 	// Function + useEffect to randomly choose element
 	const choosePosition = () => {
@@ -25,16 +27,21 @@ const SwiperItem = ({ category, imgPath, name }) => {
 	return (
 		<div className='swiperItem__container'>
 			<div className='swiperItem__containerImg'>
-				<img src={imgPath} alt='Post img' />
+				<img src={post.data.imgPath} alt='Post img' />
 
 				<div style={style} className='swiperItem__backImg'>
 					<img src={BackImg} alt='Back img' />
 				</div>
 			</div>
 
-			<div className='swiperItem__containerText'>
-				<h4>{category}</h4>
-				<h1>{name}</h1>
+			<div 
+				className='swiperItem__containerText'
+				onClick={e=>{
+					history.push('/blog',post)
+				}}
+			>
+				<h4>{post.data.category}</h4>
+				<h1>{post.data.name}</h1>
 			</div>
 		</div>
 	)
