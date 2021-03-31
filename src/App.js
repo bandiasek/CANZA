@@ -28,6 +28,7 @@ function App() {
 	const [isLogged, setIsLogged] = useState(false)
 	const [isLoaded, setIsLoaded] = useState(false)
 	const [navbarExpanded, setNavbarExpanded] = useState(true)
+	const history = useHistory()
 
 	// Wraping all the functions
 	const functions = useMemo(() => ({
@@ -221,7 +222,6 @@ function App() {
 	}
 
 	// Funcion that handles logo, redirecting to home page
-	const history = useHistory()
 	const redirectHome = () => {
 		history.push('/')
 	}

@@ -3,7 +3,7 @@ import { FuncContext } from '../components/Context'
 
 import '../styles/screens/Blog.css'
 
-function Blog({propsIndex}) {
+function Blog(props) {
 	// Getting data from useContext
 	const { posts } = useContext(FuncContext)
 
@@ -25,11 +25,13 @@ function Blog({propsIndex}) {
 
 	// Hook that runs after viewing content
 	useEffect(() => {
-		// Setting cur posts to first index
-		if(propsIndex!==null) {
-			console.log(propsIndex)
+		// Setting cur posts to first index or checking for directing position
+		if(props.location.state !== undefined) {
+			setCurPost(props.location.state)
+		} else {
+			onChangePost(null, 0)
 		}
-		onChangePost(null, 0)
+
 	}, [])
 
 	// Conditional rendering
