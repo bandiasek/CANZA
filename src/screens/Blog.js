@@ -26,7 +26,7 @@ function Blog(props) {
 	// Hook that runs after viewing content
 	useEffect(() => {
 		// Setting cur posts to first index or checking for directing position
-		if(props.location.state !== undefined) {
+		if(props.location.state !== null && props.location.state !== undefined )  {
 			setCurPost(props.location.state)
 		} else {
 			onChangePost(null, 0)

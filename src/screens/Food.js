@@ -161,7 +161,6 @@ const Food = () => {
 
 	useEffect(() => {
 		calculateMacros()
-		console.log(macrosResult)
 	}, [tdeeResult])
 
 	return (
