@@ -63,7 +63,7 @@ import '../styles/screens/FoodAndTraining.css'
 import '../styles/screens/Food.css'
 
 const Food = () => {
-	// Stpring tdee calculator data
+	// Storing tdee calculator data
 	const [tdeeData, setTdeeData] = useState({
 		weight: '',
 		height: '',
@@ -75,6 +75,7 @@ const Food = () => {
 		resultDef: '---',
 		result: '---',
 		resultSur: '---',
+		selected: 1,
 	})
 
 	const [macrosResult, setMacrosResult] = useState({
@@ -110,6 +111,14 @@ const Food = () => {
 		})
 	}
 
+	// HandleClick choose your goal
+	const onChooseGoal = (type) => {
+		setTdeeResult({
+			...tdeeResult,
+			selected: type,
+		})
+	}
+
 	// Calculate if filled
 	const calculateTdee = () => {
 		if (
@@ -126,6 +135,7 @@ const Food = () => {
 					(tdeeData.sex === '5' ? 5 : -161)) *
 				tdeeData.activityLevel.valueOf()
 			setTdeeResult({
+				...tdeeResult,
 				result: Math.round(result),
 				resultDef: Math.round(result - 200),
 				resultSur: Math.round(result + 200),
@@ -133,25 +143,42 @@ const Food = () => {
 		}
 	}
 
-	// Calculate macros result
-	const calculateMacros = () => {
+	// Check and choose macros
+	const validateMacros = () => {
 		if (tdeeResult.result !== '---') {
-			const fatSubResult = Math.round(tdeeResult.result.valueOf() * 0.3)
-			const protSubResult = Math.round(tdeeResult.result.valueOf() * 0.3)
-			const carbsSubResult = Math.round(tdeeResult.result.valueOf() * 0.4)
-			const fatResult = Math.round(fatSubResult / 9)
-			const protResult = Math.round(protSubResult / 4)
-			const carbsResult = Math.round(carbsSubResult / 4)
-
-			setMacrosResult({
-				carbs: carbsResult.toString(),
-				fat: fatResult.toString(),
-				proteins: protResult.toString(),
-				kcalCarbs: carbsSubResult.toString(),
-				kcalFat: fatSubResult.toString(),
-				kcalProt: protSubResult.toString(),
-			})
+			if (tdeeResult.selected === 0) {
+				calculateMacros(tdeeResult.resultDef)
+			} else if (tdeeResult.selected === 1) {
+				calculateMacros(tdeeResult.result)
+			} else {
+				calculateMacros(tdeeResult.resultSur)
+			}
 		}
+	}
+
+	// Calculate macros result
+	const calculateMacros = (result) => {
+		const fatResult = Math.round(
+			tdeeData.weight * (tdeeData.sex === '5' ? 1 : 1.4)
+		)
+		const fatSubResult = Math.round(fatResult * 9)
+
+		const protResult = Math.round(tdeeData.weight * 2.2)
+		const protSubResult = Math.round(protResult * 4)
+
+		const carbsSubResult = Math.round(
+			result.valueOf() - protSubResult - fatSubResult
+		)
+		const carbsResult = Math.round(carbsSubResult / 4)
+
+		setMacrosResult({
+			carbs: carbsResult.toString(),
+			fat: fatResult.toString(),
+			proteins: protResult.toString(),
+			kcalCarbs: carbsSubResult.toString(),
+			kcalFat: fatSubResult.toString(),
+			kcalProt: protSubResult.toString(),
+		})
 	}
 
 	// UseEffect runs every tdeeData changes, tdeeResult changes
@@ -160,7 +187,7 @@ const Food = () => {
 	}, [tdeeData])
 
 	useEffect(() => {
-		calculateMacros()
+		validateMacros()
 	}, [tdeeResult])
 
 	return (
@@ -514,7 +541,7 @@ const Food = () => {
 									onChange={(e) => checkHandler(e)}
 									checked={tdeeData.activityLevel === '1.375' ? true : false}
 								/>
-								<label htmlFor='moder-active'>Menej ako 3</label>
+								<label htmlFor='moder-active'>3 ktát a menej</label>
 							</div>
 							<div className='f_a_t__breakRow'></div>
 							<div className='tdeeForm__option'>
@@ -526,7 +553,7 @@ const Food = () => {
 									onChange={(e) => checkHandler(e)}
 									checked={tdeeData.activityLevel === '1.550' ? true : false}
 								/>
-								<label htmlFor='active'>3 - 5 krát</label>
+								<label htmlFor='active'>4 - 5 krát</label>
 							</div>
 							<div className='tdeeForm__option'>
 								<input
@@ -543,19 +570,37 @@ const Food = () => {
 					</form>
 				</div>
 				<div className='food__tdeeResult'>
-					<div className='tdeeResult__item'>
+					<div
+						className='tdeeResult__item'
+						style={{
+							transform: tdeeResult.selected !== 0 ? 'scale(.8)' : 'scale(1.2)',
+							opacity: tdeeResult.selected !== 0 ? 0.75 : 1,
+						}}
+					>
 						<h1>AK CHCETE SCHUDNÚŤ</h1>
-						<h2>{tdeeResult.resultDef}</h2>
+						<h2 onClick={(e) => onChooseGoal(0)}>{tdeeResult.resultDef}</h2>
 						<h1>KALÓRII DENNE</h1>
 					</div>
-					<div className='tdeeResult__item'>
+					<div
+						className='tdeeResult__item'
+						style={{
+							transform: tdeeResult.selected !== 1 ? 'scale(.8)' : 'scale(1.2)',
+							opacity: tdeeResult.selected !== 1 ? 0.75 : 1,
+						}}
+					>
 						<h1>AK NECHCETE MENIŤ</h1>
-						<h2>{tdeeResult.result}</h2>
+						<h2 onClick={(e) => onChooseGoal(1)}>{tdeeResult.result}</h2>
 						<h1>KALÓRII DENNE</h1>
 					</div>
-					<div className='tdeeResult__item'>
+					<div
+						className='tdeeResult__item'
+						style={{
+							transform: tdeeResult.selected !== 2 ? 'scale(.8)' : 'scale(1.2)',
+							opacity: tdeeResult.selected !== 2 ? 0.75 : 1,
+						}}
+					>
 						<h1>AK CHCETE NABRAŤ</h1>
-						<h2>{tdeeResult.resultSur}</h2>
+						<h2 onClick={(e) => onChooseGoal(2)}>{tdeeResult.resultSur}</h2>
 						<h1>KALÓRII DENNE</h1>
 					</div>
 				</div>
@@ -570,17 +615,19 @@ const Food = () => {
 					<div className='macrosResult__info'>
 						<div className='macrosResult__infoHeading'>
 							<h1>
-								{tdeeResult.result}
-								<span className='macrosResult__small'>kcal </span>* 0.3 ={' '}
-								{macrosResult.kcalFat}
-								<span className='macrosResult__small'>kcal </span>
-							</h1>
-							<h1>
-								{macrosResult.kcalFat}
-								<span className='macrosResult__small'>kcal </span>/ 9
-								<span className='macrosResult__small'>kcal </span>={' '}
+								{tdeeData.weight === '' ? '--' : tdeeData.weight}
+								<span className='macrosResult__small'>kg </span>*{' '}
+								{tdeeData.sex === '5' ? '1' : '1.4'}
+								<span className='macrosResult__small'>g </span> ={' '}
 								{macrosResult.fat}
 								<span className='macrosResult__small'>g </span>
+							</h1>
+							<h1>
+								{macrosResult.fat}
+								<span className='macrosResult__small'>g </span>* 9
+								<span className='macrosResult__small'>kcal </span>={' '}
+								{macrosResult.kcalFat}
+								<span className='macrosResult__small'>kcal </span>
 							</h1>
 						</div>
 						<ul>
@@ -612,17 +659,17 @@ const Food = () => {
 					<div className='macrosResult__info'>
 						<div className='macrosResult__infoHeading'>
 							<h1>
-								{tdeeResult.result}
-								<span className='macrosResult__small'>kcal </span>* 0.3 ={' '}
-								{macrosResult.kcalProt}
-								<span className='macrosResult__small'>kcal </span>
-							</h1>
-							<h1>
-								{macrosResult.kcalProt}
-								<span className='macrosResult__small'>kcal </span>/ 4
-								<span className='macrosResult__small'>kcal </span>={' '}
+								{tdeeData.weight === '' ? '--' : tdeeData.weight}
+								<span className='macrosResult__small'>kg </span>* 2.2
+								<span className='macrosResult__small'>g </span> ={' '}
 								{macrosResult.proteins}
 								<span className='macrosResult__small'>g </span>
+							</h1>
+							<h1>
+								{macrosResult.proteins}
+								<span className='macrosResult__small'>g </span>* 4 ={' '}
+								{macrosResult.kcalProt}
+								<span className='macrosResult__small'>kcal </span>
 							</h1>
 						</div>
 						<ul>
@@ -654,8 +701,19 @@ const Food = () => {
 					<div className='macrosResult__info'>
 						<div className='macrosResult__infoHeading'>
 							<h1>
-								{tdeeResult.result}
-								<span className='macrosResult__small'>kcal </span>* 0.4 ={' '}
+								{tdeeResult.selected === 0
+									? tdeeResult.resultDef
+									: tdeeResult.selected === 1
+									? tdeeResult.result
+									: tdeeResult.resultSur}
+								<span className='macrosResult__small'>kcal </span>-{' '}
+								{macrosResult.kcalProt !== '---'
+									? -(
+											-macrosResult.kcalFat.valueOf() -
+											macrosResult.kcalProt.valueOf()
+									  )
+									: '---'}
+								<span className='macrosResult__small'>kcal </span> ={' '}
 								{macrosResult.kcalCarbs}
 								<span className='macrosResult__small'>kcal </span>
 							</h1>
