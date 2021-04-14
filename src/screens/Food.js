@@ -128,12 +128,21 @@ const Food = () => {
 			tdeeData.sex !== '' &&
 			tdeeData.activityLevel !== ''
 		) {
-			const result =
-				(10 * tdeeData.weight.valueOf() +
-					6.25 * tdeeData.height.valueOf() -
-					5 * tdeeData.age.valueOf() +
-					(tdeeData.sex === '5' ? 5 : -161)) *
-				tdeeData.activityLevel.valueOf()
+			const result = tdeeData.sex === 'male' ? 
+				(
+					((10 * tdeeData.weight.valueOf()) +
+					(6.25 * tdeeData.height.valueOf()) -
+					(5 * tdeeData.age.valueOf()) +
+					5) * tdeeData.activityLevel.valueOf() 
+				)
+			: 
+				(
+					((10 * tdeeData.weight.valueOf()) +
+					(6.25 * tdeeData.height.valueOf()) -
+					(5 * tdeeData.age.valueOf()) -
+					161) * tdeeData.activityLevel.valueOf()
+				)
+
 			setTdeeResult({
 				...tdeeResult,
 				result: Math.round(result),
@@ -159,7 +168,7 @@ const Food = () => {
 	// Calculate macros result
 	const calculateMacros = (result) => {
 		const fatResult = Math.round(
-			tdeeData.weight * (tdeeData.sex === '5' ? 1 : 1.4)
+			tdeeData.weight * (tdeeData.sex === 'male' ? 1 : 1.4)
 		)
 		const fatSubResult = Math.round(fatResult * 9)
 
@@ -501,9 +510,9 @@ const Food = () => {
 									type='checkbox'
 									name='sex'
 									id='male'
-									value='5'
+									value='male'
 									onChange={(e) => checkHandler(e)}
-									checked={tdeeData.sex === '5' ? true : false}
+									checked={tdeeData.sex === 'male' ? true : false}
 								/>
 								<label htmlFor='male'>MUŽ</label>
 							</div>
@@ -512,9 +521,9 @@ const Food = () => {
 									type='checkbox'
 									name='sex'
 									id='female'
-									value='-161'
+									value='female'
 									onChange={(e) => checkHandler(e)}
-									checked={tdeeData.sex === '-161' ? true : false}
+									checked={tdeeData.sex === 'female' ? true : false}
 								/>
 								<label htmlFor='female'>ŽENA</label>
 							</div>
@@ -541,7 +550,7 @@ const Food = () => {
 									onChange={(e) => checkHandler(e)}
 									checked={tdeeData.activityLevel === '1.375' ? true : false}
 								/>
-								<label htmlFor='moder-active'>3 ktát a menej</label>
+								<label htmlFor='moder-active'>3 krát a menej</label>
 							</div>
 							<div className='f_a_t__breakRow'></div>
 							<div className='tdeeForm__option'>
@@ -549,9 +558,9 @@ const Food = () => {
 									type='checkbox'
 									name='actvity'
 									id='active'
-									value='1.550'
+									value='1.465'
 									onChange={(e) => checkHandler(e)}
-									checked={tdeeData.activityLevel === '1.550' ? true : false}
+									checked={tdeeData.activityLevel === '1.465' ? true : false}
 								/>
 								<label htmlFor='active'>4 - 5 krát</label>
 							</div>
