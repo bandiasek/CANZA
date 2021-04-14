@@ -474,6 +474,7 @@
 	justify-content: space-between;
 	align-items: center;
 	height: 25vh;
+	transition: .2s all;
 }
 
 .tdeeResult__item > h1 {
@@ -496,7 +497,15 @@
 	font-family: "Playfair Display", serif;
 	letter-spacing: 2px;
 	color: #c78567;
+	cursor: pointer;
+
+	-webkit-user-select: none; 
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
+
+
 
 /*-----Calculating macros, macros result section-----*/
 .food__macrosResult {
